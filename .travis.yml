@@ -27,4 +27,5 @@ after_success:
   - coveralls
 notifications:
   email:
-    - informatica.academica@matem.unam.mx
+    - gil@im.unam.mx
+    - adriana.rv@im.unam.mx
