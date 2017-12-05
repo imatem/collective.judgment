@@ -6,6 +6,10 @@
   <configure zcml:condition="installed AccessControl.security">
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="collective.judgment.AddAppraisal"
+        title="collective.judgment: Add Appraisal"
+    />
 
   </configure>
 

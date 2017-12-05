@@ -6,6 +6,15 @@
 collective.judgment
 ===================
 
+.. image:: https://travis-ci.org/imatem/collective.judgment.svg?branch=master
+    :target: https://travis-ci.org/imatem/collective.judgment
+    :alt: Travis CI status
+
+.. image:: https://coveralls.io/repos/github/imatem/collective.judgment/badge.svg?branch=master
+    :target: https://coveralls.io/github/imatem/collective.judgment?branch=master
+    :alt: Coveralls status
+
+
 Tell me what your product does
 
 Features
@@ -24,7 +33,7 @@ This add-on can be seen in action at the following sites:
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+Full documentation for end users can be found in the "docs" folder, and is also available online at http://
 
 
 Translations
@@ -32,8 +41,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
-
+-
 
 Installation
 ------------
@@ -56,14 +64,14 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.judgment/issues
 - Source Code: https://github.com/collective/collective.judgment
-- Documentation: https://docs.plone.org/foo/bar
+- Documentation:
 
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+We have a mailing list located at: informatica.academica@im.unam.mx
 
 
 License
