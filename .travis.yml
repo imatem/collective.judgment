@@ -6,7 +6,7 @@ cache:
   - eggs
   - downloads
 python:
-  - 2.7
+  - 2.7.9
 matrix:
   fast_finish: true
 install:
@@ -28,4 +28,3 @@ after_success:
 notifications:
   email:
     - gil@im.unam.mx
-    - adriana.rv@im.unam.mx
