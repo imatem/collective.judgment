@@ -15,19 +15,13 @@ collective.judgment
     :alt: Coveralls status
 
 
-Tell me what your product does
+Reviewer process for Promotion and Tenure of Faculty and Staff.
+
 
 Features
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- Members of the University Promotion and Tenure Committee can make comments
 
 
 Documentation
