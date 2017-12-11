@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="collective.judgment.AddPromotion"
+        title="collective.judgment: Add Promotion"
+    />
+
+        
+    <permission
         id="collective.judgment.AddAppraisal"
         title="collective.judgment: Add Appraisal"
     />
