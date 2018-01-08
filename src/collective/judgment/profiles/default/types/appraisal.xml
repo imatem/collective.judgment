@@ -12,7 +12,7 @@
       i18n:translate=""
       name="description">Individual evaluation by members</property>
 
-  <property name="allow_discussion">False</property>
+  <property name="allow_discussion">True</property>
   <property name="factory">appraisal</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
@@ -83,15 +83,18 @@
       visible="True">
     <permission value="View"/>
   </action>
+
+  <!-- condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True" -->
   <action
       action_id="edit"
       category="object"
-      condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True"
       i18n:attributes="title"
       title="Edit"
       url_expr="string:${object_url}/edit"
       visible="True">
     <permission value="Modify portal content"/>
   </action>
+
+
 
 </object>
