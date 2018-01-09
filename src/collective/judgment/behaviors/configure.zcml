@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.judgment">
+
+    <plone:behavior
+      title="Basic Info"
+      description="Basic information"
+      provides=".basic.IBasicInfo"
+      />
+
+</configure>
