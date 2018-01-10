@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="promotion"
+    name="tenure"
     meta_type="Dexterity FTI"
     i18n:domain="collective.judgment">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Promotion</property>
+      name="title">Tenure</property>
   <property
       i18n:translate=""
-      name="description">Promotion of Faculty and Staff</property>
+      name="description">An indefinite academic appointment</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">promotion</property>
+  <property name="factory">tenure</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
@@ -23,20 +23,19 @@
   <property name="global_allow">True</property>
 
   <!-- Schema, class and security -->
-  <property name="add_permission">collective.judgment.AddPromotion</property>
-  <property name="klass">collective.judgment.content.promotion.Promotion</property>
+  <property name="add_permission">collective.judgment.AddTenure</property>
+  <property name="klass">collective.judgment.content.tenure.Tenure</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">collective.judgment.content.promotion.IPromotion</property>
+  <property name="schema">collective.judgment.content.tenure.ITenure</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
-    <element value="collective.judgment.behaviors.basic.IBasicInfo"/>
-    <!-- <element value="plone.app.content.interfaces.INameFromTitle"/> -->
-    <!-- <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/> -->
-    <!-- <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/> -->
-    <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
-    <!-- <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/> -->
+    <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
+    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
+    <element value="plone.app.dexterity.behaviors.id.IShortName"/>
+    <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
     <!--<element value="plone.app.lockingbehavior.behaviors.ILocking" />-->
     <!--<element value="plone.app.dexterity.behaviors.metadata.IBasic"/>-->
@@ -47,7 +46,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++promotion</property>
+  <property name="add_view_expr">string:${folder_url}/++add++tenure</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
@@ -84,14 +83,15 @@
       visible="True">
     <permission value="View"/>
   </action>
-  <!-- condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True" -->
   <action
       action_id="edit"
       category="object"
+      condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True"
       i18n:attributes="title"
       title="Edit"
       url_expr="string:${object_url}/edit"
       visible="True">
     <permission value="Modify portal content"/>
   </action>
+
 </object>

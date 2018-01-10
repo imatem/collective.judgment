@@ -7,14 +7,13 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
-        id="collective.judgment.AddPromotion"
-        title="collective.judgment: Add Promotion"
+        id="collective.judgment.AddTenure"
+        title="collective.judgment: Add Tenure"
     />
-
         
     <permission
-        id="collective.judgment.AddAppraisal"
-        title="collective.judgment: Add Appraisal"
+        id="collective.judgment.AddPromotion"
+        title="collective.judgment: Add Promotion"
     />
 
   </configure>

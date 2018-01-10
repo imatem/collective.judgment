@@ -3,7 +3,7 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
-    <permission name="collective.judgment: Add Promotion" acquire="True">
+    <permission name="collective.judgment: Add Tenure" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
@@ -11,7 +11,7 @@
     </permission>
 
         
-    <permission name="collective.judgment: Add Appraisal" acquire="True">
+    <permission name="collective.judgment: Add Promotion" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
