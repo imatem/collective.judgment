@@ -6,7 +6,7 @@ from zope.interface import alsoProvides
 from zope import schema
 
 
-class IBasicInfo(model.Schema):
+class IPersonalData(model.Schema):
 
     first_name = schema.TextLine(
         title=_(u'First Name'),
@@ -18,4 +18,4 @@ class IBasicInfo(model.Schema):
         required=True,
     )
 
-alsoProvides(IBasicInfo, IFormFieldProvider)
+alsoProvides(IPersonalData, IFormFieldProvider)
