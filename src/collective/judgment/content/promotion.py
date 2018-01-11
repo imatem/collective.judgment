@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-from plone.app.textfield import RichText
+# from plone.app.textfield import RichText
+from collective.judgment import _
+from collective.judgment.validators import isValidFileType
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.namedfile import field as namedfile
 from plone.supermodel import model
-from plone.supermodel.directives import fieldset
-from z3c.form.browser.radio import RadioFieldWidget
-from zope import schema
+# from plone.supermodel.directives import fieldset
+# from z3c.form.browser.radio import RadioFieldWidget
+# from zope import schema
 from zope.interface import implementer
-from collective.judgment import _
 
 
 class IPromotion(model.Schema):
@@ -18,6 +19,13 @@ class IPromotion(model.Schema):
     cv = namedfile.NamedBlobFile(
         title=_(u'Curriculum vitae (Gold-sponsors and above)'),
         required=True,
+        constraint=isValidFileType,
+    )
+
+    # directives.omitted('thumbcv')
+    thumbcv = namedfile.NamedBlobImage(
+        title=_(u'ImageThumb'),
+        required=False,
     )
 
     # directives.widget(level=RadioFieldWidget)
