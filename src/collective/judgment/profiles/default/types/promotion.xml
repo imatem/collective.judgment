@@ -12,7 +12,7 @@
       i18n:translate=""
       name="description">Promotion of Faculty and Staff</property>
 
-  <property name="allow_discussion">False</property>
+  <property name="allow_discussion">True</property>
   <property name="factory">promotion</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
@@ -31,9 +31,9 @@
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
-    <element value="collective.judgment.behaviors.basic.IBasicInfo"/>
+    <element value="collective.judgment.behaviors.personaldata.IPersonalData"/>
     <!-- <element value="plone.app.content.interfaces.INameFromTitle"/> -->
-    <!-- <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/> -->
+    <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
     <!-- <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/> -->

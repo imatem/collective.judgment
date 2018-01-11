@@ -15,6 +15,11 @@ class IPromotion(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Promotion
     """
 
+    cv = namedfile.NamedBlobFile(
+        title=_(u'Curriculum vitae (Gold-sponsors and above)'),
+        required=True,
+    )
+
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
     #     title=_(u'Sponsoring Level'),

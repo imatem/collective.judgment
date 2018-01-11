@@ -4,9 +4,9 @@
     i18n_domain="collective.judgment">
 
     <plone:behavior
-      title="Basic Info"
-      description="Basic information"
-      provides=".basic.IBasicInfo"
+      title="Personal Data"
+      description="Adds first name and last name fields"
+      provides=".personaldata.IPersonalData"
       />
 
 </configure>

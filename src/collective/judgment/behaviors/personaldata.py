@@ -8,6 +8,12 @@ from zope import schema
 
 class IPersonalData(model.Schema):
 
+    title = schema.TextLine(
+        title=u"Title",
+        description=u"A title, which will be converted to a name",
+        required=True
+    )
+
     first_name = schema.TextLine(
         title=_(u'First Name'),
         required=True,
@@ -17,5 +23,6 @@ class IPersonalData(model.Schema):
         title=_(u'Last Name'),
         required=True,
     )
+
 
 alsoProvides(IPersonalData, IFormFieldProvider)
