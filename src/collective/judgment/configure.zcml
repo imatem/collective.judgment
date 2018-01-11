@@ -40,4 +40,8 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <!-- SUBSCRIBERS -->
+  <subscriber handler=".handlers.handlerAddedPromotion" />
+  <subscriber handler=".handlers.handlerModifiedPromotion" />
+
 </configure>
