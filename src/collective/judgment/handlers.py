@@ -42,7 +42,7 @@ def handlerAddedPromotion(self, event):
 
 
 @adapter(IPromotion, IObjectModifiedEvent)
-def handlerModifiedPlan(self, event):
+def handlerModifiedPromotion(self, event):
 
     try:
 
