@@ -22,7 +22,7 @@ class IPromotion(model.Schema):
         constraint=isValidFileType,
     )
 
-    # directives.omitted('thumbcv')
+    directives.omitted('thumbcv')
     thumbcv = namedfile.NamedBlobImage(
         title=_(u'ImageThumb'),
         required=False,
