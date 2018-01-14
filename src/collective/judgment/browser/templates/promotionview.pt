@@ -1,17 +1,117 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    lang="en"
-    metal:use-macro="context/main_template/macros/master"
-    i18n:domain="collective.judgment">
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.judgment">
 <body>
-    <!-- <metal:content-core fill-slot="content-core">
-        <p>Suitable for <em tal:replace="structure view/w/audience/render"></em>
-        </p>
+  <metal:css fill-slot="style_slot">
+    <style type="text/css">
+      .myphotoAlbumEntry {
+        display: inline-block;
+        margin: 5px;
+        vertical-align: middle;
+      }
+      .myphotoAlbumEntry a {
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-weight: 300;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background: #fcfcfd;
+        width: 220px;
+        height: 240px;
+      }
 
-        <div tal:content="structure view/w/details/render" />
+      .myphotoAlbumEntryTitle a{
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-weight: 300;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background: #fcfcfd;
+        width: 120px;
+        height: 40px;
 
-        <div tal:content="context/speaker">
-            User
-        </div>
-    </metal:content-core> -->
+      }
+
+      .myphotoAlbumEntry img {
+        max-width: 200px;
+        max-height: 200px;
+      }
+      .myphotoAlbumEntryTitle {
+          clear: both;
+          /*display: block;*/
+          display: flex;
+          margin-top:-40pt;
+      }
+    </style>
+  </metal:css>
+
+
+
+
+<!-- plone/app/dexterity/browser/container.pt -->
+<metal:main fill-slot="content-core">
+<metal:content-core define-macro="content-core">
+
+  <tal:block tal:define="allvalues view/widgets/values">
+
+    <h1>
+      <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
+      <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
+    </h1>
+    <!-- <span tal:replace="structure view/w/cv/render"/> -->
+
+    <br/>
+    
+    <div class="myphotoAlbumEntry">
+      <p tal:content="view/w/cv/label"/>
+      <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/cv">
+        <span class="myphotoAlbumEntryWrapper">
+          <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbcv;"/>
+        </span>
+      </a>
+
+      <span class="myphotoAlbumEntryTitle">
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/cv">
+          Download
+        </a>
+      </span>
+    </div>
+
+    
+
+  </tal:block>
+
+  <!-- <tal:block repeat="widget view/widgets/values">
+      <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
+          <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+      </tal:block>
+  </tal:block> -->
+
+  <!-- <fieldset tal:repeat="group view/groups"
+            tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
+      <legend tal:content="group/label" />
+      <tal:block tal:repeat="widget group/widgets/values">
+          <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+      </tal:block>
+  </fieldset> -->
+
+  <!-- <fieldset id="folder-listing">
+      <legend i18n:translate="" i18n:domain="collective.judgment">Contents</legend>
+      <tal:block define="view nocall:context/folder_listing; listing_macro view/macros/listing">
+          <metal:use_macro use-macro="listing_macro" />
+      </tal:block>
+  </fieldset> -->
+
+</metal:content-core>
+</metal:main>
+
 </body>
 </html>
