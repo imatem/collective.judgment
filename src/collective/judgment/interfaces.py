@@ -16,7 +16,7 @@ class ICollectiveJudgmentLayer(IDefaultBrowserLayer):
 
 
 # Ivotable is the marker interface for contentypes who support this behavoir
-class Ivotable(Interface):
+class IVotable(Interface):
     pass
 
 
