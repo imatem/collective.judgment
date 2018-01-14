@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from hashlib import md5
 from persistent.dict import PersistentDict
 from persistent.list import PersistentList
@@ -25,3 +26,31 @@ class Vote(object):
     @property
     def voted(self):
         return self.annotations['voted']
+
+    def _hash(self, request):
+        hash_ = md5()
+        hash_.update(request.getClientAddr())
+        for key in ["User-Agent", "Accept-Language",
+                    "Accept-Encoding"]:
+            hash_.update(request.getHeader(key))
+        return hash_.hexdigest()
+
+    def vote(self, vote, request):
+        if self.already_voted(request):
+            raise KeyError("You may not vote twice")
+        vote = int(vote)
+        self.annotations['voted'].append(self._hash(request))
+        votes = self.annotations['votes']
+        if vote not in votes:
+            votes[vote] = 1
+        else:
+            votes[vote] += 1
+
+    def already_voted(self, request):
+        return self._hash(request) in self.annotations['voted']
+
+    def clear(self):
+        annotations = IAnnotations(self.context)
+        annotations[KEY] = PersistentDict({'voted': PersistentList(),
+                                           'votes': PersistentDict()})
+        self.annotations = annotations[KEY]

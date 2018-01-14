@@ -49,11 +49,6 @@ class IVoting(model.Schema):
         that the user does not vote twice
         """
 
-    def has_votes():
-        """
-        Return whether anybody ever voted for this item
-        """
-
     def already_voted(request):
         """
         Return the information wether a person already voted.
