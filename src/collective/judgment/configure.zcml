@@ -44,4 +44,10 @@
   <subscriber handler=".handlers.handlerAddedPromotion" />
   <subscriber handler=".handlers.handlerModifiedPromotion" />
 
+  <!-- VOCABULARIES -->
+  <utility
+    component=".vocabularies.YesorNoVocabulary"
+    name="collective.judgment.YesorNoVocabulary"
+  />
+
 </configure>
