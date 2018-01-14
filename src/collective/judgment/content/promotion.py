@@ -28,6 +28,18 @@ class IPromotion(model.Schema):
         required=False,
     )
 
+    report = namedfile.NamedBlobFile(
+        title=_(u'Activities Report'),
+        required=True,
+        constraint=isValidFileType,
+    )
+
+    directives.omitted('thumbreport')
+    thumbreport = namedfile.NamedBlobImage(
+        title=_(u'ImageThumbReport'),
+        required=False,
+    )
+
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
     #     title=_(u'Sponsoring Level'),

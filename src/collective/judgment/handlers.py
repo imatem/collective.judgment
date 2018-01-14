@@ -15,9 +15,8 @@ import shutil
 @adapter(IPromotion, IObjectAddedEvent)
 def handlerAddedPromotion(self, event):
 
+    tempdir = tempfile.mkdtemp()
     try:
-
-        tempdir = tempfile.mkdtemp()
         file_path = os.path.join(tempdir, 'cv.pdf')
         file_os = open(file_path, 'wb')
         file_os.write(self.cv.data)
@@ -33,6 +32,24 @@ def handlerAddedPromotion(self, event):
         )
     except:
         self.thumbcv = None
+
+    try:
+        file_path = os.path.join(tempdir, 'report.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.report.data)
+        file_os.close()
+        os.system("cd {0}; gs -o report.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'report.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbreport = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'report.png'
+        )
+    except:
+        self.thumbreport = None
+
 
     try:
         shutil.rmtree(tempdir)  # remove tempdir
@@ -44,9 +61,8 @@ def handlerAddedPromotion(self, event):
 @adapter(IPromotion, IObjectModifiedEvent)
 def handlerModifiedPromotion(self, event):
 
+    tempdir = tempfile.mkdtemp()
     try:
-
-        tempdir = tempfile.mkdtemp()
         file_path = os.path.join(tempdir, 'cv.pdf')
         file_os = open(file_path, 'wb')
         file_os.write(self.cv.data)
@@ -62,6 +78,23 @@ def handlerModifiedPromotion(self, event):
         )
     except:
         self.thumbcv = None
+
+    try:
+        file_path = os.path.join(tempdir, 'report.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.report.data)
+        file_os.close()
+        os.system("cd {0}; gs -o report.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'report.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbreport = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'report.png'
+        )
+    except:
+        self.thumbreport = None
 
     try:
         shutil.rmtree(tempdir)  # remove tempdir

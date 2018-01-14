@@ -85,6 +85,25 @@
       </span>
     </div>
 
+    <tal:block tal:condition="view/w/report | nothing">
+
+      <div class="myphotoAlbumEntry">
+      <p tal:content="view/w/report/label"/>
+      <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/report">
+        <span class="myphotoAlbumEntryWrapper">
+          <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbreport;"/>
+        </span>
+      </a>
+
+      <span class="myphotoAlbumEntryTitle">
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report">
+          Download
+        </a>
+      </span>
+    </div>
+
+    </tal:block>
+
     
 
   </tal:block>
