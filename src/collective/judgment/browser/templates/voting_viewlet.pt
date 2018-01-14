@@ -1,0 +1,9 @@
+<div class="voting">
+     Wanna vote? Write code!
+ </div>
+
+ <script type="text/javascript">
+   jq(document).ready(function(){
+     // please add some jQuery-magic
+   });
+ </script>
