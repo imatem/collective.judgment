@@ -9,4 +9,12 @@
       provides=".personaldata.IPersonalData"
       />
 
+    <plone:behavior
+      title="Voting"
+      description="Allow voting for an item"
+      provides="collective.judgment.interfaces.IVoting"
+      factory=".voting.Vote"
+      marker="collective.judgment.interfaces.IVotable"
+      />
+
 </configure>
