@@ -47,27 +47,6 @@ class IPromotion(model.Schema):
     #     required=True
     # )
 
-    # text = RichText(
-    #     title=_(u'Text'),
-    #     required=False
-    # )
-
-    # url = schema.URI(
-    #     title=_(u'Link'),
-    #     required=False
-    # )
-
-    # fieldset('Images', fields=['logo', 'advertisement'])
-    # logo = namedfile.NamedBlobImage(
-    #     title=_(u'Logo'),
-    #     required=False,
-    # )
-
-    # advertisement = namedfile.NamedBlobImage(
-    #     title=_(u'Advertisement (Gold-sponsors and above)'),
-    #     required=False,
-    # )
-
     # directives.read_permission(notes='cmf.ManagePortal')
     # directives.write_permission(notes='cmf.ManagePortal')
     # notes = RichText(

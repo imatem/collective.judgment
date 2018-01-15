@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.judgment import _
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope.interface import alsoProvides
@@ -8,6 +9,7 @@ from zope import schema
 
 class IPersonalData(model.Schema):
 
+    directives.order_before(title='report')
     title = schema.TextLine(
         title=u"Title",
         description=u"A title, which will be converted to a name",
