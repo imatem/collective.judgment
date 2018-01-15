@@ -47,14 +47,14 @@ class Vote(object):
             votes[vote] += 1
 
     def average_vote(self):
-        if not self.has_votes():
+        if not self.has_evaluations():
             return 0
         total_votes = sum(self.annotations['votes'].values())
         total_points = sum([vote * count for (vote, count) in
                             self.annotations['votes'].items()])
         return float(total_points) / total_votes
 
-    def has_votes(self):
+    def has_evaluations(self):
         return len(self.annotations.get('votes', [])) != 0
 
     def already_voted(self, request):

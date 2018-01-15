@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.judgment.interfaces import IVoting
+from collective.judgment.interfaces import IEvaluation
 from plone import api
 from plone.app.layout.viewlets import common as base
 from Products.CMFCore.permissions import ViewManagementScreens
@@ -14,7 +14,7 @@ class Vote(base.ViewletBase):
         super(Vote, self).update()
 
         if self.vote is None:
-            self.vote = IVoting(self.context)
+            self.vote = IEvaluation(self.context)
         if self.is_manager is None:
             self.is_manager = api.user.has_permission(
                 ViewManagementScreens,
@@ -27,5 +27,5 @@ class Vote(base.ViewletBase):
     def average(self):
         return self.vote.average_vote()
 
-    def has_votes(self):
-        return self.vote.has_votes()
+    def has_evaluations(self):
+        return self.vote.has_evaluations()

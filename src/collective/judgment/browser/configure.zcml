@@ -29,7 +29,7 @@
 
   <browser:viewlet
       name="collective.judgment.voting"
-      for="collective.judgment.interfaces.IVotable"
+      for="collective.judgment.interfaces.IEvaluable"
       manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
       layer="..interfaces.ICollectiveJudgmentLayer"
       class=".viewlets.Vote"
@@ -39,7 +39,7 @@
 
   <browser:page
       name="vote"
-      for="collective.judgment.interfaces.IVotable"
+      for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
       class=".vote.Vote"
       permission="zope2.View"
@@ -47,7 +47,7 @@
 
   <browser:page
       name="clearvotes"
-      for="collective.judgment.interfaces.IVotable"
+      for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
       class=".vote.ClearVotes"
       permission="zope2.ViewManagementScreens"

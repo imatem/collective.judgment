@@ -1,6 +1,6 @@
 <tal:snippet omit-tag="">
   <div class="voting">
-    <div id="current_rating" tal:condition="view/has_votes">
+    <div id="current_rating" tal:condition="view/has_evaluations">
       The average vote for this talk is <span tal:content="view/average">200</span>
     </div>
     <div id="alreadyvoted" class="voting_option">
@@ -11,7 +11,7 @@
       <div class="votes"><span id="voting_plus">+1</span> <span id="voting_neutral">0</span> <span id="voting_negative">-1</span>
       </div>
     </div>
-    <div id="no_ratings" tal:condition="not: view/has_votes">
+    <div id="no_ratings" tal:condition="not: view/has_evaluations">
       This talk has not been voted yet. Be the first!
     </div>
     <div id="delete_votings" tal:condition="view/is_manager">
