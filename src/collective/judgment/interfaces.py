@@ -22,9 +22,9 @@ class IVotable(Interface):
 
 # behaviors interface. When doing Ivoting(object), you receive an adapter
 class IVoting(model.Schema):
-    if not api.env.debug_mode():
-        directives.omitted('votes')
-        directives.omitted('voted')
+    #if not api.env.debug_mode():
+    directives.omitted('votes')
+    directives.omitted('voted')
 
     fieldset(
         'debug',
