@@ -47,7 +47,7 @@ class Vote(object):
             votes[vote] += 1
 
     def average_vote(self):
-        if not self.has_votes(self):
+        if not self.has_votes():
             return 0
         total_votes = sum(self.annotations['votes'].values())
         total_points = sum([vote * count for (vote, count) in
