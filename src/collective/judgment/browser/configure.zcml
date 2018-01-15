@@ -19,12 +19,38 @@
       />
 
   <browser:page
-   name="promotionview"
-   for="collective.judgment.content.promotion.IPromotion"
-   layer="zope.interface.Interface"
-   class=".views.PromotionView"
-   template="templates/promotionview.pt"
-   permission="zope2.View"
-   />
+      name="promotionview"
+      for="collective.judgment.content.promotion.IPromotion"
+      layer="zope.interface.Interface"
+      class=".views.PromotionView"
+      template="templates/promotionview.pt"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
+      name="collective.judgment.voting"
+      for="collective.judgment.interfaces.IVotable"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      layer="..interfaces.ICollectiveJudgmentLayer"
+      class=".viewlets.Vote"
+      template="templates/voting_viewlet.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="vote"
+      for="collective.judgment.interfaces.IVotable"
+      layer="..interfaces.ICollectiveJudgmentLayer"
+      class=".vote.Vote"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="clearvotes"
+      for="collective.judgment.interfaces.IVotable"
+      layer="..interfaces.ICollectiveJudgmentLayer"
+      class=".vote.ClearVotes"
+      permission="zope2.ViewManagementScreens"
+      />
 
 </configure>

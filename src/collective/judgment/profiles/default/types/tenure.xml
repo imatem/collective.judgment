@@ -34,6 +34,7 @@
     <element value="collective.judgment.behaviors.personaldata.IPersonalData"/>
     <!-- <element value="plone.app.content.interfaces.INameFromTitle"/> -->
     <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
+    <element value="collective.judgment.interfaces.IVoting"/>
     <!-- <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/> -->

@@ -1,4 +1,16 @@
 <?xml version="1.0"?>
 <registry>
 
+    <records prefix="plone.bundles/judgment-bundle"
+        interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="resources">
+        <element>judgment-main</element>
+        </value>
+        <value key="enabled">True</value>
+        <value key="compile">True</value>
+        <value key="csscompilation">++plone++collective.judgment/collective_judgment.css</value>
+        <value key="jscompilation">++plone++collective.judgment/collective_judgment.js</value>
+        <value key="last_compilation"></value>
+    </records>
+
 </registry>
