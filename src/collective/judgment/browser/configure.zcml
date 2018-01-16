@@ -32,12 +32,12 @@
       for="collective.judgment.interfaces.IEvaluable"
       manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".viewlets.Evaluation"
       template="templates/evaluation_viewlet.pt"
       permission="zope2.View"
       />
 
-  <browser:page
+<!-- class=".viewlets.Evaluation" -->
+  <!-- <browser:page
       name="evaluate"
       for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
@@ -51,6 +51,6 @@
       layer="..interfaces.ICollectiveJudgmentLayer"
       class=".evaluation.ClearEvaluations"
       permission="zope2.ViewManagementScreens"
-      />
+      /> -->
 
 </configure>

@@ -7,25 +7,22 @@ from Products.CMFCore.permissions import ViewManagementScreens
 
 class Evaluation(base.ViewletBase):
 
-    vote = None
+    evaluation = None
     is_manager = None
+    userid = None
 
     def update(self):
         super(Evaluation, self).update()
 
-        if self.vote is None:
-            self.vote = IEvaluation(self.context)
+        if self.evaluation is None:
+            self.evaluation = IEvaluation(self.context)
         if self.is_manager is None:
             self.is_manager = api.user.has_permission(
                 ViewManagementScreens,
                 user=api.user.get_current(),
                 obj=self.context)
+        if self.userid is None:
+            self.userid = api.user.get_current().getId()
 
-    def voted(self):
-        return self.vote.already_voted(self.request)
-
-    def average(self):
-        return self.vote.average_vote()
-
-    def has_evaluations(self):
-        return self.vote.has_evaluations()
+    def evaluated(self):
+        return self.evaluation.already_evaluated(self.userid)

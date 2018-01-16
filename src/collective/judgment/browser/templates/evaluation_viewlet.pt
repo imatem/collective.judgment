@@ -1,34 +1,28 @@
 <tal:snippet omit-tag="">
-  <div class="voting">
-    <div id="current_rating" tal:condition="view/has_evaluations">
-      The average vote for this talk is <span tal:content="view/average">200</span>
-    </div>
-    <div id="alreadyvoted" class="voting_option">
+  <div class="evaluation">
+    <div id="alreadyevaluated" class="evaluation_option">
       You already voted this talk. Thank you!
     </div>
-    <div id="notyetvoted" class="voting_option">
+    <div id="notyetevaluated" class="evaluation_option">
       What do you think of this talk?
-      <div class="votes"><span id="voting_plus">+1</span> <span id="voting_neutral">0</span> <span id="voting_negative">-1</span>
+      <div class="votes"><span id="voting_plus">approve</span> <span id="voting_neutral">0</span> <span id="voting_negative">disapprove</span>
       </div>
     </div>
-    <div id="no_ratings" tal:condition="not: view/has_evaluations">
-      This talk has not been voted yet. Be the first!
-    </div>
-    <div id="delete_votings" tal:condition="view/is_manager">
+   <!--  <div id="delete_votings" tal:condition="view/is_manager">
       Delete all votes
-    </div>
-    <div id="delete_votings2" class="areyousure warning"
+    </div> -->
+    <!-- <div id="delete_votings2" class="areyousure warning"
          tal:condition="view/is_manager"
          >
       Are you sure?
-    </div>
-    <a href="#" class="hiddenStructure" id="context_url"
-       tal:attributes="href context/absolute_url"></a>
-    <span id="voted" tal:condition="view/voted"></span>
+    </div> -->
+ <!--    <a href="#" class="hiddenStructure" id="context_url"
+       tal:attributes="href context/absolute_url"></a> -->
+    <!-- <span id="evaluated" tal:condition="view/evaluated"></span> -->
   </div>
   <script type="text/javascript">
     $(document).ready(function(){
-      collective_judgment.init_voting_viewlet($(".voting"));
+      collective_judgment.init_voting_viewlet($(".evaluation"));
     });
   </script>
 </tal:snippet>

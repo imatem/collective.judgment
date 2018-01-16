@@ -1,11 +1,11 @@
-.voting {
+.evaluation {
     float: right;
     border: 1px solid #ddd;
     background-color: #DDDDDD;
     padding: 0.5em 1em;
 }
 
-.voting .voting_option {
+.evaluation .evaluation_option {
     display: none;
 }
 
@@ -13,7 +13,7 @@
     display: none;
 }
 
-.voting div.votes span {
+.evaluation div.votes span {
     border: 0 solid #DDDDDD;
     cursor: pointer;
     float: left;
@@ -26,14 +26,14 @@
     float: right;
 }
 
-.voting #voting_plus {
+.evaluation #voting_plus {
     background-color: LimeGreen;
 }
 
-.voting #voting_neutral {
+.evaluation #voting_neutral {
     background-color: yellow;
 }
 
-.voting #voting_negative {
+.evaluation #voting_negative {
     background-color: red;
 }
