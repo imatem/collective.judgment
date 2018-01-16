@@ -37,3 +37,49 @@
 .voting #voting_negative {
     background-color: red;
 }
+
+/*For the folders view*/
+
+ul.blank-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+li.branch-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eaeaea;
+    margin-bottom: .3rem;
+    border-radius: 2px;
+}
+
+div.row-personaldata{
+
+    padding-left: 1em;
+}
+
+div.row-evaluations ul{
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.row-evaluations li{
+    position: relative;
+    height: 100%;
+    float: left;
+    border-right: 1px solid #fff;
+
+}
+
+li.approve{
+    background-color: #deecdc;
+}
+
+li.disapprove{
+    background-color: #fce8e2;
+}
+

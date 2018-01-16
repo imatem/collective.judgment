@@ -13,8 +13,8 @@
         <metal:listingmacro define-macro="listingjquery">
           <tal:results define="items view/itembrains">
             <tal:listing condition="items">
-              <ul tal:repeat="item items">
-                <li>
+              <ul class="blank-list">
+                <li class="branch-row" tal:repeat="item items">
                   <div class="row-personaldata">
                     <div class="name">
                       <h2 tal:content="item/Title | nothing"/>
@@ -31,9 +31,11 @@
                   </div>
                   <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
                     <ul>
-                      <li tal:repeat="evaluator evaluations">
-                        <span tal:content="evaluator"/>
-                      </li>
+                      <tal:block tal:repeat="evaluator evaluations">
+                        <li tal:attributes="class python:evaluator[1]">
+                          <span tal:content="python:evaluator[0]"/>
+                        </li>
+                      </tal:block>
                     </ul>
                   </div>
                 </li>
