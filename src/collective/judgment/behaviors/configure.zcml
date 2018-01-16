@@ -10,10 +10,10 @@
       />
 
     <plone:behavior
-      title="Voting"
-      description="Allow voting for an item"
+      title="Evaluation"
+      description="Allow evaluation for an item"
       provides="collective.judgment.interfaces.IEvaluation"
-      factory=".voting.Vote"
+      factory=".evaluation.Evaluation"
       marker="collective.judgment.interfaces.IEvaluable"
       />
 
