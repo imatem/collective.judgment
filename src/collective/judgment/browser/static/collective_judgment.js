@@ -15,7 +15,7 @@
 
         function vote(rating) {
             return function inner_vote() {
-                $.post(context.find("#context_url").attr('href') + '/vote', {
+                $.post(context.find("#context_url").attr('href') + '/evaluate', {
                     rating: rating
                 }, function () {
                     location.reload();
@@ -31,7 +31,7 @@
             delete_votings2.toggle();
         });
         delete_votings2.click(function () {
-            $.post(context.find("#context_url").attr("href") + "/clearvotes", function () {
+            $.post(context.find("#context_url").attr("href") + "/clearevaluations", function () {
                 location.reload();
             });
         });

@@ -5,13 +5,13 @@ from plone.app.layout.viewlets import common as base
 from Products.CMFCore.permissions import ViewManagementScreens
 
 
-class Vote(base.ViewletBase):
+class Evaluation(base.ViewletBase):
 
     vote = None
     is_manager = None
 
     def update(self):
-        super(Vote, self).update()
+        super(Evaluation, self).update()
 
         if self.vote is None:
             self.vote = IEvaluation(self.context)

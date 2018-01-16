@@ -32,24 +32,24 @@
       for="collective.judgment.interfaces.IEvaluable"
       manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".viewlets.Vote"
-      template="templates/voting_viewlet.pt"
+      class=".viewlets.Evaluation"
+      template="templates/evaluation_viewlet.pt"
       permission="zope2.View"
       />
 
   <browser:page
-      name="vote"
+      name="evaluate"
       for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".vote.Vote"
+      class=".evaluation.Evaluate"
       permission="zope2.View"
       />
 
   <browser:page
-      name="clearvotes"
+      name="clearevaluations"
       for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".vote.ClearVotes"
+      class=".evaluation.ClearEvaluations"
       permission="zope2.ViewManagementScreens"
       />
 
