@@ -1,0 +1,109 @@
+<!-- plone/app/dexterity/browser/container|folder_listing.pt -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.judgment">
+  <body>
+
+    <metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
+        <metal:listingmacro define-macro="listingjquery">
+
+          <form name="cdim_folder"
+              action="folder_cdim_types"
+              method="POST"
+              tal:attributes="action string:${context/absolute_url}"
+              >
+            <span>Select type: </span>
+            <select name="options">
+              <option name="pending" value="pending" selected>
+                <span> Pending review </span>
+              </option>
+              <option name="studied" value="studied">
+                <span> Studied </span>
+            </select>
+            <input class="mybutton searchPage searchButton allowMultiSubmit"
+                  type="submit"
+                  value="Filter"/>
+
+          </form>
+          <hr/>
+
+
+
+          <tal:results define="items view/itembrains">
+            <tal:listing condition="items">
+
+              <h1 tal:content="python:items[0].review_state"/>
+
+              <ul class="blank-list">
+                <li class="branch-row" tal:repeat="item items">
+                  <div class="row-personaldata">
+                    <div class="name">
+                      <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
+                    </div>
+                    <div class="classification">
+                      Investigador Titular A
+                    </div>
+                  </div>
+                  <div class="row-type">
+                    <p tal:content="item/PortalType | nothing"/>
+                  </div>
+                  <div class="row-date">
+                    01/01/2017
+                  </div>
+                  <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
+                    <ul>
+                      <tal:block tal:repeat="evaluator evaluations">
+                        <tal:block tal:define="nameclass python:evaluator[1];
+                                              nameclasshover python:evaluator[2]+'hover';">
+                          <li tal:attributes="class python:nameclass">
+                            <tal:block tal:condition="python:nameclass == 'approve'">
+                              <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                                  <path stroke="#39aa56" fill="none" style="stroke-width: 3"
+                                    d="M14.5 1.5L6.499 13.716.5 8.78">
+                                  </path></svg>
+                              </span>
+                            </tal:block>
+                            <tal:block tal:condition="python:nameclass == 'disapprove'">
+                              <span class="icon">
+                                <svg viewBox="0 0 15 15">
+                                  <style>.stroke-grey{fill:none;stroke:#9d9d9d;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+                                  <path stroke="#db4545" fill="none" style="stroke-width: 3" d="M.5.5l14 14m0-14l-14 14"></path>
+                                </svg>
+                              </span>
+                            </tal:block>
+                            <tal:block tal:condition="view/isManager">
+                              <p style="padding: 10px; font-weight: bold;"
+                              tal:attributes="title python:evaluator[0]" tal:content="python:evaluator[0]"/>
+                            </tal:block>
+
+                              <p tal:condition="not:view/isManager" style="padding: 2em"/>
+                          </li>
+                        </tal:block>
+                      </tal:block>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+
+
+
+            </tal:listing>
+            <metal:empty metal:define-slot="no_items_in_listing">
+              <p class="discreet"
+                  tal:condition="not: items">
+                There are currently no items in this folder.
+              </p>
+            </metal:empty>
+          </tal:results>
+
+        </metal:listingmacro>
+      </metal:block>
+    </metal:content-core>
+  </body>
+</html>
