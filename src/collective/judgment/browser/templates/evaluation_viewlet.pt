@@ -5,7 +5,7 @@
     </div>
     <div id="notyetevaluated" class="evaluation_option">
       What do you think of this talk?
-      <div class="votes"><span id="voting_plus">approve</span> <span id="voting_neutral">0</span> <span id="voting_negative">disapprove</span>
+      <div class="votes"><span id="voting_plus">Approve</span> <span id="voting_negative">Disapprove</span>
       </div>
     </div>
    <!--  <div id="delete_votings" tal:condition="view/is_manager">
