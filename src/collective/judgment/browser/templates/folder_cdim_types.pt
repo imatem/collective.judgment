@@ -17,7 +17,7 @@
                 <li class="branch-row" tal:repeat="item items">
                   <div class="row-personaldata">
                     <div class="name">
-                      <h2 tal:content="item/Title | nothing"/>
+                      <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
                     </div>
                     <div class="classification">
                       Investigador Titular A
@@ -32,9 +32,33 @@
                   <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
                     <ul>
                       <tal:block tal:repeat="evaluator evaluations">
-                        <li tal:attributes="class python:evaluator[1]">
-                          <span tal:content="python:evaluator[0]"/>
-                        </li>
+                        <tal:block tal:define="nameclass python:evaluator[1];
+                                              nameclasshover python:evaluator[2]+'hover';">
+                          <li tal:attributes="class python:nameclass">
+                            <tal:block tal:condition="python:nameclass == 'approve'">
+                              <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                                  <path stroke="#39aa56" fill="none" style="stroke-width: 3"
+                                    d="M14.5 1.5L6.499 13.716.5 8.78">
+                                  </path></svg>
+                              </span>
+                            </tal:block>
+                            <tal:block tal:condition="python:nameclass == 'disapprove'">
+                              <span class="icon">
+                                <svg viewBox="0 0 15 15">
+                                  <style>.stroke-grey{fill:none;stroke:#9d9d9d;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+                                  <path stroke="#db4545" fill="none" style="stroke-width: 3" d="M.5.5l14 14m0-14l-14 14"></path>
+                                </svg>
+                              </span>
+                            </tal:block>
+                            <tal:block tal:condition="view/isManager">
+                              <p style="padding: 10px; font-weight: bold;"
+                              tal:attributes="title python:evaluator[0]" tal:content="python:evaluator[0]"/>
+                            </tal:block>
+
+                              <p tal:condition="not:view/isManager" style="padding: 2em"/>
+                          </li>
+                        </tal:block>
                       </tal:block>
                     </ul>
                   </div>
