@@ -11,8 +11,34 @@
     <metal:content-core fill-slot="content-core">
       <metal:block define-macro="content-core">
         <metal:listingmacro define-macro="listingjquery">
+
+          <form name="cdim_folder"
+              action="folder_cdim_types"
+              method="POST"
+              tal:attributes="action string:${context/absolute_url}"
+              >
+            <span>Select type: </span>
+            <select name="options">
+              <option name="pending" value="pending" selected>
+                <span> Pending review </span>
+              </option>
+              <option name="studied" value="studied">
+                <span> Studied </span>
+            </select>
+            <input class="mybutton searchPage searchButton allowMultiSubmit"
+                  type="submit"
+                  value="Filter"/>
+
+          </form>
+          <hr/>
+
+
+
           <tal:results define="items view/itembrains">
             <tal:listing condition="items">
+
+              <h1 tal:content="python:items[0].review_state"/>
+
               <ul class="blank-list">
                 <li class="branch-row" tal:repeat="item items">
                   <div class="row-personaldata">

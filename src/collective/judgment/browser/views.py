@@ -15,10 +15,21 @@ class PromotionView(DefaultView):
 
 class FolderCdimView(BrowserView):
 
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
     def itembrains(self):
+
+        option = 'pending'
+        if self.request.form:
+            option = self.request.form.get('options', 'pending')
+
         catalog = api.portal.get_tool(name='portal_catalog')
         brains = catalog(
             path=dict(query='/'.join(self.context.getPhysicalPath()), depth=1),
+            review_state=option,
             # sort_on='start'
         )
 
@@ -51,4 +62,3 @@ class FolderCdimView(BrowserView):
         if 'Manager' in local_roles or 'Reviewer' in local_roles:
             return True
         return False
-
