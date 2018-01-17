@@ -28,28 +28,28 @@
       />
 
   <browser:viewlet
-      name="collective.judgment.voting"
-      for="collective.judgment.interfaces.IVotable"
+      name="collective.judgment.evaluation"
+      for="collective.judgment.interfaces.IEvaluable"
       manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class=".viewlets.Evaluation"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".viewlets.Vote"
-      template="templates/voting_viewlet.pt"
+      template="templates/evaluation_viewlet.pt"
       permission="zope2.View"
       />
 
   <browser:page
-      name="vote"
-      for="collective.judgment.interfaces.IVotable"
+      name="evaluate"
+      for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".vote.Vote"
+      class=".evaluation.Evaluate"
       permission="zope2.View"
       />
 
   <browser:page
-      name="clearvotes"
-      for="collective.judgment.interfaces.IVotable"
+      name="clearevaluations"
+      for="collective.judgment.interfaces.IEvaluable"
       layer="..interfaces.ICollectiveJudgmentLayer"
-      class=".vote.ClearVotes"
+      class=".evaluation.ClearEvaluations"
       permission="zope2.ViewManagementScreens"
       />
 

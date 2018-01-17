@@ -10,11 +10,11 @@
       />
 
     <plone:behavior
-      title="Voting"
-      description="Allow voting for an item"
-      provides="collective.judgment.interfaces.IVoting"
-      factory=".voting.Vote"
-      marker="collective.judgment.interfaces.IVotable"
+      title="Evaluation"
+      description="Allow evaluation for an item"
+      provides="collective.judgment.interfaces.IEvaluation"
+      factory=".evaluation.Evaluation"
+      marker="collective.judgment.interfaces.IEvaluable"
       />
 
 </configure>

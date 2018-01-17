@@ -1,0 +1,28 @@
+<tal:snippet omit-tag="">
+  <div class="evaluation">
+    <div id="alreadyevaluated" class="evaluation_option">
+      You already evaluated this promotion.
+    </div>
+    <div id="notyetevaluated" class="evaluation_option">
+      What do you think of this promotion?
+      <div class="evaluations"><span id="evaluation_approve">Approve</span> <span id="evaluation_disapprove">Disapprove</span>
+      </div>
+    </div>
+    <div id="delete_evaluations" tal:condition="view/is_manager">
+      Delete all votes
+    </div>
+    <div id="delete_evaluations2" class="areyousure warning"
+         tal:condition="view/is_manager"
+         >
+      Are you sure?
+    </div>
+    <a href="#" class="hiddenStructure" id="context_url"
+       tal:attributes="href context/absolute_url"></a>
+      <span id="evaluated" tal:condition="view/evaluated"></span>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      collective_judgment.init_voting_viewlet($(".evaluation"));
+    });
+  </script>
+</tal:snippet>

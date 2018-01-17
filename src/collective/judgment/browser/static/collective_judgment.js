@@ -2,20 +2,20 @@
 (function ($, collective_judgment) {
     "use strict";
     collective_judgment.init_voting_viewlet = function (context) {
-        var notyetvoted = context.find("#notyetvoted"),
-            alreadyvoted = context.find("#alreadyvoted"),
-            delete_votings = context.find("#delete_votings"),
-            delete_votings2 = context.find("#delete_votings2");
+        var notyetevaluated = context.find("#notyetevaluated"),
+            alreadyevaluated = context.find("#alreadyevaluated"),
+            delete_votings = context.find("#delete_evaluations"),
+            delete_votings2 = context.find("#delete_evaluations2");
 
-        if (context.find("#voted").length !== 0) {
-            alreadyvoted.show();
+        if (context.find("#evaluated").length !== 0) {
+            alreadyevaluated.show();
         } else {
-            notyetvoted.show();
+            notyetevaluated.show();
         }
 
-        function vote(rating) {
-            return function inner_vote() {
-                $.post(context.find("#context_url").attr('href') + '/vote', {
+        function evaluate(rating) {
+            return function inner_evaluate() {
+                $.post(context.find("#context_url").attr('href') + '/evaluate', {
                     rating: rating
                 }, function () {
                     location.reload();
@@ -23,17 +23,16 @@
             };
         }
 
-        context.find("#voting_plus").click(vote(1));
-        context.find("#voting_neutral").click(vote(0));
-        context.find("#voting_negative").click(vote(-1));
+        context.find("#evaluation_approve").click(evaluate("approve"));
+        context.find("#evaluation_disapprove").click(evaluate("disapprove"));
 
-        delete_votings.click(function () {
-            delete_votings2.toggle();
+        delete_evaluations.click(function () {
+            delete_evaluations2.toggle();
         });
-        delete_votings2.click(function () {
-            $.post(context.find("#context_url").attr("href") + "/clearvotes", function () {
-                location.reload();
-            });
-        });
+        // delete_evaluations2.click(function () {
+        //     $.post(context.find("#context_url").attr("href") + "/clearevaluations", function () {
+        //         location.reload();
+        //     });
+        // });
     };
 }(jQuery, window.collective_judgment = window.collective_judgment || {}));

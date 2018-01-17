@@ -32,15 +32,15 @@
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
     <element value="collective.judgment.behaviors.personaldata.IPersonalData"/>
+    <element value="collective.judgment.interfaces.IEvaluation"/>
     <!-- <element value="plone.app.content.interfaces.INameFromTitle"/> -->
     <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
-    <element value="collective.judgment.interfaces.IVoting"/>
     <!-- <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
     <!-- <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/> -->
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
-    <!--<element value="plone.app.lockingbehavior.behaviors.ILocking" />-->
     <!--<element value="plone.app.dexterity.behaviors.metadata.IBasic"/>-->
+    <element value="plone.app.lockingbehavior.behaviors.ILocking" />
     <!--<element value="plone.app.relationfield.behavior.IRelatedItems"/>-->
     <!--<element value="plone.app.versioningbehavior.behaviors.IVersionable" />-->
     <!--<element value="plone.app.contenttypes.behaviors.tableofcontents.ITableOfContents"/>-->
@@ -49,7 +49,7 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++promotion</property>
-  <property name="default_view">view</property>
+  <property name="default_view">promotionview</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
   <property name="view_methods">
@@ -86,10 +86,10 @@
       visible="True">
     <permission value="View"/>
   </action>
-  <!-- condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True" -->
   <action
       action_id="edit"
       category="object"
+      condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True"
       i18n:attributes="title"
       title="Edit"
       url_expr="string:${object_url}/edit"

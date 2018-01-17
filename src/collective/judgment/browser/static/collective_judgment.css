@@ -1,11 +1,15 @@
-.voting {
+.evaluation {
     float: right;
-    border: 1px solid #ddd;
-    background-color: #DDDDDD;
-    padding: 0.5em 1em;
+    border: 1px solid rgba(27,31,35,0.15);
+    display: block;
+    padding: 9px 10px 10px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: #f6f8fa;
 }
 
-.voting .voting_option {
+.evaluation .evaluation_option {
     display: none;
 }
 
@@ -13,7 +17,7 @@
     display: none;
 }
 
-.voting div.votes span {
+.evaluation div.evaluations span {
     border: 0 solid #DDDDDD;
     cursor: pointer;
     float: left;
@@ -21,21 +25,48 @@
     padding: 0 0.5em;
 }
 
-.votes {
+.evaluations {
     display: inline;
     float: right;
 }
 
-.voting #voting_plus {
-    background-color: LimeGreen;
+.evaluation #evaluation_approve {
+    color: #39aa56;
+    display: block;
+    width: 8em;
+    padding: 0 .5em;
+    border: 1px solid #39aa56;
+    border-radius: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none !important;
+    line-height: 1.45;
 }
 
-.voting #voting_neutral {
-    background-color: yellow;
+.evaluation #evaluation_approve:hover {
+    color: white;
+    background-color: #39aa56;
 }
 
-.voting #voting_negative {
-    background-color: red;
+
+.evaluation #evaluation_disapprove {
+    color: #db4545;
+    display: block;
+    width: 8em;
+    padding: 0 .5em;
+    border: 1px solid #db4545;
+    border-radius: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none !important;
+    line-height: 1.45;
+}
+
+.evaluation #evaluation_disapprove:hover {
+    color: white;
+    background-color: #db4545;
 }
 
 /*For the folders view*/

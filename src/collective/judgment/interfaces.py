@@ -9,66 +9,51 @@ from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+from z3c.form.interfaces import IEditForm
 
 
 class ICollectiveJudgmentLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-# Ivotable is the marker interface for contentypes who support this behavoir
-class IVotable(Interface):
+# IEvaluable is the marker interface for contentypes who support this behavoir
+class IEvaluable(Interface):
     pass
 
 
-# behaviors interface. When doing Ivoting(object), you receive an adapter
-class IVoting(model.Schema):
-    #if not api.env.debug_mode():
-    directives.omitted('votes')
-    directives.omitted('voted')
+# behaviors interface. When doing IEvaluation(object), you receive an adapter
+class IEvaluation(model.Schema):
+    directives.omitted('evaluations')
+    if api.env.debug_mode():
+        directives.no_omit(IEditForm, 'evaluations')
 
     fieldset(
         'debug',
         label=u'debug',
-        fields=('votes', 'voted')
+        fields=('evaluations', )
     )
 
-    votes = schema.Dict(
-        title=u'Vote info',
-        key_type=schema.TextLine(title=u'voted number'),
-        value_type=schema.Int(title=u'Voted so often'),
+    evaluations = schema.Dict(
+        title=u'Evaluation info',
+        key_type=schema.TextLine(title=u'User ID'),
+        value_type=schema.TextLine(title=u'Evaluation'),
         required=False)
 
-    voted = schema.List(
-        title=u'Vote hashes',
-        value_type=schema.TextLine(),
-        required=False)
-
-    def vote(request):
+    def evaluate(evaluation, userid):
         """
-        Store the vote information, store the request hash to ensure
+        Store the evaluation information, store the user id to ensure
         that the user does not vote twice
         """
 
-    def average_vote():
+    def already_evaluated(userid):
         """
-        Return the average voting for an item
-        """
-
-    def has_votes():
-        """
-        Return whether anybody ever voted for this item
-        """
-
-    def already_voted(request):
-        """
-        Return the information wether a person already voted.
-        This is not very high level and can be tricked out easily
+        Return the information wether a person already evaluated.
         """
 
     def clear():
         """
-        Clear the votes. Should only be called by admins
+        Clear the evaluations. Should only be called by admins
         """
 
 
-alsoProvides(IVoting, IFormFieldProvider)
+alsoProvides(IEvaluation, IFormFieldProvider)
