@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-
+from collective.judgment.interfaces import IEvaluation
 from plone.dexterity.browser.view import DefaultView
 from Products.Five import BrowserView
 from plone import api
-from zope.component.hooks import getSite
+
 
 class PromotionView(DefaultView):
     """ The default view for talks
@@ -37,12 +37,8 @@ class FolderCdimView(BrowserView):
 
     def evaluations(self, brain):
 
-        values = {
-            'revisor1': 'approve',
-            'revisor2': 'approve',
-            # 'revisor3': None,
-            'revisor2': 'disapprove',
-        }
+        values = IEvaluation(brain.getObject()).evaluations
+
         evaluators = []
 
         isManager = self.isManager()
