@@ -17,7 +17,7 @@
     display: none;
 }
 
-.evaluation div.votes span {
+.evaluation div.evaluations span {
     border: 0 solid #DDDDDD;
     cursor: pointer;
     float: left;
@@ -25,12 +25,12 @@
     padding: 0 0.5em;
 }
 
-.votes {
+.evaluations {
     display: inline;
     float: right;
 }
 
-.evaluation #voting_plus {
+.evaluation #evaluation_approve {
     color: #39aa56;
     display: block;
     width: 8em;
@@ -44,13 +44,13 @@
     line-height: 1.45;
 }
 
-.evaluation #voting_plus:hover {
+.evaluation #evaluation_approve:hover {
     color: white;
     background-color: #39aa56;
 }
 
 
-.evaluation #voting_negative {
+.evaluation #evaluation_disapprove {
     color: #db4545;
     display: block;
     width: 8em;
@@ -64,7 +64,7 @@
     line-height: 1.45;
 }
 
-.evaluation #voting_negative:hover {
+.evaluation #evaluation_disapprove:hover {
     color: white;
     background-color: #db4545;
 }

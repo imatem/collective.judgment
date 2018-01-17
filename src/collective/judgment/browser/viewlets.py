@@ -13,7 +13,6 @@ class Evaluation(base.ViewletBase):
 
     def update(self):
         super(Evaluation, self).update()
-
         if self.evaluation is None:
             self.evaluation = IEvaluation(self.context)
         if self.is_manager is None:

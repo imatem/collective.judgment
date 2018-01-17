@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from collective.judgment.content.promotion import IPromotion
+from collective.judgment.behaviors.evaluation import KEY
+from persistent.dict import PersistentDict
 from plone import namedfile
+from zope.annotation.interfaces import IAnnotations
 from zope.component import adapter
 # from zope.lifecycleevent.interfaces import IObjectCreatedEvent
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
-
 
 import os
 import tempfile
@@ -14,6 +16,10 @@ import shutil
 
 @adapter(IPromotion, IObjectAddedEvent)
 def handlerAddedPromotion(self, event):
+
+    annotations = IAnnotations(self)
+    if KEY not in annotations:
+        annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
 
     tempdir = tempfile.mkdtemp()
     try:

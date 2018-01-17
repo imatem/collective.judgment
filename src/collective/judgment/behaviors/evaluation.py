@@ -10,8 +10,8 @@ class Evaluation(object):
     def __init__(self, context):
         self.context = context
         annotations = IAnnotations(context)
-        if KEY not in annotations.keys():
-            annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
+        # if KEY not in annotations.keys():
+        #     annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
         self.annotations = annotations[KEY]
 
     @property
