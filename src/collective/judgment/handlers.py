@@ -5,7 +5,7 @@ from persistent.dict import PersistentDict
 from plone import namedfile
 from zope.annotation.interfaces import IAnnotations
 from zope.component import adapter
-# from zope.lifecycleevent.interfaces import IObjectCreatedEvent
+from zope.lifecycleevent.interfaces import IObjectCreatedEvent
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
@@ -14,13 +14,15 @@ import tempfile
 import shutil
 
 
-@adapter(IPromotion, IObjectAddedEvent)
-def handlerAddedPromotion(self, event):
-
+@adapter(IPromotion, IObjectCreatedEvent)
+def handlerCreatedPromotion(self, event):
     annotations = IAnnotations(self)
     if KEY not in annotations:
         annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
 
+
+@adapter(IPromotion, IObjectAddedEvent)
+def handlerAddedPromotion(self, event):
     tempdir = tempfile.mkdtemp()
     try:
         file_path = os.path.join(tempdir, 'cv.pdf')

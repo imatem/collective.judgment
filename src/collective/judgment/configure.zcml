@@ -41,6 +41,7 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <!-- SUBSCRIBERS -->
+  <subscriber handler=".handlers.handlerCreatedPromotion" />
   <subscriber handler=".handlers.handlerAddedPromotion" />
   <subscriber handler=".handlers.handlerModifiedPromotion" />
 
