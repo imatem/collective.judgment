@@ -26,5 +26,15 @@ class IPersonalData(model.Schema):
         required=True,
     )
 
+    current_position = schema.TextLine(
+        title=_(u'Current Position'),
+        required=True,
+    )
+
+    evaluation_date = schema.Datetime(
+        title=_(u'Evaluation Date'),
+        required=True,
+    )
+
 
 alsoProvides(IPersonalData, IFormFieldProvider)
