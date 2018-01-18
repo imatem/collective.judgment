@@ -29,6 +29,10 @@
                   type="submit"
                   value="Filter"/>
 
+            <input tal:condition="view/isManager" class="mybutton" 
+                  type="submit"
+                  name="send_email"
+                  value="Send notifications email">
           </form>
           <hr/>
 
