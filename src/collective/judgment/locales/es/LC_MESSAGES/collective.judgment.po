@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 19:02+0000\n"
+"POT-Creation-Date: 2018-01-18 19:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,8 +64,9 @@ msgid "Evaluation"
 msgstr "Evaluación"
 
 #: collective/judgment/behaviors/personaldata.py:35
+#: collective/judgment/browser/templates/folder_cdim_types.pt:62
 msgid "Evaluation Date"
-msgstr "Fecha de Evaluación"
+msgstr "Fecha de evaluación"
 
 #: collective/judgment/behaviors/personaldata.py:20
 msgid "First Name"
@@ -107,6 +108,10 @@ msgstr "Carta Razonada"
 msgid "No"
 msgstr "No"
 
+#: collective/judgment/browser/templates/folder_cdim_types.pt:23
+msgid "Pending review"
+msgstr "En revisión"
+
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Personal Data"
 msgstr "Datos personales"
@@ -122,6 +127,14 @@ msgstr "Promoción"
 #: collective/judgment/profiles/default/types/promotion.xml
 msgid "Promotion of Faculty and Staff"
 msgstr "Promoción de Investigadores y Técnicos Académicos"
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:20
+msgid "Select type:"
+msgstr "Tipo de caso:"
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:26
+msgid "Studied"
+msgstr "Casos estudiados"
 
 #: collective/judgment/profiles/default/types/tenure.xml
 msgid "Tenure"
@@ -155,3 +168,13 @@ msgstr ""
 #: collective/judgment/configure.zcml:34
 msgid "collective.judgment (uninstall)"
 msgstr ""
+
+#. Default: "Filter"
+#: collective/judgment/browser/templates/folder_cdim_types.pt:28
+msgid "label_filter"
+msgstr "Buscar"
+
+#. Default: "Send notifications email"
+#: collective/judgment/browser/templates/folder_cdim_types.pt:33
+msgid "label_sendmail"
+msgstr "Enviar correo"

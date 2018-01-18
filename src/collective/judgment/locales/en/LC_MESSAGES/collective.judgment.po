@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 19:02+0000\n"
+"POT-Creation-Date: 2018-01-18 19:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,7 @@ msgid "Evaluation"
 msgstr ""
 
 #: collective/judgment/behaviors/personaldata.py:35
+#: collective/judgment/browser/templates/folder_cdim_types.pt:62
 msgid "Evaluation Date"
 msgstr ""
 
@@ -107,6 +108,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: collective/judgment/browser/templates/folder_cdim_types.pt:23
+msgid "Pending review"
+msgstr ""
+
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Personal Data"
 msgstr ""
@@ -121,6 +126,14 @@ msgstr ""
 
 #: collective/judgment/profiles/default/types/promotion.xml
 msgid "Promotion of Faculty and Staff"
+msgstr ""
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:20
+msgid "Select type:"
+msgstr ""
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:26
+msgid "Studied"
 msgstr ""
 
 #: collective/judgment/profiles/default/types/tenure.xml
@@ -154,4 +167,14 @@ msgstr ""
 
 #: collective/judgment/configure.zcml:34
 msgid "collective.judgment (uninstall)"
+msgstr ""
+
+#. Default: "Filter"
+#: collective/judgment/browser/templates/folder_cdim_types.pt:28
+msgid "label_filter"
+msgstr ""
+
+#. Default: "Send notifications email"
+#: collective/judgment/browser/templates/folder_cdim_types.pt:33
+msgid "label_sendmail"
 msgstr ""

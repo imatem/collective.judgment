@@ -17,22 +17,24 @@
               method="POST"
               tal:attributes="action string:${context/absolute_url}"
               >
-            <span>Select type: </span>
+            <span i18n:translate="">Select type: </span>
             <select name="options">
               <option name="pending" value="pending" selected>
-                <span> Pending review </span>
+                <span i18n:translate=""> Pending review </span>
               </option>
               <option name="studied" value="studied">
-                <span> Studied </span>
+                <span i18n:translate=""> Studied </span>
             </select>
             <input class="mybutton searchPage searchButton allowMultiSubmit"
                   type="submit"
-                  value="Filter"/>
+                  value="Filter"
+                  i18n:attributes="value label_filter"/>
 
             <input tal:condition="view/isManager" class="mybutton"
                   type="submit"
                   name="send_email"
-                  value="Send notifications email">
+                  value="Send notifications email"
+                  i18n:attributes="value label_sendmail">
           </form>
           <hr/>
 
@@ -57,7 +59,7 @@
                     <p tal:content="item/PortalType | nothing"/>
                   </div>
                   <div class="row-date">
-                    <b>Evaluation Date</b><br/>
+                    <b i18n:translate="">Evaluation Date</b><br/>
                     <span tal:content="python:view.evaluation_date(item)"/>
                   </div>
                   <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
