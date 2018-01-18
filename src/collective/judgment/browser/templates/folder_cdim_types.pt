@@ -57,6 +57,7 @@
                     <p tal:content="item/PortalType | nothing"/>
                   </div>
                   <div class="row-date">
+                    <b>Evaluation Date</b><br/>
                     <span tal:content="python:view.evaluation_date(item)"/>
                   </div>
                   <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
