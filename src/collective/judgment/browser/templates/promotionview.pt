@@ -62,10 +62,10 @@
 
   <tal:block tal:define="allvalues view/widgets/values">
 
-    <h1>
+    <!-- <h1>
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
-    </h1>
+    </h1> -->
     <p>
      <b tal:replace="structure view/w/IPersonalData.evaluation_date/label"/>:
      <span tal:replace="structure view/w/IPersonalData.evaluation_date/render"/>
@@ -88,7 +88,7 @@
       </a>
 
       <span class="myphotoAlbumEntryTitle">
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/cv">
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/cv" i18n:translate="">
           Download
         </a>
       </span>
@@ -104,7 +104,7 @@
         </a>
 
         <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report" i18n:translate="">
             Download
           </a>
         </span>
@@ -120,7 +120,7 @@
           </span>
         </a>
         <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/letter">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/letter" i18n:translate="">
             Download
           </a>
         </span>
@@ -136,7 +136,7 @@
           </span>
         </a>
         <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/plan">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/plan" i18n:translate="">
             Download
           </a>
         </span>
@@ -149,7 +149,7 @@
 
   <div class="visualClear"><!-- --></div>
   <hr/>
-  <p style="color:red">All evaluators can view the comments</p>
+  <p style="color:red" i18n:translate="">All evaluators can view the comments</p>
 
   <!-- <tal:block repeat="widget view/widgets/values">
       <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">

@@ -60,6 +60,40 @@ def handlerAddedPromotion(self, event):
 
 
     try:
+        file_path = os.path.join(tempdir, 'letter.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.letter.data)
+        file_os.close()
+        os.system("cd {0}; gs -o letter.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'letter.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbletter = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'letter.png'
+        )
+    except:
+        self.thumbletter = None
+
+    try:
+        file_path = os.path.join(tempdir, 'plan.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.plan.data)
+        file_os.close()
+        os.system("cd {0}; gs -o plan.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'plan.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbplan = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'plan.png'
+        )
+    except:
+        self.thumbplan = None
+
+    try:
         shutil.rmtree(tempdir)  # remove tempdir
     except:
         pass
@@ -103,6 +137,41 @@ def handlerModifiedPromotion(self, event):
         )
     except:
         self.thumbreport = None
+
+    try:
+        file_path = os.path.join(tempdir, 'letter.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.letter.data)
+        file_os.close()
+        os.system("cd {0}; gs -o letter.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'letter.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbletter = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'letter.png'
+        )
+    except:
+        self.thumbletter = None
+
+    try:
+        file_path = os.path.join(tempdir, 'plan.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.plan.data)
+        file_os.close()
+        os.system("cd {0}; gs -o plan.png -sDEVICE=pngalpha -dLastPage=1 {1}".format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'plan.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbplan = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'plan.png'
+        )
+    except:
+        self.thumbplan = None
+
 
     try:
         shutil.rmtree(tempdir)  # remove tempdir

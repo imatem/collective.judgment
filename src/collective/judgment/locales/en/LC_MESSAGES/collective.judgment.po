@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 18:27+0000\n"
+"POT-Creation-Date: 2018-01-18 19:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,10 @@ msgstr ""
 
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Adds first name and last name fields"
+msgstr ""
+
+#: collective/judgment/browser/templates/promotionview.pt:152
+msgid "All evaluators can view the comments"
 msgstr ""
 
 #: collective/judgment/behaviors/configure.zcml:18
@@ -44,6 +48,10 @@ msgstr ""
 
 #: collective/judgment/browser/templates/evaluation_viewlet.pt:8
 msgid "Disapprove"
+msgstr ""
+
+#: collective/judgment/browser/templates/promotionview.pt:91
+msgid "Download"
 msgstr ""
 
 #: collective/judgment/profiles/default/types/promotion.xml

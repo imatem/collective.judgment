@@ -9,7 +9,7 @@ from zope import schema
 
 class IPersonalData(model.Schema):
 
-    directives.order_before(title='report')
+    directives.order_before(title='evaluation_date')
     title = schema.TextLine(
         title=u"Title",
         description=u"A title, which will be converted to a name",
