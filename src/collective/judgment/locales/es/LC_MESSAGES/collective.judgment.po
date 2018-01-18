@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 17:13+0000\n"
+"POT-Creation-Date: 2018-01-18 18:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,10 @@ msgstr "Permite la evalución de elementos"
 msgid "An indefinite academic appointment"
 msgstr "Un contrato academico permanente"
 
+#: collective/judgment/browser/templates/evaluation_viewlet.pt:8
+msgid "Approve"
+msgstr "Aprobar"
+
 #: collective/judgment/behaviors/personaldata.py:30
 msgid "Current Position"
 msgstr "Nombramiento"
@@ -37,6 +41,10 @@ msgstr "Nombramiento"
 #: collective/judgment/content/promotion.py:56
 msgid "Curriculum vitae"
 msgstr "Curriculum vitae"
+
+#: collective/judgment/browser/templates/evaluation_viewlet.pt:8
+msgid "Disapprove"
+msgstr "Rechazar"
 
 #: collective/judgment/profiles/default/types/promotion.xml
 #: collective/judgment/profiles/default/types/tenure.xml
@@ -120,9 +128,17 @@ msgstr "Desinstala el paquete collective.judgement"
 msgid "View"
 msgstr "Vista"
 
+#: collective/judgment/browser/templates/evaluation_viewlet.pt:7
+msgid "What do you think of this case?"
+msgstr "¿Que opina de este caso?"
+
 #: collective/judgment/vocabularies.py:12
 msgid "Yes"
-msgstr "Si"
+msgstr "Sí"
+
+#: collective/judgment/browser/templates/evaluation_viewlet.pt:4
+msgid "You already evaluated this case."
+msgstr "Usted ya evaluó este caso"
 
 #: collective/judgment/configure.zcml:25
 msgid "collective.judgment"

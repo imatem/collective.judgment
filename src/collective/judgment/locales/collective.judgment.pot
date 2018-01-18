@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 17:13+0000\n"
+"POT-Creation-Date: 2018-01-18 18:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,12 +33,20 @@ msgstr ""
 msgid "An indefinite academic appointment"
 msgstr ""
 
+#: collective.judgment/src/collective/judgment/browser/templates/evaluation_viewlet.pt:8
+msgid "Approve"
+msgstr ""
+
 #: collective.judgment/src/collective/judgment/behaviors/personaldata.py:30
 msgid "Current Position"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/content/promotion.py:56
 msgid "Curriculum vitae"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/browser/templates/evaluation_viewlet.pt:8
+msgid "Disapprove"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
@@ -123,8 +131,16 @@ msgstr ""
 msgid "View"
 msgstr ""
 
+#: collective.judgment/src/collective/judgment/browser/templates/evaluation_viewlet.pt:7
+msgid "What do you think of this case?"
+msgstr ""
+
 #: collective.judgment/src/collective/judgment/vocabularies.py:12
 msgid "Yes"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/browser/templates/evaluation_viewlet.pt:4
+msgid "You already evaluated this case."
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/configure.zcml:25
