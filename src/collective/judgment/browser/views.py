@@ -5,6 +5,7 @@ from plone.dexterity.browser.view import DefaultView
 from Products.Five import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
+from zope.i18n import translate
 
 
 class PromotionView(DefaultView):
@@ -77,6 +78,19 @@ class FolderCdimView(BrowserView):
 
     def position(self, brain):
         return brain.getObject().current_position
+
+    def title_state(self, brain):
+
+        wft = api.portal.get_tool('portal_workflow')
+        obj = brain.getObject()
+        current_state = api.content.get_state(obj)
+        itemstatus = translate(
+            wft.getTitleForStateOnType(current_state, obj.portal_type),
+            domain="collective.judgment",
+            target_language=self.context.REQUEST.LANGUAGE
+        )
+
+        return itemstatus
 
     def send_email(self):
         catalog = api.portal.get_tool(name='portal_catalog')

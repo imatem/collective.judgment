@@ -43,7 +43,7 @@
           <tal:results define="items view/itembrains">
             <tal:listing condition="items">
 
-              <h1 tal:content="python:items[0].review_state"/>
+              <h1 tal:content="python:view.title_state(items[0])"/>
 
               <ul class="blank-list">
                 <li class="branch-row" tal:repeat="item items">
