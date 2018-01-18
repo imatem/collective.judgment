@@ -95,7 +95,7 @@ class FolderCdimView(BrowserView):
 
         message = []
         for k, v in emails.iteritems():
-            mail_text = 'Dear %s:' % (evaluators_data[k]['name'])
+            mail_text = 'Dear %s:' % (evaluators_data[k]['name'].decode('utf-8'))
             if len(v) > 1:
                 mail_text += u'\n Please evaluate the next cases: \n'
             else:
