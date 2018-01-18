@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-01-18 06:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: collective/judgment/content/promotion.py:32
+msgid "Activities Report"
+msgstr "Reporte de actividades"
+
+#: collective/judgment/behaviors/configure.zcml:10
+msgid "Adds first name and last name fields"
+msgstr "Agrega campos de nombre y apellidos"
+
+#: collective/judgment/behaviors/configure.zcml:18
+msgid "Allow evaluation for an item"
+msgstr "Permite la evalución de elementos"
+
+#: collective/judgment/profiles/default/types/tenure.xml
+msgid "An indefinite academic appointment"
+msgstr "Un contrato academico permanente"
+
+#: collective/judgment/content/promotion.py:20
+msgid "Curriculum vitae (Gold-sponsors and above)"
+msgstr "Curriculum vitae"
+
+#: collective/judgment/profiles/default/types/promotion.xml
+#: collective/judgment/profiles/default/types/tenure.xml
+msgid "Edit"
+msgstr "Editar"
+
+#: collective/judgment/behaviors/configure.zcml:18
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#: collective/judgment/behaviors/personaldata.py:20
+msgid "First Name"
+msgstr "Nombre"
+
+#: collective/judgment/content/promotion.py:27
+msgid "ImageThumb"
+msgstr "Imagen miniatura"
+
+#: collective/judgment/content/promotion.py:39
+msgid "ImageThumbReport"
+msgstr "Imagen miniatura"
+
+#: collective/judgment/configure.zcml:25
+msgid "Installs the collective.judgment add-on."
+msgstr "Instala el paquete collective.judgment"
+
+#: collective/judgment/validators.py:10
+msgid "Invalid Type File: please correct it, only accept pdf file"
+msgstr "Tipo de archivo invalido: Solo acepta archivos PDF"
+
+#: collective/judgment/behaviors/personaldata.py:25
+msgid "Last Name"
+msgstr "Apellido(s)"
+
+#: collective/judgment/vocabularies.py:11
+msgid "No"
+msgstr "No"
+
+#: collective/judgment/behaviors/configure.zcml:10
+msgid "Personal Data"
+msgstr "Datos personales"
+
+#: collective/judgment/profiles/default/types/promotion.xml
+msgid "Promotion"
+msgstr "Promoción"
+
+#: collective/judgment/profiles/default/types/promotion.xml
+msgid "Promotion of Faculty and Staff"
+msgstr "Promoción de Investigadores y Técnicos Académicos"
+
+#: collective/judgment/profiles/default/types/tenure.xml
+msgid "Tenure"
+msgstr "Definitividad"
+
+#: collective/judgment/configure.zcml:34
+msgid "Uninstalls the collective.judgment add-on."
+msgstr "Desinstala el paquete collective.judgement"
+
+#: collective/judgment/profiles/default/types/promotion.xml
+#: collective/judgment/profiles/default/types/tenure.xml
+msgid "View"
+msgstr "Vista"
+
+#: collective/judgment/vocabularies.py:12
+msgid "Yes"
+msgstr "Si"
+
+#: collective/judgment/configure.zcml:25
+msgid "collective.judgment"
+msgstr ""
+
+#: collective/judgment/configure.zcml:34
+msgid "collective.judgment (uninstall)"
+msgstr ""
