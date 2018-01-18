@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 06:07+0000\n"
+"POT-Creation-Date: 2018-01-18 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,12 @@ msgstr "Permite la evalución de elementos"
 msgid "An indefinite academic appointment"
 msgstr "Un contrato academico permanente"
 
-#: collective/judgment/content/promotion.py:20
-msgid "Curriculum vitae (Gold-sponsors and above)"
+#: collective/judgment/behaviors/personaldata.py:30
+msgid "Current Position"
+msgstr "Nombramiento"
+
+#: collective/judgment/content/promotion.py:56
+msgid "Curriculum vitae"
 msgstr "Curriculum vitae"
 
 #: collective/judgment/profiles/default/types/promotion.xml
@@ -43,17 +47,29 @@ msgstr "Editar"
 msgid "Evaluation"
 msgstr "Evaluación"
 
+#: collective/judgment/behaviors/personaldata.py:35
+msgid "Evaluation Date"
+msgstr "Fecha de Evaluación"
+
 #: collective/judgment/behaviors/personaldata.py:20
 msgid "First Name"
 msgstr "Nombre"
 
-#: collective/judgment/content/promotion.py:27
+#: collective/judgment/content/promotion.py:51
+msgid "ImagePlan"
+msgstr "Imagen de Plan de trabajo"
+
+#: collective/judgment/content/promotion.py:63
 msgid "ImageThumb"
 msgstr "Imagen miniatura"
 
+#: collective/judgment/content/promotion.py:27
+msgid "ImageThumbLetter"
+msgstr "Imagen miniatura de parta"
+
 #: collective/judgment/content/promotion.py:39
 msgid "ImageThumbReport"
-msgstr "Imagen miniatura"
+msgstr "Imagen miniatura de reporte"
 
 #: collective/judgment/configure.zcml:25
 msgid "Installs the collective.judgment add-on."
@@ -67,6 +83,10 @@ msgstr "Tipo de archivo invalido: Solo acepta archivos PDF"
 msgid "Last Name"
 msgstr "Apellido(s)"
 
+#: collective/judgment/content/promotion.py:20
+msgid "Letter"
+msgstr "Carta Razonada"
+
 #: collective/judgment/vocabularies.py:11
 msgid "No"
 msgstr "No"
@@ -74,6 +94,10 @@ msgstr "No"
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Personal Data"
 msgstr "Datos personales"
+
+#: collective/judgment/content/promotion.py:44
+msgid "Plan"
+msgstr "Plan de trabajo"
 
 #: collective/judgment/profiles/default/types/promotion.xml
 msgid "Promotion"

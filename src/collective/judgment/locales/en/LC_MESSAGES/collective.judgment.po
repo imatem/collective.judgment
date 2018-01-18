@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 06:07+0000\n"
+"POT-Creation-Date: 2018-01-18 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,12 @@ msgstr ""
 msgid "An indefinite academic appointment"
 msgstr ""
 
-#: collective/judgment/content/promotion.py:20
-msgid "Curriculum vitae (Gold-sponsors and above)"
+#: collective/judgment/behaviors/personaldata.py:30
+msgid "Current Position"
+msgstr ""
+
+#: collective/judgment/content/promotion.py:56
+msgid "Curriculum vitae"
 msgstr ""
 
 #: collective/judgment/profiles/default/types/promotion.xml
@@ -43,12 +47,24 @@ msgstr ""
 msgid "Evaluation"
 msgstr ""
 
+#: collective/judgment/behaviors/personaldata.py:35
+msgid "Evaluation Date"
+msgstr ""
+
 #: collective/judgment/behaviors/personaldata.py:20
 msgid "First Name"
 msgstr ""
 
-#: collective/judgment/content/promotion.py:27
+#: collective/judgment/content/promotion.py:51
+msgid "ImagePlan"
+msgstr ""
+
+#: collective/judgment/content/promotion.py:63
 msgid "ImageThumb"
+msgstr ""
+
+#: collective/judgment/content/promotion.py:27
+msgid "ImageThumbLetter"
 msgstr ""
 
 #: collective/judgment/content/promotion.py:39
@@ -67,12 +83,20 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
+#: collective/judgment/content/promotion.py:20
+msgid "Letter"
+msgstr ""
+
 #: collective/judgment/vocabularies.py:11
 msgid "No"
 msgstr ""
 
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Personal Data"
+msgstr ""
+
+#: collective/judgment/content/promotion.py:44
+msgid "Plan"
 msgstr ""
 
 #: collective/judgment/profiles/default/types/promotion.xml
