@@ -1,0 +1,112 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-01-18 06:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.judgment\n"
+
+#: collective.judgment/src/collective/judgment/content/promotion.py:32
+msgid "Activities Report"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/configure.zcml:10
+msgid "Adds first name and last name fields"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/configure.zcml:18
+msgid "Allow evaluation for an item"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+msgid "An indefinite academic appointment"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/promotion.py:20
+msgid "Curriculum vitae (Gold-sponsors and above)"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+msgid "Edit"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/configure.zcml:18
+msgid "Evaluation"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:20
+msgid "First Name"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/promotion.py:27
+msgid "ImageThumb"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/promotion.py:39
+msgid "ImageThumbReport"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/configure.zcml:25
+msgid "Installs the collective.judgment add-on."
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/validators.py:10
+msgid "Invalid Type File: please correct it, only accept pdf file"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:25
+msgid "Last Name"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/vocabularies.py:11
+msgid "No"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/configure.zcml:10
+msgid "Personal Data"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
+msgid "Promotion"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
+msgid "Promotion of Faculty and Staff"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+msgid "Tenure"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/configure.zcml:34
+msgid "Uninstalls the collective.judgment add-on."
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+msgid "View"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/vocabularies.py:12
+msgid "Yes"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/configure.zcml:25
+msgid "collective.judgment"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/configure.zcml:34
+msgid "collective.judgment (uninstall)"
+msgstr ""
