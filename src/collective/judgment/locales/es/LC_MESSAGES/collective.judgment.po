@@ -28,7 +28,7 @@ msgstr "Permite la evalución de elementos"
 
 #: collective/judgment/profiles/default/types/tenure.xml
 msgid "An indefinite academic appointment"
-msgstr "Un contrato academico permanente"
+msgstr "Un contrato académico permanente"
 
 #: collective/judgment/browser/templates/evaluation_viewlet.pt:8
 msgid "Approve"
@@ -85,7 +85,7 @@ msgstr "Instala el paquete collective.judgment"
 
 #: collective/judgment/validators.py:10
 msgid "Invalid Type File: please correct it, only accept pdf file"
-msgstr "Tipo de archivo invalido: Solo acepta archivos PDF"
+msgstr "Tipo de archivo inválido: Sólo acepta archivos PDF"
 
 #: collective/judgment/behaviors/personaldata.py:25
 msgid "Last Name"
@@ -130,7 +130,7 @@ msgstr "Vista"
 
 #: collective/judgment/browser/templates/evaluation_viewlet.pt:7
 msgid "What do you think of this case?"
-msgstr "¿Que opina de este caso?"
+msgstr "¿Qué opina de este caso?"
 
 #: collective/judgment/vocabularies.py:12
 msgid "Yes"
