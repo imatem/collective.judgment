@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <section class="portlet portletClassic" id="portal-footer-signature" metal:define-macro="portlet">
+      <div class="portletContent">
+        <span i18n:translate="description_copyright" tal:omit-tag="">
+        Instituto de Matemáticas, Universidad Nacional Autónoma de México (UNAM),
+          <tal:year i18n:name="current_year"
+                    tal:define="DateTime nocall:modules/DateTime.DateTime;
+                               myTime python:DateTime()"
+                    tal:content="python:myTime.year()" />
+
+          <br />Desarrollado por Informática Académica
+        </span>
+      </div>
+    </section>
+  </div>
+</div>
