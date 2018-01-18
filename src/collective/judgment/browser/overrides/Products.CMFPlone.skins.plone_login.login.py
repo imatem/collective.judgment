@@ -9,6 +9,10 @@
 
 request = context.REQUEST
 
+# set ZMI properties layout to login
+if not context.portal_membership.isAnonymousUser():
+    return context.restrictedTraverse('2018')()
+
 # Handle external login requests from other portals where the user is already
 # logged in in this portal
 next = request.get('next', None)
@@ -29,4 +33,3 @@ came_from = request.get('came_from')
 if came_from:
     url = "%s&came_from=%s" % (url, came_from)
 request.RESPONSE.redirect(url)
-
