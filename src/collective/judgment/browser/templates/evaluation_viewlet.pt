@@ -1,21 +1,21 @@
-<tal:snippet omit-tag="">
+<tal:snippet omit-tag="" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="collective.judgment">
   <div class="evaluation">
     <div id="alreadyevaluated" class="evaluation_option">
-      You already evaluated this promotion.
+      <span i18n:translate="">You already evaluated this case.</span>
     </div>
     <div id="notyetevaluated" class="evaluation_option">
-      What do you think of this promotion?
-      <div class="evaluations"><span id="evaluation_approve">Approve</span> <span id="evaluation_disapprove">Disapprove</span>
+      <span i18n:translate="">What do you think of this case?</span>
+      <div class="evaluations"><span id="evaluation_approve" i18n:translate="">Approve</span> <span id="evaluation_disapprove" i18n:translate="">Disapprove</span>
       </div>
     </div>
-    <div id="delete_evaluations" tal:condition="view/is_manager">
+    <!-- <div id="delete_evaluations" tal:condition="view/is_manager">
       Delete all votes
     </div>
     <div id="delete_evaluations2" class="areyousure warning"
          tal:condition="view/is_manager"
          >
       Are you sure?
-    </div>
+    </div> -->
     <a href="#" class="hiddenStructure" id="context_url"
        tal:attributes="href context/absolute_url"></a>
       <span id="evaluated" tal:condition="view/evaluated"></span>
