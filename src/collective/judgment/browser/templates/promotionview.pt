@@ -143,9 +143,13 @@
       </div>
     </tal:block>
 
-
-
   </tal:block>
+
+  <br/><br/>
+
+  <div class="visualClear"><!-- --></div>
+  <hr/>
+  <p style="color:red">All evaluators can view the comments</p>
 
   <!-- <tal:block repeat="widget view/widgets/values">
       <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
