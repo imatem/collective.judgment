@@ -44,6 +44,7 @@ class FolderCdimView(BrowserView):
 
         return brains
 
+
     def evaluations(self, brain):
 
         values = IEvaluation(brain.getObject()).evaluations
@@ -67,6 +68,15 @@ class FolderCdimView(BrowserView):
         if 'Manager' in local_roles or 'Reviewer' in local_roles:
             return True
         return False
+
+    def evaluation_date(self, brain):
+        date = brain.getObject().evaluation_date
+        if date:
+            return date.isoformat()
+        return ''
+
+    def position(self, brain):
+        return brain.getObject().current_position
 
     def send_email(self):
         catalog = api.portal.get_tool(name='portal_catalog')

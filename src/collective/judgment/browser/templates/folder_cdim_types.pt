@@ -29,7 +29,7 @@
                   type="submit"
                   value="Filter"/>
 
-            <input tal:condition="view/isManager" class="mybutton" 
+            <input tal:condition="view/isManager" class="mybutton"
                   type="submit"
                   name="send_email"
                   value="Send notifications email">
@@ -45,19 +45,19 @@
 
               <ul class="blank-list">
                 <li class="branch-row" tal:repeat="item items">
-                  <div class="row-personaldata">
+                  <div class="row-personaldata" >
                     <div class="name">
                       <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
                     </div>
                     <div class="classification">
-                      Investigador Titular A
+                      <span tal:content="python:view.position(item)"/>
                     </div>
                   </div>
                   <div class="row-type">
                     <p tal:content="item/PortalType | nothing"/>
                   </div>
                   <div class="row-date">
-                    01/01/2017
+                    <span tal:content="python:view.evaluation_date(item)"/>
                   </div>
                   <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
                     <ul>
