@@ -66,10 +66,19 @@
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
     </h1>
+    <p>
+     <b tal:replace="structure view/w/IPersonalData.evaluation_date/label"/>:
+     <span tal:replace="structure view/w/IPersonalData.evaluation_date/render"/>
+    </p>
+
+    <p>
+     <b tal:replace="structure view/w/IPersonalData.current_position/label"/>:
+     <span tal:replace="structure view/w/IPersonalData.current_position/render"/>
+    </p>
+
     <!-- <span tal:replace="structure view/w/cv/render"/> -->
 
     <br/>
-    
     <div class="myphotoAlbumEntry">
       <p tal:content="view/w/cv/label"/>
       <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/cv">
@@ -86,25 +95,55 @@
     </div>
 
     <tal:block tal:condition="view/w/report | nothing">
-
       <div class="myphotoAlbumEntry">
-      <p tal:content="view/w/report/label"/>
-      <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/report">
-        <span class="myphotoAlbumEntryWrapper">
-          <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbreport;"/>
-        </span>
-      </a>
-
-      <span class="myphotoAlbumEntryTitle">
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report">
-          Download
+        <p tal:content="view/w/report/label"/>
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/report">
+          <span class="myphotoAlbumEntryWrapper">
+            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbreport;"/>
+          </span>
         </a>
-      </span>
-    </div>
 
+        <span class="myphotoAlbumEntryTitle">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report">
+            Download
+          </a>
+        </span>
+      </div>
     </tal:block>
 
-    
+    <tal:block tal:condition="view/w/letter | nothing">
+      <div class="myphotoAlbumEntry">
+        <p tal:content="view/w/letter/label"/>
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/letter">
+          <span class="myphotoAlbumEntryWrapper">
+            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbletter;"/>
+          </span>
+        </a>
+        <span class="myphotoAlbumEntryTitle">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/letter">
+            Download
+          </a>
+        </span>
+      </div>
+    </tal:block>
+
+    <tal:block tal:condition="view/w/plan | nothing">
+      <div class="myphotoAlbumEntry">
+        <p tal:content="view/w/plan/label"/>
+        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/plan">
+          <span class="myphotoAlbumEntryWrapper">
+            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbplan;"/>
+          </span>
+        </a>
+        <span class="myphotoAlbumEntryTitle">
+          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/plan">
+            Download
+          </a>
+        </span>
+      </div>
+    </tal:block>
+
+
 
   </tal:block>
 
