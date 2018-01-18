@@ -16,15 +16,15 @@ class IPromotion(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Promotion
     """
 
-    cv = namedfile.NamedBlobFile(
-        title=_(u'Curriculum vitae (Gold-sponsors and above)'),
+    letter = namedfile.NamedBlobFile(
+        title=_(u'Letter'),
         required=True,
         constraint=isValidFileType,
     )
 
-    directives.omitted('thumbcv')
-    thumbcv = namedfile.NamedBlobImage(
-        title=_(u'ImageThumb'),
+    directives.omitted('thumbletter')
+    thumbletter = namedfile.NamedBlobImage(
+        title=_(u'ImageThumbLetter'),
         required=False,
     )
 
@@ -37,6 +37,30 @@ class IPromotion(model.Schema):
     directives.omitted('thumbreport')
     thumbreport = namedfile.NamedBlobImage(
         title=_(u'ImageThumbReport'),
+        required=False,
+    )
+
+    plan = namedfile.NamedBlobFile(
+        title=_(u'Plan'),
+        required=True,
+        constraint=isValidFileType,
+    )
+
+    directives.omitted('thumbplan')
+    thumbplan = namedfile.NamedBlobImage(
+        title=_(u'ImagePlan'),
+        required=False,
+    )
+
+    cv = namedfile.NamedBlobFile(
+        title=_(u'Curriculum vitae'),
+        required=True,
+        constraint=isValidFileType,
+    )
+
+    directives.omitted('thumbcv')
+    thumbcv = namedfile.NamedBlobImage(
+        title=_(u'ImageThumb'),
         required=False,
     )
 
