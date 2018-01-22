@@ -3,8 +3,8 @@ from collective.judgment import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
-from zope.interface import alsoProvides
 from zope import schema
+from zope.interface import alsoProvides
 
 
 class IPersonalData(model.Schema):

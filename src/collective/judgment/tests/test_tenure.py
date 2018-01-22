@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
+from collective.judgment.content.tenure import ITenure
+from collective.judgment.testing import COLLECTIVE_JUDGMENT_INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
-from collective.judgment.content.tenure import ITenure
-from collective.judgment.testing import COLLECTIVE_JUDGMENT_INTEGRATION_TESTING  # noqa
 from zope.component import createObject
 from zope.component import queryUtility
 

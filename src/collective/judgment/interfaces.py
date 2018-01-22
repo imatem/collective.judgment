@@ -5,11 +5,11 @@ from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from plone.supermodel.directives import fieldset
+from z3c.form.interfaces import IEditForm
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from z3c.form.interfaces import IEditForm
 
 
 class ICollectiveJudgmentLayer(IDefaultBrowserLayer):
