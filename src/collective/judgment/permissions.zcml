@@ -10,7 +10,7 @@
         id="collective.judgment.AddTenure"
         title="collective.judgment: Add Tenure"
     />
-        
+
     <permission
         id="collective.judgment.AddPromotion"
         title="collective.judgment: Add Promotion"

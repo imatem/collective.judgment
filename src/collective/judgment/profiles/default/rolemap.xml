@@ -10,7 +10,6 @@
       <role name="Contributor"/>
     </permission>
 
-        
     <permission name="collective.judgment: Add Promotion" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
