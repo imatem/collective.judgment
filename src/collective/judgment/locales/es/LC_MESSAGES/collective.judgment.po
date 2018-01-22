@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-18 19:18+0000\n"
+"POT-Creation-Date: 2018-01-22 03:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,6 +109,7 @@ msgid "No"
 msgstr "No"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:23
+#: collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
 msgid "Pending review"
 msgstr "En revisión"
 
@@ -133,12 +134,17 @@ msgid "Select type:"
 msgstr "Tipo de caso:"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:26
+#: collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
 msgid "Studied"
 msgstr "Casos estudiados"
 
 #: collective/judgment/profiles/default/types/tenure.xml
 msgid "Tenure"
 msgstr "Definitividad"
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:105
+msgid "There are currently no items in this folder."
+msgstr ""
 
 #: collective/judgment/configure.zcml:34
 msgid "Uninstalls the collective.judgment add-on."
