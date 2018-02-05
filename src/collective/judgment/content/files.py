@@ -48,3 +48,8 @@ class CurriculumVitae(File):
 class ActivitiesPlan(File):
     """Convenience subclass for ``Activities Plan`` portal type
     """
+
+
+class ActivitiesReport(File):
+    """Convenience subclass for ``Activities Report`` portal type
+    """
