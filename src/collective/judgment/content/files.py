@@ -53,3 +53,8 @@ class ActivitiesPlan(File):
 class ActivitiesReport(File):
     """Convenience subclass for ``Activities Report`` portal type
     """
+
+
+class ReasonedLetter(File):
+    """Convenience subclass for ``Reasoned Letter`` portal type
+    """
