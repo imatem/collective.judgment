@@ -5,4 +5,5 @@
   <object meta_type="Dexterity FTI" name="promotion"/>
   <object meta_type="Dexterity FTI" name="tenure"/>
   <object meta_type="Dexterity FTI" name="Curriculum Vitae"/>
+  <object meta_type="Dexterity FTI" name="Activities Plan"/>
 </object>

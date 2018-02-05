@@ -43,3 +43,8 @@ class IPdfFile(model.Schema):
 class CurriculumVitae(File):
     """Convenience subclass for ``Curriculum Vitae`` portal type
     """
+
+
+class ActivitiesPlan(File):
+    """Convenience subclass for ``Activities Plan`` portal type
+    """
