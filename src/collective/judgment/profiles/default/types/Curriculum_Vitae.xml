@@ -26,20 +26,20 @@
   <!-- Schema, class and security -->
   <property name="add_permission">collective.judgment.AddPromotion</property>
   <property name="klass">collective.judgment.content.files.CurriculumVitae</property>
-  <property name="model_file">plone.app.contenttypes.schema:file.xml</property>
+  <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema"></property>
+  <property name="schema">collective.judgment.content.files.IPdfFile</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
-    <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
-    <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
-    <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/>
+    <!-- <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/> -->
+    <!-- <element value="plone.app.dexterity.behaviors.metadata.IPublication"/> -->
+    <!-- <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/> -->
     <element value="plone.app.dexterity.behaviors.filename.INameFromFileName"/>
     <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
-    <element value="plone.app.dexterity.behaviors.id.IShortName"/>
-    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
-    <element value="plone.app.relationfield.behavior.IRelatedItems"/>
+    <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
+    <!-- <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/> -->
+    <!-- <element value="plone.app.relationfield.behavior.IRelatedItems"/> -->
   </property>
 
   <!-- View information -->
