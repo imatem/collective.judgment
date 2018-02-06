@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.judgment.behaviors.evaluation import KEY
 from collective.judgment.content.promotion import IPromotion
+from collective.judgment.content.files import IPdfFile
 from persistent.dict import PersistentDict
 from plone import namedfile
 from zope.annotation.interfaces import IAnnotations
@@ -169,6 +170,58 @@ def handlerModifiedPromotion(self, event):
         )
     except:
         self.thumbplan = None
+
+    try:
+        shutil.rmtree(tempdir)  # remove tempdir
+    except:
+        pass
+
+
+@adapter(IPdfFile, IObjectAddedEvent)
+def handlerAddedPdfFile(self, event):
+    tempdir = tempfile.mkdtemp()
+    try:
+        file_path = os.path.join(tempdir, 'file.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.file.data)
+        file_os.close()
+        os.system('cd {0}; gs -o page1.png -sDEVICE=pngalpha -dLastPage=1 {1}'.format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'page1.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbfile = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'page1.png'
+        )
+    except:
+        self.thumbfile = None
+
+    try:
+        shutil.rmtree(tempdir)  # remove tempdir
+    except:
+        pass
+
+
+@adapter(IPdfFile, IObjectModifiedEvent)
+def handlerModifiedPdfFile(self, event):
+    tempdir = tempfile.mkdtemp()
+    try:
+        file_path = os.path.join(tempdir, 'file.pdf')
+        file_os = open(file_path, 'wb')
+        file_os.write(self.file.data)
+        file_os.close()
+        os.system('cd {0}; gs -o page1.png -sDEVICE=pngalpha -dLastPage=1 {1}'.format(tempdir, file_path))
+        image_path = os.path.join(tempdir, 'page1.png')
+        thumb_file = open(image_path, 'r')
+
+        self.thumbfile = namedfile.NamedBlobImage(
+            data=thumb_file.read(),
+            contentType='image/png',
+            filename=u'page1.png'
+        )
+    except:
+        self.thumbfile = None
 
     try:
         shutil.rmtree(tempdir)  # remove tempdir
