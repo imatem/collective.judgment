@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import OrderedDict
 from collective.judgment.interfaces import IEvaluation
 from plone import api
 from plone.dexterity.browser.view import DefaultView
@@ -14,6 +15,7 @@ class PromotionView(DefaultView):
     """
 
     def foo(self):
+        import pdb; pdb.set_trace()
         return ''
 
     def timeleft(self):
@@ -21,6 +23,30 @@ class PromotionView(DefaultView):
         evaluation = self.context.evaluation_date
         timeleft = evaluation - today
         return str(timeleft.days)
+
+    def order_items(self):
+        items = OrderedDict()
+        items['cv'] = None
+        items['report'] = None
+        items['plan'] = None
+        items['letter'] = None
+        items['other'] = []
+
+        for item in self.context.items():
+            itemportal = item[1].portal_type
+            if itemportal == 'Curriculum Vitae':
+                items['cv'] = item[1]
+            elif itemportal == 'Activities Plan':
+                items['plan'] = item[1]
+            elif itemportal == 'Activities Report':
+                items['report'] = item[1]
+            elif itemportal == 'Reasoned Letter':
+                items['letter'] = item[1]
+            else:
+                items['other'].append(item[1])
+
+        return items
+
 
 
 class FolderCdimView(BrowserView):
