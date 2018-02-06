@@ -62,10 +62,10 @@
 
   <tal:block tal:define="allvalues view/widgets/values">
 
-    <!-- <h1>
+    <h2>
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
-    </h1> -->
+    </h2>
     <p>
      <b tal:replace="structure view/w/IPersonalData.evaluation_date/label"/>:
      <span tal:replace="structure view/w/IPersonalData.evaluation_date/render"/>
@@ -87,7 +87,6 @@
             <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbcv;"/>
           </span>
         </a>
-
         <span class="myphotoAlbumEntryTitle">
           <a href="" tal:attributes="href string:${context/absolute_url}/@@download/cv" i18n:translate="">
             Download
@@ -150,6 +149,14 @@
   <br/><br/>
 
   <div class="visualClear"><!-- --></div>
+
+  <fieldset id="folder-listing">
+      <legend i18n:translate="" i18n:domain="collective.judgment">Pdf Files</legend>
+      <tal:block define="view nocall:context/folder_listing; listing_macro view/macros/listing">
+          <metal:use_macro use-macro="listing_macro" />
+      </tal:block>
+  </fieldset>
+
   <hr/>
   <p style="color:red" i18n:translate="">All evaluators can view the comments</p>
 
