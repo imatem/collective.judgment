@@ -37,10 +37,5 @@ class IPersonalData(model.Schema):
         required=True
     )
 
-    evaluation_date = schema.Date(
-        title=_(u'Evaluation Date'),
-        required=True,
-    )
-
 
 alsoProvides(IPersonalData, IFormFieldProvider)
