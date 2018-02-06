@@ -30,7 +30,7 @@ class PromotionView(DefaultView):
         items['report'] = None
         items['plan'] = None
         items['letter'] = None
-        items['other'] = []
+        others = []
 
         for item in self.context.items():
             itemportal = item[1].portal_type
@@ -43,11 +43,25 @@ class PromotionView(DefaultView):
             elif itemportal == 'Reasoned Letter':
                 items['letter'] = item[1]
             else:
-                items['other'].append(item[1])
+                others.append(item[1])
 
-        return items
+        return {'base': items, 'extra': others}
 
+    def iddictToType(self, key):
+        iddict = {
+            'cv': 'Curriculum Vitae',
+            'plan': 'Activities Plan',
+            'report': 'Activities Report',
+            'letter': 'Reasoned Letter'
+        }
+        return iddict.get(key, '')
 
+    def editurl(self, key):
+        nametype = self.iddictToType(key)
+        if nametype:
+            return '++add++' + nametype
+
+        return ''
 
 class FolderCdimView(BrowserView):
 

@@ -26,6 +26,20 @@
         height: 240px;
       }
 
+      .emptymyphotoAlbumEntryWrapper {
+
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-weight: 300;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background: #fcfcfd;
+        width: 220px;
+        height: 240px;
+      }
+
       .myphotoAlbumEntryTitle a{
         text-align: center;
         vertical-align: middle;
@@ -96,7 +110,7 @@
 
   <div class="visualClear"><!-- --></div>
 
-  <fieldset tal:define="items view/order_items">
+  <fieldset tal:define="order_items view/order_items; items order_items/base; extras order_items/extra">
     <legend i18n:translate="" i18n:domain="collective.judgment">Pdf Files</legend>
 
     <tal:block tal:repeat="key python:items.keys()">
@@ -112,16 +126,36 @@
             <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
               Download
             </a>
-            <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate="">
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
               Edit
             </a>
           </span>
 
         </div>
       </tal:block>
+
+      <tal:block tal:condition="python:not items[key]">
+        <div class="myphotoAlbumEntry">
+          <p i18n:translate="" tal:content="python:view.iddictToType(key)"/>
+            <span class="emptymyphotoAlbumEntryWrapper">
+              <img src="" tal:attributes="src string:++plone++collective.judgment/no-fees-icon-B.png"/>
+            </span>
+
+          <span class="myphotoAlbumEntryTitle" tal:define="editurl python:view.editurl(key)">
+            <a href="" tal:attributes="href string:${context/absolute_url}/${editurl}" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
+              Add
+            </a>
+          </span>
+        </div>
+
+      </tal:block>
     </tal:block>
 
-
+    <tal:block tal:repeat="extra extras">
+      <span tal:content="extra/title"/>
+    </tal:block>
   </fieldset>
 
   <hr/>
