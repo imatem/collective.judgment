@@ -42,8 +42,8 @@
 
   <!-- SUBSCRIBERS -->
   <subscriber handler=".handlers.handlerCreatedPromotion" />
-  <!-- <subscriber handler=".handlers.handlerAddedPromotion" />
-  <subscriber handler=".handlers.handlerModifiedPromotion" /> -->
+  <!-- <subscriber handler=".handlers.handlerAddedPromotion" /> -->
+  <!-- <subscriber handler=".handlers.handlerModifiedPromotion" /> -->
   <subscriber handler=".handlers.handlerAddedPdfFile" />
   <subscriber handler=".handlers.handlerModifiedPdfFile" />
 
