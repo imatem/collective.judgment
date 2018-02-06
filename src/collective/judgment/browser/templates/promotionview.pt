@@ -67,8 +67,8 @@
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
     </h2>
     <p>
-     <b tal:replace="structure view/w/IPersonalData.evaluation_date/label"/>:
-     <span tal:replace="structure view/w/IPersonalData.evaluation_date/render"/>
+     <b tal:replace="structure view/w/evaluation_date/label"/>:
+     <span tal:replace="structure view/w/evaluation_date/render"/>
     </p>
 
     <p>
