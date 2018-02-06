@@ -42,13 +42,21 @@
 
   <!-- SUBSCRIBERS -->
   <subscriber handler=".handlers.handlerCreatedPromotion" />
-  <subscriber handler=".handlers.handlerAddedPromotion" />
-  <subscriber handler=".handlers.handlerModifiedPromotion" />
+  <!-- <subscriber handler=".handlers.handlerAddedPromotion" />
+  <subscriber handler=".handlers.handlerModifiedPromotion" /> -->
 
   <!-- VOCABULARIES -->
   <utility
     component=".vocabularies.YesorNoVocabulary"
     name="collective.judgment.YesorNoVocabulary"
+  />
+  <utility
+    component=".vocabularies.ClassificationsVocabulary"
+    name="collective.judgment.ClassificationsVocabulary"
+  />
+  <utility
+    component=".vocabularies.PositionsVocabulary"
+    name="collective.judgment.PositionsVocabulary"
   />
 
 </configure>
