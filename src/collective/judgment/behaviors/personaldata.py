@@ -9,7 +9,12 @@ from zope.interface import alsoProvides
 
 class IPersonalData(model.Schema):
 
-    directives.order_before(title='evaluation_date')
+    # directives.order_before(title='evaluation_date')
+    classification = schema.Choice(
+        title=_(u'Classification'),
+        vocabulary='collective.judgment.ClassificationsVocabulary',
+        required=True
+    )
     title = schema.TextLine(
         title=u"Title",
         description=u"A title, which will be converted to a name",
@@ -26,9 +31,10 @@ class IPersonalData(model.Schema):
         required=True,
     )
 
-    current_position = schema.TextLine(
+    current_position = schema.Choice(
         title=_(u'Current Position'),
-        required=True,
+        vocabulary='collective.judgment.PositionsVocabulary',
+        required=True
     )
 
     evaluation_date = schema.Date(
