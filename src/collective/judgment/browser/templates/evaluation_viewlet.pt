@@ -18,7 +18,27 @@
     </div> -->
     <a href="#" class="hiddenStructure" id="context_url"
        tal:attributes="href context/absolute_url"></a>
-      <span id="evaluated" tal:condition="view/evaluated"></span>
+      <p id="evaluated" style="width: 40pt;" tal:condition="view/evaluated">
+
+        <tal:block tal:condition="python:view.evaluationvalue() == 'approve'">
+          <span class="myicon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+              <path stroke="#39aa56" fill="none" style="stroke-width: 3"
+                d="M14.5 1.5L6.499 13.716.5 8.78">
+              </path></svg>
+          </span>
+        </tal:block>
+
+        <tal:block tal:condition="python:view.evaluationvalue() == 'disapprove'">
+          <span class="myicon">
+            <svg viewBox="0 0 15 15">
+              <style>.stroke-grey{fill:none;stroke:#9d9d9d;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+              <path stroke="#db4545" fill="none" style="stroke-width: 3" d="M.5.5l14 14m0-14l-14 14"></path>
+            </svg>
+          </span>
+        </tal:block>
+
+      </p>
   </div>
   <script type="text/javascript">
     $(document).ready(function(){

@@ -156,6 +156,17 @@ li.disapprove:hover path{
     bottom:0;
 }
 
+.myicon{
+    /*position: absolute;*/
+    width: 8px;
+    height: 8px;
+    margin:auto;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom:0;
+}
+
 .mybutton {
     font: bold 14px;
     text-decoration: none;
