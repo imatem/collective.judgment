@@ -24,8 +24,9 @@ class IEvaluable(Interface):
 # behaviors interface. When doing IEvaluation(object), you receive an adapter
 class IEvaluation(model.Schema):
     directives.omitted('evaluations')
-    if api.env.debug_mode():
-        directives.no_omit(IEditForm, 'evaluations')
+    # show debug tab
+    # if api.env.debug_mode():
+    #     directives.no_omit(IEditForm, 'evaluations')
 
     fieldset(
         'debug',
