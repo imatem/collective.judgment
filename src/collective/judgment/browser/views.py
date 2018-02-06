@@ -7,6 +7,7 @@ from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
 from zope.i18n import translate
 
+import datetime
 
 class PromotionView(DefaultView):
     """ The default view for talks
@@ -14,6 +15,12 @@ class PromotionView(DefaultView):
 
     def foo(self):
         return ''
+
+    def timeleft(self):
+        today = datetime.date.today()
+        evaluation = self.context.evaluation_date
+        timeleft = evaluation - today
+        return str(timeleft.days)
 
 
 class FolderCdimView(BrowserView):

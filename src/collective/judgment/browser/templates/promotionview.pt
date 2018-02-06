@@ -70,10 +70,22 @@
      <b tal:replace="structure view/w/evaluation_date/label"/>:
      <span tal:replace="structure view/w/evaluation_date/render"/>
     </p>
+    <p style="color:red">
+      <span i18n:translate="">Time Left (in days):</span>
+      <span tal:content="view/timeleft | nothing"></span>
+    </p>
 
     <p>
      <b tal:replace="structure view/w/IPersonalData.current_position/label"/>:
      <span tal:replace="structure view/w/IPersonalData.current_position/render"/>
+    </p>
+    <p>
+      <b tal:replace="structure view/w/requestedposition/label"/>:
+      <span tal:replace="structure view/w/requestedposition/render"/>
+    </p>
+
+    <p>
+
     </p>
 
     <!-- <span tal:replace="structure view/w/cv/render"/> -->
