@@ -45,26 +45,24 @@
 
               <h1 i18n:translate="" tal:content="python:view.title_state(items[0])"/>
 
-              <ul class="blank-list">
-                <li class="branch-row" tal:repeat="item items">
-                  <div class="row-personaldata" >
-                    <div class="name">
-                      <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
-                    </div>
-                    <div class="classification">
-                      <span tal:content="python:view.position(item)"/>
-                    </div>
-                  </div>
-                  <div class="row-type">
+              <ul class="evaluation-row" tal:repeat="item items">
+                <li>
+                  <div class="row-personaldata">
+                   <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
+                   <span class="position" tal:content="python:view.position(item)"/>
                     <p tal:content="item/PortalType | nothing"/>
                   </div>
+                </li>
+
+                <li>
                   <div class="row-date">
                     <b i18n:translate="">Evaluation Date</b><br/>
                     <span tal:content="python:view.evaluation_date(item)"/>
                   </div>
-                  <div class="row-evaluations" tal:define="evaluations python:view.evaluations(item)">
-                    <ul>
-                      <tal:block tal:repeat="evaluator evaluations">
+                </li>
+                <li>
+                  <ul class="evaluation-card">
+                      <tal:block tal:repeat="evaluator python:view.evaluations(item)">
                         <tal:block tal:define="nameclass python:evaluator[1];
                                               nameclasshover python:evaluator[2]+'hover';">
                           <li tal:attributes="class python:nameclass">
@@ -93,8 +91,7 @@
                           </li>
                         </tal:block>
                       </tal:block>
-                    </ul>
-                  </div>
+                  </ul>
                 </li>
               </ul>
 
