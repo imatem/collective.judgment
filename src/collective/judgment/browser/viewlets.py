@@ -25,3 +25,6 @@ class Evaluation(base.ViewletBase):
 
     def evaluated(self):
         return self.evaluation.already_evaluated(self.userid)
+
+    def evaluationvalue(self):
+        return self.evaluation.evaluations.get(self.userid, None)

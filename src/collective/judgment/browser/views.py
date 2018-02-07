@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import OrderedDict
 from collective.judgment.interfaces import IEvaluation
 from plone import api
 from plone.dexterity.browser.view import DefaultView
@@ -7,14 +8,63 @@ from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
 from zope.i18n import translate
 
+from zope.schema.interfaces import IVocabularyFactory
+from zope.component import getUtility
+
+import datetime
 
 class PromotionView(DefaultView):
     """ The default view for talks
     """
 
     def foo(self):
+        import pdb; pdb.set_trace()
         return ''
 
+    def timeleft(self):
+        today = datetime.date.today()
+        evaluation = self.context.evaluation_date
+        timeleft = evaluation - today
+        return str(timeleft.days)
+
+    def order_items(self):
+        items = OrderedDict()
+        items['cv'] = None
+        items['report'] = None
+        items['plan'] = None
+        items['letter'] = None
+        others = []
+
+        for item in self.context.items():
+            itemportal = item[1].portal_type
+            if itemportal == 'Curriculum Vitae':
+                items['cv'] = item[1]
+            elif itemportal == 'Activities Plan':
+                items['plan'] = item[1]
+            elif itemportal == 'Activities Report':
+                items['report'] = item[1]
+            elif itemportal == 'Reasoned Letter':
+                items['letter'] = item[1]
+            else:
+                others.append(item[1])
+
+        return {'base': items, 'extra': others}
+
+    def iddictToType(self, key):
+        iddict = {
+            'cv': 'Curriculum Vitae',
+            'plan': 'Activities Plan',
+            'report': 'Activities Report',
+            'letter': 'Reasoned Letter'
+        }
+        return iddict.get(key, '')
+
+    def editurl(self, key):
+        nametype = self.iddictToType(key)
+        if nametype:
+            return '++add++' + nametype
+
+        return ''
 
 class FolderCdimView(BrowserView):
 
@@ -40,7 +90,7 @@ class FolderCdimView(BrowserView):
         brains = catalog(
             path=dict(query='/'.join(self.context.getPhysicalPath()), depth=1),
             review_state=option,
-            # sort_on='start'
+            sort_on='evaluation_date'
         )
 
         return brains
@@ -77,7 +127,11 @@ class FolderCdimView(BrowserView):
         return ''
 
     def position(self, brain):
-        return brain.getObject().current_position
+        position = brain.getObject().current_position
+        vocabulary = getUtility(
+            IVocabularyFactory,
+            'collective.judgment.PositionsVocabulary')(self.context).by_value
+        return vocabulary[position].title
 
     def title_state(self, brain):
 

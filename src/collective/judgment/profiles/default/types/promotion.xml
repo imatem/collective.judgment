@@ -18,9 +18,15 @@
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="allowed_content_types"/>
-  <property name="filter_content_types">True</property>
   <property name="global_allow">True</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types">
+    <element value="Curriculum Vitae"/>
+    <element value="Activities Plan"/>
+    <element value="Activities Report"/>
+    <element value="Reasoned Letter"/>
+  </property>
+  
 
   <!-- Schema, class and security -->
   <property name="add_permission">collective.judgment.AddPromotion</property>

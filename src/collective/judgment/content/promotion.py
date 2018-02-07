@@ -1,82 +1,78 @@
 # -*- coding: utf-8 -*-
 # from plone.app.textfield import RichText
 from collective.judgment import _
-from collective.judgment.validators import isValidFileType
+# from collective.judgment.validators import isValidFileType
 from plone.autoform import directives
 from plone.dexterity.content import Container
-from plone.namedfile import field as namedfile
+# from plone.namedfile import field as namedfile
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
 from zope.interface import implementer
+from zope.interface import invariant
+import datetime
+from zope.interface import Invalid
 
 
 class IPromotion(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Promotion
     """
 
-    letter = namedfile.NamedBlobFile(
-        title=_(u'Letter'),
-        required=True,
-        constraint=isValidFileType,
-    )
-
-    directives.omitted('thumbletter')
-    thumbletter = namedfile.NamedBlobImage(
-        title=_(u'ImageThumbLetter'),
-        required=False,
-    )
-
-    report = namedfile.NamedBlobFile(
-        title=_(u'Activities Report'),
-        required=True,
-        constraint=isValidFileType,
-    )
-
-    directives.omitted('thumbreport')
-    thumbreport = namedfile.NamedBlobImage(
-        title=_(u'ImageThumbReport'),
-        required=False,
-    )
-
-    plan = namedfile.NamedBlobFile(
-        title=_(u'Plan'),
-        required=True,
-        constraint=isValidFileType,
-    )
-
-    directives.omitted('thumbplan')
-    thumbplan = namedfile.NamedBlobImage(
-        title=_(u'ImagePlan'),
-        required=False,
-    )
-
-    cv = namedfile.NamedBlobFile(
-        title=_(u'Curriculum vitae'),
-        required=True,
-        constraint=isValidFileType,
-    )
-
-    directives.omitted('thumbcv')
-    thumbcv = namedfile.NamedBlobImage(
-        title=_(u'ImageThumb'),
-        required=False,
-    )
-
     # directives.widget(level=RadioFieldWidget)
-    # level = schema.Choice(
-    #     title=_(u'Sponsoring Level'),
-    #     vocabulary=LevelVocabulary,
-    #     required=True
-    # )
+    directives.order_after(requestedposition='IPersonalData.current_position')
+    requestedposition = schema.Choice(
+        title=_(u'Requested position'),
+        vocabulary='collective.judgment.PositionsVocabulary',
+        required=True
+    )
+    directives.order_after(evaluation_date='requestedposition')
+    evaluation_date = schema.Date(
+        title=_(u'Evaluation Date'),
+        required=True,
+    )
 
-    # directives.read_permission(notes='cmf.ManagePortal')
-    # directives.write_permission(notes='cmf.ManagePortal')
-    # notes = RichText(
-    #     title=_(u'Secret Notes (only for site-admins)'),
-    #     required=False
-    # )
+    @invariant
+    def validate_dates(data):
+        try:
+            really_creation_date = data.__context__.creation_date
+            creation_date = datetime.datetime(
+                really_creation_date.year(),
+                really_creation_date.month(),
+                really_creation_date.day(),
+                really_creation_date.hour(),
+                really_creation_date.minute()
+            )
+        except Exception:
+            creation_date = datetime.datetime.today()
+
+        if (data.evaluation_date < creation_date.date()):
+            raise Invalid(
+                _('label_error_dates',
+                  default=u'The Evaluation Date must be grather than Creation Date')
+            )
+
+    @invariant
+    def validate_orderpositions(data):
+        pvalue = {
+            'IAC': 1,
+            'ITA': 2,
+            'ITB': 3,
+            'ITC': 4,
+            'TAAA': 5,
+            'TAAB': 6,
+            'TAAC': 7,
+            'TATA': 8,
+            'TATB': 9,
+            'TATC': 10,
+        }
+        rposition = pvalue.get(data.requestedposition, 0)
+        aposition = pvalue.get(data.__context__.REQUEST.form['form.widgets.IPersonalData.current_position'][0], 0)
+        if aposition >= rposition:
+            raise Invalid(
+                _('label_error_orderpositions',
+                  default=u'The Requested Position must be grather than Position')
+            )
 
 
 @implementer(IPromotion)

@@ -7,11 +7,12 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include file="permissions.zcml" />
+
   <include package=".browser" />
 
   <include package=".behaviors" />
 
-  <include file="permissions.zcml" />
 
   <include file="upgrades.zcml" />
 
@@ -42,13 +43,23 @@
 
   <!-- SUBSCRIBERS -->
   <subscriber handler=".handlers.handlerCreatedPromotion" />
-  <subscriber handler=".handlers.handlerAddedPromotion" />
-  <subscriber handler=".handlers.handlerModifiedPromotion" />
+  <!-- <subscriber handler=".handlers.handlerAddedPromotion" /> -->
+  <!-- <subscriber handler=".handlers.handlerModifiedPromotion" /> -->
+  <subscriber handler=".handlers.handlerAddedPdfFile" />
+  <subscriber handler=".handlers.handlerModifiedPdfFile" />
 
   <!-- VOCABULARIES -->
   <utility
     component=".vocabularies.YesorNoVocabulary"
     name="collective.judgment.YesorNoVocabulary"
+  />
+  <utility
+    component=".vocabularies.ClassificationsVocabulary"
+    name="collective.judgment.ClassificationsVocabulary"
+  />
+  <utility
+    component=".vocabularies.PositionsVocabulary"
+    name="collective.judgment.PositionsVocabulary"
   />
 
 </configure>

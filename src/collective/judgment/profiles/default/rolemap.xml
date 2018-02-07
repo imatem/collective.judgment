@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <rolemap>
+  <roles>
+    <role name="Evaluator"/>
+  </roles>
+
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
@@ -15,6 +19,10 @@
       <role name="Site Administrator"/>
       <role name="Owner"/>
       <role name="Contributor"/>
+    </permission>
+
+    <permission name="collective.judgment: Evaluation" acquire="True">
+      <role name="Evaluator"/>
     </permission>
 
   </permissions>

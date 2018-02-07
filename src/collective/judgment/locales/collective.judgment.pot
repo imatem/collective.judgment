@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-22 03:59+0000\n"
+"POT-Creation-Date: 2018-02-07 00:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,27 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.judgment\n"
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:32
+#: collective.judgment/src/collective/judgment/vocabularies.py:23
+msgid "Academic Technician"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Plan.xml
+msgid "Activities Plan"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Report.xml
 msgid "Activities Report"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:150
+msgid "Add"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/behaviors/configure.zcml:10
 msgid "Adds first name and last name fields"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:152
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:166
 msgid "All evaluators can view the comments"
 msgstr ""
 
@@ -41,24 +53,37 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:30
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:14
+msgid "Classification"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:84
+msgid "Creation Date:"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:35
 msgid "Current Position"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:56
-msgid "Curriculum vitae"
+#: collective.judgment/src/collective/judgment/profiles/default/types/Curriculum_Vitae.xml
+msgid "Curriculum Vitae"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/files.py:23
+msgid "Description"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/evaluation_viewlet.pt:8
 msgid "Disapprove"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:91
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:130
 msgid "Download"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
-#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:133
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Plan.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Report.xml
 msgid "Edit"
 msgstr ""
 
@@ -66,29 +91,21 @@ msgstr ""
 msgid "Evaluation"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:35
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:62
+#: collective.judgment/src/collective/judgment/content/promotion.py:31
 msgid "Evaluation Date"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:20
+#: collective.judgment/src/collective/judgment/content/files.py:29
+msgid "File"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:25
 msgid "First Name"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:51
-msgid "ImagePlan"
-msgstr ""
-
-#: collective.judgment/src/collective/judgment/content/promotion.py:63
+#: collective.judgment/src/collective/judgment/content/files.py:38
 msgid "ImageThumb"
-msgstr ""
-
-#: collective.judgment/src/collective/judgment/content/promotion.py:27
-msgid "ImageThumbLetter"
-msgstr ""
-
-#: collective.judgment/src/collective/judgment/content/promotion.py:39
-msgid "ImageThumbReport"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/configure.zcml:25
@@ -99,16 +116,26 @@ msgstr ""
 msgid "Invalid Type File: please correct it, only accept pdf file"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:25
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:30
 msgid "Last Name"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:20
-msgid "Letter"
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:92
+msgid "Left Time (in days):"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Plan.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Report.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Curriculum_Vitae.xml
+msgid "Lets you upload a file to the site."
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/vocabularies.py:11
 msgid "No"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:118
+msgid "Pdf Files"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:23
@@ -120,16 +147,24 @@ msgstr ""
 msgid "Personal Data"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:44
-msgid "Plan"
-msgstr ""
-
 #: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
 msgid "Promotion"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
 msgid "Promotion of Faculty and Staff"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/Reasoned_Letter.xml
+msgid "Reasoned Letter"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/promotion.py:25
+msgid "Requested position"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/vocabularies.py:22
+msgid "Researcher"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:20
@@ -149,12 +184,21 @@ msgstr ""
 msgid "There are currently no items in this folder."
 msgstr ""
 
+#: collective.judgment/src/collective/judgment/handlers.py:40
+msgid "There were errors."
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/content/files.py:17
+msgid "Title"
+msgstr ""
+
 #: collective.judgment/src/collective/judgment/configure.zcml:34
 msgid "Uninstalls the collective.judgment add-on."
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/profiles/default/types/promotion.xml
-#: collective.judgment/src/collective/judgment/profiles/default/types/tenure.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Plan.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Activities_Report.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Curriculum_Vitae.xml
 msgid "View"
 msgstr ""
 
@@ -176,6 +220,16 @@ msgstr ""
 
 #: collective.judgment/src/collective/judgment/configure.zcml:34
 msgid "collective.judgment (uninstall)"
+msgstr ""
+
+#. Default: "The Evaluation Date must be grather than Creation Date"
+#: collective.judgment/src/collective/judgment/content/promotion.py:51
+msgid "label_error_dates"
+msgstr ""
+
+#. Default: "The Requested Position must be grather than Position"
+#: collective.judgment/src/collective/judgment/content/promotion.py:73
+msgid "label_error_orderpositions"
 msgstr ""
 
 #. Default: "Filter"

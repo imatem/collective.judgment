@@ -16,6 +16,11 @@
         title="collective.judgment: Add Promotion"
     />
 
+    <permission
+        id="collective.judgment.Evaluation"
+        title="collective.judgment: Evaluation"
+    />
+
   </configure>
 
 </configure>

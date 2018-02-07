@@ -26,6 +26,20 @@
         height: 240px;
       }
 
+      .emptymyphotoAlbumEntryWrapper {
+
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-weight: 300;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background: #fcfcfd;
+        width: 220px;
+        height: 240px;
+      }
+
       .myphotoAlbumEntryTitle a{
         text-align: center;
         vertical-align: middle;
@@ -35,8 +49,8 @@
         border: 1px solid #e5e5e5;
         border-radius: 4px;
         background: #fcfcfd;
-        width: 120px;
-        height: 40px;
+        width: 100px;
+        height: 25px;
 
       }
 
@@ -48,7 +62,7 @@
           clear: both;
           /*display: block;*/
           display: flex;
-          margin-top:-40pt;
+          margin-top:-20pt;
       }
     </style>
   </metal:css>
@@ -62,92 +76,92 @@
 
   <tal:block tal:define="allvalues view/widgets/values">
 
-    <!-- <h1>
+    <h2>
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
-    </h1> -->
+    </h2>
+    <p tal:define="cdate context/creation_date">
+      <b i18n:translate="">Creation Date:</b>
+      <span tal:content="python:str(cdate.day()) + '/' + str(cdate.month()) + '/' + str(cdate.year())"/>
+    </p>
     <p>
-     <b tal:replace="structure view/w/IPersonalData.evaluation_date/label"/>:
-     <span tal:replace="structure view/w/IPersonalData.evaluation_date/render"/>
+      <b tal:replace="structure view/w/evaluation_date/label"/>:
+      <span tal:replace="structure view/w/evaluation_date/render"/>
+    </p>
+    <p style="color:red">
+      <span i18n:translate="">Left Time (in days):</span>
+      <span tal:content="view/timeleft | nothing"></span>
     </p>
 
     <p>
      <b tal:replace="structure view/w/IPersonalData.current_position/label"/>:
      <span tal:replace="structure view/w/IPersonalData.current_position/render"/>
     </p>
+    <p>
+      <b tal:replace="structure view/w/requestedposition/label"/>:
+      <span tal:replace="structure view/w/requestedposition/render"/>
+    </p>
+
+    <p>
+
+    </p>
 
     <!-- <span tal:replace="structure view/w/cv/render"/> -->
-
-    <br/>
-    <div class="myphotoAlbumEntry">
-      <p tal:content="view/w/cv/label"/>
-      <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/cv">
-        <span class="myphotoAlbumEntryWrapper">
-          <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbcv;"/>
-        </span>
-      </a>
-
-      <span class="myphotoAlbumEntryTitle">
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@download/cv" i18n:translate="">
-          Download
-        </a>
-      </span>
-    </div>
-
-    <tal:block tal:condition="view/w/report | nothing">
-      <div class="myphotoAlbumEntry">
-        <p tal:content="view/w/report/label"/>
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/report">
-          <span class="myphotoAlbumEntryWrapper">
-            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbreport;"/>
-          </span>
-        </a>
-
-        <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/report" i18n:translate="">
-            Download
-          </a>
-        </span>
-      </div>
-    </tal:block>
-
-    <tal:block tal:condition="view/w/letter | nothing">
-      <div class="myphotoAlbumEntry">
-        <p tal:content="view/w/letter/label"/>
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/letter">
-          <span class="myphotoAlbumEntryWrapper">
-            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbletter;"/>
-          </span>
-        </a>
-        <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/letter" i18n:translate="">
-            Download
-          </a>
-        </span>
-      </div>
-    </tal:block>
-
-    <tal:block tal:condition="view/w/plan | nothing">
-      <div class="myphotoAlbumEntry">
-        <p tal:content="view/w/plan/label"/>
-        <a href="" tal:attributes="href string:${context/absolute_url}/@@display-file/plan">
-          <span class="myphotoAlbumEntryWrapper">
-            <img height="75%" width="128" src="" tal:attributes="src string:${context/absolute_url}/@@images/thumbplan;"/>
-          </span>
-        </a>
-        <span class="myphotoAlbumEntryTitle">
-          <a href="" tal:attributes="href string:${context/absolute_url}/@@download/plan" i18n:translate="">
-            Download
-          </a>
-        </span>
-      </div>
-    </tal:block>
 
   </tal:block>
 
   <br/><br/>
 
   <div class="visualClear"><!-- --></div>
+
+  <fieldset tal:define="order_items view/order_items; items order_items/base; extras order_items/extra">
+    <legend i18n:translate="" i18n:domain="collective.judgment">Pdf Files</legend>
+
+    <tal:block tal:repeat="key python:items.keys()">
+      <tal:block tal:condition="python:items[key]">
+        <div class="myphotoAlbumEntry" tal:define="item python:items[key]">
+          <p i18n:translate="" tal:content="python:item.portal_type"/>
+          <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
+            <span class="myphotoAlbumEntryWrapper">
+              <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
+            </span>
+          </a>
+          <span class="myphotoAlbumEntryTitle">
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
+              Download
+            </a>
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
+              Edit
+            </a>
+          </span>
+
+        </div>
+      </tal:block>
+
+      <tal:block tal:condition="python:not items[key]">
+        <div class="myphotoAlbumEntry">
+          <p i18n:translate="" tal:content="python:view.iddictToType(key)"/>
+            <span class="emptymyphotoAlbumEntryWrapper">
+              <img src="" tal:attributes="src string:++plone++collective.judgment/no-fees-icon-B.png"/>
+            </span>
+
+          <span class="myphotoAlbumEntryTitle" tal:define="editurl python:view.editurl(key)">
+            <a href="" tal:attributes="href string:${context/absolute_url}/${editurl}" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
+              Add
+            </a>
+          </span>
+        </div>
+
+      </tal:block>
+    </tal:block>
+
+    <tal:block tal:repeat="extra extras">
+      <span tal:content="extra/title"/>
+    </tal:block>
+  </fieldset>
+
   <hr/>
   <p style="color:red" i18n:translate="">All evaluators can view the comments</p>
 
