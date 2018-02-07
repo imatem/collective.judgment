@@ -121,10 +121,7 @@ class FolderCdimView(BrowserView):
         return False
 
     def evaluation_date(self, brain):
-        date = brain.getObject().evaluation_date
-        if date:
-            return date.isoformat()
-        return ''
+        return brain.getObject().evaluation_date
 
     def position(self, brain):
         position = brain.getObject().current_position

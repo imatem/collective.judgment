@@ -149,7 +149,8 @@ li.disapprove:hover path{
     font-weight: bold;
 }
 
-.row-personaldata{
+.row-personaldata,
+.row-date{
     padding-left: 1em;
 }
 
@@ -160,17 +161,18 @@ li.disapprove:hover path{
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: 6fr 2fr 6fr;
-    grid-gap: 20px;
+    grid-template-columns: 4fr 2fr 6fr;
+    grid-gap: 10px;
 }
 
 .evaluation-card {
+    background-color: #f1f1f1;
+    font-size: 12px;
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #f1f1f1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 
@@ -187,6 +189,7 @@ li.disapprove:hover path{
 
 .evaluation-card1 {
     background-color: #f1f1f1;
+    font-size: 14px;
     margin: 0;
     padding: 0;
     list-style: none;
