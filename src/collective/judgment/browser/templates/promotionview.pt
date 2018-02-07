@@ -165,7 +165,7 @@
     <fieldset id="folder-listing">
         <legend i18n:translate="" i18n:domain="collective.judgment">Extra Contents</legend>
         <tal:block tal:repeat="item extras">
-        <!-- 
+        <!--
           item_wf_state item/review_state;
           item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
           item_type_class python:('contenttype-' + view.normalizeString(item_type));
@@ -186,13 +186,12 @@
                 i18n:translate="">View History
             </a>
         </tal:block>
-          
+
       </tal:block>
     </fieldset>
   </tal:block>
 
   <hr/>
-  <p style="color:red" i18n:translate="">All evaluators can view the comments</p>
 
   <!-- <tal:block repeat="widget view/widgets/values">
       <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
