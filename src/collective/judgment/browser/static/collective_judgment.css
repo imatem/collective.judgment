@@ -71,49 +71,12 @@
 
 /*For the folders view*/
 
-ul.blank-list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-}
-
-li.branch-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #eaeaea;
-    margin-bottom: .3rem;
-    border-radius: 2px;
-}
-
-div.row-personaldata{
-
-    padding-left: 1em;
-}
-
-div.row-evaluations ul{
-    list-style: none;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-div.row-evaluations li{
-    position: relative;
-    height: 4em;
-    float: left;
-    border-right: 1px solid #fff;
-    background-color: #f1f1f1;
-
-}
-
 /*div.row-evaluations li:hover{
     font-size: 130%;
 }*/
 
 li.approve{
     background-color: #deecdc !important;
-    height: 4em;
     position: relative;
     border-right: 1px solid #fff;
     color:#deecdc !important;
@@ -130,7 +93,6 @@ li.approve:hover path{
 
 li.disapprove{
     background-color: #fce8e2 !important;
-    height: 4em;
     border-right: 1px solid #fff;
     position: relative;
     color:#fce8e2 !important;
@@ -180,3 +142,54 @@ li.disapprove:hover path{
       }
 
 
+/* grid layout */
+
+.row-personaldata h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.row-personaldata{
+    padding-left: 1em;
+}
+
+.evaluation-row {
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 6fr 2fr 6fr;
+    grid-gap: 20px;
+}
+
+.evaluation-card {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f1f1f1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.evaluation-row1 {
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 4fr 3fr 1fr;
+    grid-gap: 20px;
+}
+
+.evaluation-card1 {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+}
