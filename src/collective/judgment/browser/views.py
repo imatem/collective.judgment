@@ -90,7 +90,7 @@ class FolderCdimView(BrowserView):
         brains = catalog(
             path=dict(query='/'.join(self.context.getPhysicalPath()), depth=1),
             review_state=option,
-            # sort_on='start'
+            sort_on='evaluation_date'
         )
 
         return brains
