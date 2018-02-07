@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-07 00:21+0000\n"
+"POT-Creation-Date: 2018-02-07 13:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Plan de Actividades"
 msgid "Activities Report"
 msgstr "Reporte de actividades"
 
-#: collective/judgment/browser/templates/promotionview.pt:150
+#: collective/judgment/browser/templates/promotionview.pt:152
 msgid "Add"
 msgstr "Agregar"
 
@@ -34,7 +34,7 @@ msgstr "Agregar"
 msgid "Adds first name and last name fields"
 msgstr "Agrega campos de nombre y apellidos"
 
-#: collective/judgment/browser/templates/promotionview.pt:166
+#: collective/judgment/browser/templates/promotionview.pt:195
 msgid "All evaluators can view the comments"
 msgstr "Sus comentarios son vistos por el resto de los evaluadores"
 
@@ -58,7 +58,7 @@ msgstr "Clasificación"
 msgid "Creation Date:"
 msgstr "Fecha de Creación:"
 
-#: collective/judgment/behaviors/personaldata.py:35
+#: collective/judgment/behaviors/personaldata.py:34
 msgid "Current Position"
 msgstr "Nombramiento"
 
@@ -74,11 +74,11 @@ msgstr "Descripción"
 msgid "Disapprove"
 msgstr "Rechazar"
 
-#: collective/judgment/browser/templates/promotionview.pt:130
+#: collective/judgment/browser/templates/promotionview.pt:132
 msgid "Download"
 msgstr "Descargar"
 
-#: collective/judgment/browser/templates/promotionview.pt:133
+#: collective/judgment/browser/templates/promotionview.pt:135
 #: collective/judgment/profiles/default/types/Activities_Plan.xml
 #: collective/judgment/profiles/default/types/Activities_Report.xml
 msgid "Edit"
@@ -88,16 +88,20 @@ msgstr "Editar"
 msgid "Evaluation"
 msgstr "Evaluación"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:62
+#: collective/judgment/browser/templates/folder_cdim_types.pt:59
 #: collective/judgment/content/promotion.py:31
 msgid "Evaluation Date"
 msgstr "Fecha de evaluación"
+
+#: collective/judgment/browser/templates/promotionview.pt:166
+msgid "Extra Contents"
+msgstr "Contenido adicional"
 
 #: collective/judgment/content/files.py:29
 msgid "File"
 msgstr "Archivo"
 
-#: collective/judgment/behaviors/personaldata.py:25
+#: collective/judgment/behaviors/personaldata.py:24
 msgid "First Name"
 msgstr "Nombre"
 
@@ -105,7 +109,7 @@ msgstr "Nombre"
 msgid "ImageThumb"
 msgstr "Imagen miniatura"
 
-#: collective/judgment/configure.zcml:25
+#: collective/judgment/configure.zcml:26
 msgid "Installs the collective.judgment add-on."
 msgstr "Instala el paquete collective.judgment"
 
@@ -113,7 +117,7 @@ msgstr "Instala el paquete collective.judgment"
 msgid "Invalid Type File: please correct it, only accept pdf file"
 msgstr "Tipo de archivo inválido: Sólo acepta archivos PDF"
 
-#: collective/judgment/behaviors/personaldata.py:30
+#: collective/judgment/behaviors/personaldata.py:29
 msgid "Last Name"
 msgstr "Apellido(s)"
 
@@ -131,7 +135,7 @@ msgstr "Subir un archivo el sitio"
 msgid "No"
 msgstr "No"
 
-#: collective/judgment/browser/templates/promotionview.pt:118
+#: collective/judgment/browser/templates/promotionview.pt:120
 msgid "Pdf Files"
 msgstr "Archivos Pdf"
 
@@ -177,7 +181,7 @@ msgstr "Casos estudiados"
 msgid "Tenure"
 msgstr "Definitividad"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:105
+#: collective/judgment/browser/templates/folder_cdim_types.pt:102
 msgid "There are currently no items in this folder."
 msgstr "No hay items contenidos en esta carpeta"
 
@@ -189,7 +193,7 @@ msgstr "Hay errores"
 msgid "Title"
 msgstr "Título"
 
-#: collective/judgment/configure.zcml:34
+#: collective/judgment/configure.zcml:35
 msgid "Uninstalls the collective.judgment add-on."
 msgstr "Desinstala el paquete collective.judgement"
 
@@ -198,6 +202,10 @@ msgstr "Desinstala el paquete collective.judgement"
 #: collective/judgment/profiles/default/types/Curriculum_Vitae.xml
 msgid "View"
 msgstr "Vista"
+
+#: collective/judgment/browser/templates/promotionview.pt:183
+msgid "View History"
+msgstr "Histórico"
 
 #: collective/judgment/browser/templates/evaluation_viewlet.pt:7
 msgid "What do you think of this case?"
@@ -211,11 +219,11 @@ msgstr "Sí"
 msgid "You already evaluated this case."
 msgstr "Usted ya evaluó este caso"
 
-#: collective/judgment/configure.zcml:25
+#: collective/judgment/configure.zcml:26
 msgid "collective.judgment"
 msgstr ""
 
-#: collective/judgment/configure.zcml:34
+#: collective/judgment/configure.zcml:35
 msgid "collective.judgment (uninstall)"
 msgstr ""
 
