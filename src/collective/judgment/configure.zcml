@@ -7,11 +7,12 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include file="permissions.zcml" />
+
   <include package=".browser" />
 
   <include package=".behaviors" />
 
-  <include file="permissions.zcml" />
 
   <include file="upgrades.zcml" />
 

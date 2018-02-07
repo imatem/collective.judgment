@@ -34,7 +34,7 @@
       class=".viewlets.Evaluation"
       layer="..interfaces.ICollectiveJudgmentLayer"
       template="templates/evaluation_viewlet.pt"
-      permission="zope2.View"
+      permission="collective.judgment.Evaluation"
       />
 
   <browser:page
