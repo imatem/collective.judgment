@@ -8,6 +8,9 @@ from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
 from zope.i18n import translate
 
+from zope.schema.interfaces import IVocabularyFactory
+from zope.component import getUtility
+
 import datetime
 
 class PromotionView(DefaultView):
@@ -124,7 +127,11 @@ class FolderCdimView(BrowserView):
         return ''
 
     def position(self, brain):
-        return brain.getObject().current_position
+        position = brain.getObject().current_position
+        vocabulary = getUtility(
+            IVocabularyFactory,
+            'collective.judgment.PositionsVocabulary')(self.context).by_value
+        return vocabulary[position].title
 
     def title_state(self, brain):
 
