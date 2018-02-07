@@ -2,6 +2,7 @@
 <layers>
   <layer
       name="collective.judgment"
-      remove="true"
+      interface="collective.judgment.interfaces.ICollectiveJudgmentLayer"
+      remove="True"
       />
 </layers>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object meta_type="Plone Types Tool" name="portal_types">
+ <property name="title">Controls the available content types in your portal</property>
+
+ <object meta_type="Dexterity FTI" name="promotion" remove="True" />
+ <object meta_type="Dexterity FTI" name="tenure" remove="True" />
+ <object meta_type="Dexterity FTI" name="Curriculum Vitae" remove="True" />
+ <object meta_type="Dexterity FTI" name="Activities Plan" remove="True" />
+ <object meta_type="Dexterity FTI" name="Activities Report" remove="True" />
+ <object meta_type="Dexterity FTI" name="Reasoned Letter" remove="True" />
+</object>
