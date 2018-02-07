@@ -26,7 +26,7 @@
     <element value="Activities Report"/>
     <element value="Reasoned Letter"/>
   </property>
-  
+
 
   <!-- Schema, class and security -->
   <property name="add_permission">collective.judgment.AddPromotion</property>
@@ -46,7 +46,7 @@
     <!-- <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/> -->
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
     <!--<element value="plone.app.dexterity.behaviors.metadata.IBasic"/>-->
-    <element value="plone.app.lockingbehavior.behaviors.ILocking" />
+    <!-- <element value="plone.app.lockingbehavior.behaviors.ILocking" /> -->
     <!--<element value="plone.app.relationfield.behavior.IRelatedItems"/>-->
     <!--<element value="plone.app.versioningbehavior.behaviors.IVersionable" />-->
     <!--<element value="plone.app.contenttypes.behaviors.tableofcontents.ITableOfContents"/>-->
@@ -95,7 +95,7 @@
   <action
       action_id="edit"
       category="object"
-      condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True"
+      condition_expr=""
       i18n:attributes="title"
       title="Edit"
       url_expr="string:${object_url}/edit"

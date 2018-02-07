@@ -17,7 +17,7 @@
               method="POST"
               tal:attributes="action string:${context/absolute_url}"
               >
-            <span i18n:translate="">Select type: </span>
+            <span i18n:translate="">Select type</span>:
             <select name="options">
               <option name="pending" value="pending" selected>
                 <span i18n:translate=""> Pending review </span>
@@ -50,14 +50,13 @@
                   <div class="row-personaldata">
                    <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
                    <span class="position" tal:content="python:view.position(item)"/>
-                    <p tal:content="item/PortalType | nothing"/>
                   </div>
                 </li>
 
                 <li>
                   <div class="row-date">
-                    <b i18n:translate="">Evaluation Date</b><br/>
-                    <span tal:content="python:view.evaluation_date(item)"/>
+                    <span i18n:translate="">Evaluation Date</span><br/>
+                    <span class="pat-moment" data-pat-moment="format:LL;" tal:content="python:view.evaluation_date(item)"/>
                   </div>
                 </li>
                 <li>
