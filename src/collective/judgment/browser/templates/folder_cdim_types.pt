@@ -45,7 +45,7 @@
 
               <h1 i18n:translate="" tal:content="python:view.title_state(items[0])"/>
 
-              <ul class="evaluation-row" tal:repeat="item items">
+              <ul tal:attributes="class python:view.isManager() and 'evaluation-row' or 'evaluation-row1'" tal:repeat="item items">
                 <li>
                   <div class="row-personaldata">
                    <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
@@ -61,7 +61,7 @@
                   </div>
                 </li>
                 <li>
-                  <ul class="evaluation-card">
+                  <ul tal:attributes="class python:view.isManager() and 'evaluation-card' or 'evaluation-card1'">
                       <tal:block tal:repeat="evaluator python:view.evaluations(item)">
                         <tal:block tal:define="nameclass python:evaluator[1];
                                               nameclasshover python:evaluator[2]+'hover';">

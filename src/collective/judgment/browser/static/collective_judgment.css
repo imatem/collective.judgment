@@ -168,6 +168,28 @@ li.disapprove:hover path{
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: #f1f1f1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.evaluation-row1 {
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 4fr 3fr 1fr;
+    grid-gap: 20px;
+}
+
+.evaluation-card1 {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
 }
