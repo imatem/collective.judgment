@@ -18,6 +18,14 @@
       directory="static"
       />
 
+
+  <browser:page
+    for="*"
+    name="macro_comments"
+    template="templates/macro_comments.pt"
+    permission="zope2.View"
+    />
+
   <browser:page
       name="promotionview"
       for="collective.judgment.content.promotion.IPromotion"
