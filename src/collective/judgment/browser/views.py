@@ -17,7 +17,7 @@ class PromotionView(DefaultView):
     """ The default view for talks
     """
 
-    def foo(self):
+    def foo(self, element):
         import pdb; pdb.set_trace()
         return ''
 
