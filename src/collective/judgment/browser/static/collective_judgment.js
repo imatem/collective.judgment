@@ -26,9 +26,9 @@
         context.find("#evaluation_approve").click(evaluate("approve"));
         context.find("#evaluation_disapprove").click(evaluate("disapprove"));
 
-        delete_evaluations.click(function () {
-            delete_evaluations2.toggle();
-        });
+        // delete_evaluations.click(function () {
+        //     delete_evaluations2.toggle();
+        // });
         // delete_evaluations2.click(function () {
         //     $.post(context.find("#context_url").attr("href") + "/clearevaluations", function () {
         //         location.reload();
