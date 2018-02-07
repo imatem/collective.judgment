@@ -67,7 +67,15 @@ class IPromotion(model.Schema):
             'TATC': 10,
         }
         rposition = pvalue.get(data.requestedposition, 0)
-        aposition = pvalue.get(data.__context__.REQUEST.form['form.widgets.IPersonalData.current_position'][0], 0)
+
+        try:
+            apositionvalue = data.__context__.REQUEST.form.get('form.widgets.IPersonalData.current_position', '')
+        except Exception:
+            apositionvalue = ''
+
+        aposition = 0
+        if apositionvalue:
+            aposition = pvalue.get(data.__context__.REQUEST.form['form.widgets.IPersonalData.current_position'][0], 0)
         if aposition >= rposition:
             raise Invalid(
                 _('label_error_orderpositions',
