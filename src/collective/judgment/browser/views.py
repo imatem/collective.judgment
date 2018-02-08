@@ -33,6 +33,7 @@ class PromotionView(DefaultView):
         items['report'] = None
         items['plan'] = None
         items['letter'] = None
+        items['pdf'] = None
         others = []
 
         for item in self.context.items():
@@ -45,6 +46,8 @@ class PromotionView(DefaultView):
                 items['report'] = item[1]
             elif itemportal == 'Reasoned Letter':
                 items['letter'] = item[1]
+            elif itemportal == 'Pdf File':
+                items['pdf'] = item[1]
             else:
                 others.append(item[1])
 
@@ -55,14 +58,15 @@ class PromotionView(DefaultView):
             'cv': 'Curriculum Vitae',
             'plan': 'Activities Plan',
             'report': 'Activities Report',
-            'letter': 'Reasoned Letter'
+            'letter': 'Reasoned Letter',
+            'pdf': 'Pdf File'
         }
         return iddict.get(key, '')
 
     def editurl(self, key):
         nametype = self.iddictToType(key)
         if nametype:
-            return '++add++' + nametype
+            return '++add++' + nametype + '?title=foopdf'
 
         return ''
 

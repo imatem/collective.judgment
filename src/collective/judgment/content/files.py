@@ -8,15 +8,25 @@ from plone.namedfile import field as namedfile
 
 from collective.judgment.validators import isValidFileType
 from plone.autoform import directives
+from zope.interface import provider
+from zope.schema.interfaces import IContextAwareDefaultFactory
+
+
+
+@provider(IContextAwareDefaultFactory)
+def request_title(context):
+    return context.REQUEST.form.get('title', '')
 
 
 class IPdfFile(model.Schema):
     """ Marker interfce and Dexterity Python Schema for Promotion
     """
+    # directives.omitted('title')
     title = schema.TextLine(
         title=_(u'Title'),
         # description=u"",
-        required=False
+        required=False,
+        defaultFactory=request_title,
     )
 
     description = schema.Text(
