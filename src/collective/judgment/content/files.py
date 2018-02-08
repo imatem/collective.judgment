@@ -40,6 +40,10 @@ class IPdfFile(model.Schema):
     )
 
 
+class PdfFile(File):
+    """Convenience subclass for ``File`` only accept pdf
+    """
+
 class CurriculumVitae(File):
     """Convenience subclass for ``Curriculum Vitae`` portal type
     """
