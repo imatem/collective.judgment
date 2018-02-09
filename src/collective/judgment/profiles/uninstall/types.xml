@@ -4,8 +4,5 @@
 
  <object meta_type="Dexterity FTI" name="promotion" remove="True" />
  <object meta_type="Dexterity FTI" name="tenure" remove="True" />
- <object meta_type="Dexterity FTI" name="Curriculum Vitae" remove="True" />
- <object meta_type="Dexterity FTI" name="Activities Plan" remove="True" />
- <object meta_type="Dexterity FTI" name="Activities Report" remove="True" />
- <object meta_type="Dexterity FTI" name="Reasoned Letter" remove="True" />
+ <object meta_type="Dexterity FTI" name="Pdf File" remove="True" />
 </object>

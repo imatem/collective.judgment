@@ -12,7 +12,6 @@ from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
 
-
 @provider(IContextAwareDefaultFactory)
 def request_title(context):
     return context.REQUEST.form.get('title', '')
@@ -52,23 +51,4 @@ class IPdfFile(model.Schema):
 
 class PdfFile(File):
     """Convenience subclass for ``File`` only accept pdf
-    """
-
-class CurriculumVitae(File):
-    """Convenience subclass for ``Curriculum Vitae`` portal type
-    """
-
-
-class ActivitiesPlan(File):
-    """Convenience subclass for ``Activities Plan`` portal type
-    """
-
-
-class ActivitiesReport(File):
-    """Convenience subclass for ``Activities Report`` portal type
-    """
-
-
-class ReasonedLetter(File):
-    """Convenience subclass for ``Reasoned Letter`` portal type
     """

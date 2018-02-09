@@ -29,46 +29,21 @@ class PromotionView(DefaultView):
 
     def order_items(self):
         items = OrderedDict()
-        items['cv'] = None
-        items['report'] = None
-        items['plan'] = None
-        items['letter'] = None
         items['pdf'] = None
         others = []
 
         for item in self.context.items():
             itemportal = item[1].portal_type
-            if itemportal == 'Curriculum Vitae':
-                items['cv'] = item[1]
-            elif itemportal == 'Activities Plan':
-                items['plan'] = item[1]
-            elif itemportal == 'Activities Report':
-                items['report'] = item[1]
-            elif itemportal == 'Reasoned Letter':
-                items['letter'] = item[1]
-            elif itemportal == 'Pdf File':
+            if itemportal == 'Pdf File':
                 items['pdf'] = item[1]
             else:
                 others.append(item[1])
 
         return {'base': items, 'extra': others}
 
-    def iddictToType(self, key):
-        iddict = {
-            'cv': 'Curriculum Vitae',
-            'plan': 'Activities Plan',
-            'report': 'Activities Report',
-            'letter': 'Reasoned Letter',
-            'pdf': 'Pdf File'
-        }
-        return iddict.get(key, '')
-
     def editurl(self, key):
-        nametype = self.iddictToType(key)
-        if nametype:
-            return '++add++' + nametype + '?title=foopdf'
+        return '++add++Pdf File?title=foopdf'
 
-        return ''
 
 class FolderCdimView(BrowserView):
 

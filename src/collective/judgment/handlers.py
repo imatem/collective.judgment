@@ -31,14 +31,10 @@ def handlerCreatedPromotion(self, event):
 # @adapter(IPromotion, IObjectAddedEvent)
 # def handlerAddedPromotion(self, event):
 
-@adapter(IPromotion, IObjectModifiedEvent)
-def handlerModifiedPromotion(self, event):
+# @adapter(IPromotion, IObjectModifiedEvent)
+# def handlerModifiedPromotion(self, event):
 
-    if type(event) == ContainerModifiedEvent:
-        cv = [item[1] for item in self.items() if item[1].portal_type == 'Curriculum Vitae']
-        if len(cv) > 1:
-            IStatusMessage(self.REQUEST).addStatusMessage(_(u'There were errors.'), 'error')
-
+#     if type(event) == ContainerModifiedEvent:
 
 
 @adapter(IPdfFile, IObjectAddedEvent)
