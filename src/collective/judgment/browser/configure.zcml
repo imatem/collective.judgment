@@ -17,8 +17,30 @@
       type="plone"
       directory="static"
       />
+  <!-- custom add and edit forms -->
+  <adapter
+    for="Products.CMFCore.interfaces.IFolderish
+        zope.publisher.interfaces.browser.IDefaultBrowserLayer
+        plone.dexterity.interfaces.IDexterityFTI"
+    provides="zope.publisher.interfaces.browser.IBrowserPage"
+    factory=".addpdffiles.PdfFileAddView"
+    name="Pdf File"
+    />
+  <class class=".addpdffiles.PdfFileAddView">
+    <require
+      permission="collective.judgment.AddPromotion"
+      interface="zope.publisher.interfaces.browser.IBrowserPage"
+    />
+  </class>
 
+  <browser:page
+    for="collective.judgment.content.files.IPdfFile"
+    name="edit"
+    class=".editpdffiles.EditForm"
+    permission="collective.judgment.AddPromotion"
+    />
 
+  <!-- macros and views -->
   <browser:page
     for="*"
     name="macro_comments"
