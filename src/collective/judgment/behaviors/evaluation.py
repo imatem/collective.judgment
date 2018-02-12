@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from DateTime import DateTime
 from persistent.dict import PersistentDict
+from persistent.list import PersistentList
 from zope.annotation.interfaces import IAnnotations
 
 
@@ -16,18 +18,21 @@ class Evaluation(object):
 
     @property
     def evaluations(self):
-        return self.annotations['evaluations']
+        return self.annotations
 
     def evaluate(self, evaluation, userid):
-        if self.already_evaluated(userid):
-            raise KeyError("You may not evaluate twice")
-        evaluations = self.annotations['evaluations']
-        evaluations[userid] = evaluation
+        if not self.already_evaluated(userid):
+            self.evaluations[userid] = PersistentList()
+
+        evaluations = self.annotations[userid]
+        evaluations.insert(0, PersistentDict(
+            {'evaluation': evaluation, 'date': DateTime()})
+        )
 
     def already_evaluated(self, userid):
-        return userid in self.annotations['evaluations'].keys()
+        return userid in self.annotations
 
     def clear(self):
         annotations = IAnnotations(self.context)
-        annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
+        annotations[KEY] = PersistentDict()
         self.annotations = annotations[KEY]
