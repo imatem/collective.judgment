@@ -25,8 +25,8 @@ class IEvaluable(Interface):
 class IEvaluation(model.Schema):
     directives.omitted('evaluations')
     # show debug tab
-    if api.env.debug_mode():
-        directives.no_omit(IEditForm, 'evaluations')
+    # if api.env.debug_mode():
+    #     directives.no_omit(IEditForm, 'evaluations')
 
     fieldset(
         'debug',
