@@ -25,7 +25,7 @@ import tempfile
 def handlerCreatedPromotion(self, event):
     annotations = IAnnotations(self)
     if KEY not in annotations:
-        annotations[KEY] = PersistentDict({'evaluations': PersistentDict()})
+        annotations[KEY] = PersistentDict()
 
 
 # @adapter(IPromotion, IObjectAddedEvent)

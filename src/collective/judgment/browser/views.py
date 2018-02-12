@@ -18,7 +18,6 @@ class PromotionView(DefaultView):
     """
 
     def foo(self, element):
-        import pdb; pdb.set_trace()
         return ''
 
     def timeleft(self):
@@ -71,24 +70,25 @@ class FolderCdimView(BrowserView):
             review_state=option,
             sort_on='evaluation_date'
         )
-
         return brains
-
 
     def evaluations(self, brain):
 
-        values = IEvaluation(brain.getObject()).evaluations
-
+        evaluations = IEvaluation(brain.getObject()).evaluations
         evaluators = []
-
         isManager = self.isManager()
         userid = api.user.get_current().id
 
-        for gmember in api.user.get_users(groupname='evaluators'):
+        for member in api.user.get_users(groupname='evaluators'):
+
             if isManager:
-                evaluators.append((gmember.getProperty('fullname'), values.get(gmember.id, None), gmember.id))
-            elif userid == gmember.id:
-                evaluators.append((gmember.getProperty('fullname'), values.get(gmember.id, None), gmember.id))
+                member_evaluations = evaluations.get(member.id, None)
+                value = member_evaluations and member_evaluations[0]['evaluation']
+                evaluators.append((member.getProperty('fullname'), value, member.id))
+            elif userid == member.id:
+                member_evaluations = evaluations.get(member.id, None)
+                value = member_evaluations and member_evaluations[0]['evaluation']
+                evaluators.append((member.getProperty('fullname'), value, member.id))
                 break
         return evaluators
 

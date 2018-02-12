@@ -9,9 +9,9 @@
 
         if (context.find("#evaluated").length !== 0) {
             alreadyevaluated.show();
-        } else {
-            notyetevaluated.show();
         }
+        notyetevaluated.show();
+
 
         function evaluate(rating) {
             return function inner_evaluate() {
