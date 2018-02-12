@@ -22,10 +22,6 @@
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
     <element value="Pdf File"/>
-    <element value="Curriculum Vitae"/>
-    <element value="Activities Plan"/>
-    <element value="Activities Report"/>
-    <element value="Reasoned Letter"/>
   </property>
 
 
