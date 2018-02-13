@@ -3,7 +3,10 @@ from collective.judgment.behaviors.evaluation import KEY
 from collective.judgment.content.files import IPdfFile
 from collective.judgment.interfaces import IEvaluable
 from persistent.dict import PersistentDict
+from plone import api
 from plone import namedfile
+from plone.app.dexterity.behaviors import constrains
+from Products.CMFPlone.interfaces import ISelectableConstrainTypes
 from zope.annotation.interfaces import IAnnotations
 from zope.component import adapter
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
@@ -20,6 +23,17 @@ def handlerCreatedPromotion(self, event):
     annotations = IAnnotations(self)
     if KEY not in annotations:
         annotations[KEY] = PersistentDict()
+
+
+@adapter(IEvaluable, IObjectAddedEvent)
+def handleAddedEvaluable(obj, event):
+    with api.env.adopt_roles(roles='Manager'):
+        constraints = ISelectableConstrainTypes(obj)
+        constraints.setConstrainTypesMode(constrains.DISABLED)
+        api.content.create(type='Document', title='Carta', container=obj)
+        constraints.setLocallyAllowedTypes(['Pdf File'])
+        constraints.setImmediatelyAddableTypes(['Pdf File'])
+        constraints.setConstrainTypesMode(constrains.ENABLED)
 
 
 @adapter(IPdfFile, IObjectAddedEvent)
