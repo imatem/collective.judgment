@@ -21,16 +21,16 @@ class TenureIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='tenure')
+        fti = queryUtility(IDexterityFTI, name='Tenure')
         schema = fti.lookupSchema()
         self.assertEqual(ITenure, schema)
 
     def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name='tenure')
+        fti = queryUtility(IDexterityFTI, name='Tenure')
         self.assertTrue(fti)
 
     def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name='tenure')
+        fti = queryUtility(IDexterityFTI, name='Tenure')
         factory = fti.factory
         obj = createObject(factory)
         self.assertTrue(ITenure.providedBy(obj))
@@ -39,7 +39,7 @@ class TenureIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
             container=self.portal,
-            type='tenure',
+            type='Tenure',
             id='tenure',
         )
         self.assertTrue(ITenure.providedBy(obj))

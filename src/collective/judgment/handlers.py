@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-from collective.judgment import _
 from collective.judgment.behaviors.evaluation import KEY
-from collective.judgment.content.promotion import IPromotion
 from collective.judgment.content.files import IPdfFile
+from collective.judgment.interfaces import IEvaluable
 from persistent.dict import PersistentDict
 from plone import namedfile
 from zope.annotation.interfaces import IAnnotations
@@ -11,30 +10,16 @@ from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectCreatedEvent
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
-from zope.lifecycleevent import ObjectModifiedEvent
-from zope.container.contained import ContainerModifiedEvent
-from zope.interface import Invalid
-from Products.statusmessages.interfaces import IStatusMessage
-
 import os
 import shutil
 import tempfile
 
 
-@adapter(IPromotion, IObjectCreatedEvent)
+@adapter(IEvaluable, IObjectCreatedEvent)
 def handlerCreatedPromotion(self, event):
     annotations = IAnnotations(self)
     if KEY not in annotations:
         annotations[KEY] = PersistentDict()
-
-
-# @adapter(IPromotion, IObjectAddedEvent)
-# def handlerAddedPromotion(self, event):
-
-# @adapter(IPromotion, IObjectModifiedEvent)
-# def handlerModifiedPromotion(self, event):
-
-#     if type(event) == ContainerModifiedEvent:
 
 
 @adapter(IPdfFile, IObjectAddedEvent)

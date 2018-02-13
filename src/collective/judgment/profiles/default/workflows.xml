@@ -5,7 +5,7 @@
   <type type_id="promotion">
    <bound-workflow workflow_id="cdim_workflow"/>
   </type>
-  <type type_id="tenure">
+  <type type_id="Tenure">
    <bound-workflow workflow_id="cdim_workflow"/>
   </type>
  </bindings>
