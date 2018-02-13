@@ -7,13 +7,18 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
-        id="collective.judgment.AddTenure"
-        title="collective.judgment: Add Tenure"
+        id="collective.judgment.AddAnnualEvaluation"
+        title="collective.judgment: Add Annual Evaluation"
     />
 
     <permission
         id="collective.judgment.AddPromotion"
         title="collective.judgment: Add Promotion"
+    />
+
+    <permission
+        id="collective.judgment.AddTenure"
+        title="collective.judgment: Add Tenure"
     />
 
     <permission
