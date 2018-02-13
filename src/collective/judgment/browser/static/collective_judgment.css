@@ -75,6 +75,16 @@
     font-size: 130%;
 }*/
 
+th.approve{
+    background-color: #39aa56 !important;
+    color:#ffffff !important;
+}
+
+th.disapprove{
+    background-color: #db4545 !important;
+    color:#ffffff !important;
+}
+
 li.approve{
     background-color: #deecdc !important;
     position: relative;
