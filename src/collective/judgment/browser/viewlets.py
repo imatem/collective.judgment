@@ -30,3 +30,17 @@ class Evaluation(base.ViewletBase):
         if self.userid not in self.evaluation.evaluations:
             return None
         return self.evaluation.evaluations[self.userid][0]['evaluation']
+
+    def allevaluations(self):
+
+        allevaluations = self.evaluation.evaluations
+        evaluators = []
+
+        for member in api.user.get_users(groupname='evaluators'):
+
+            if member.id != self.userid:
+                value = None
+                if member.id in allevaluations.keys():
+                    value = allevaluations[member.id][0]['evaluation']
+                evaluators.append((member.getProperty('fullname'), value,))
+        return evaluators

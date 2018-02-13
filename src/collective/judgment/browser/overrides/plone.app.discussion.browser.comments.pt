@@ -1,5 +1,5 @@
 <tal:block tal:define="contexttype context/portal_type;
-                      restrictedTypes python:['promotion', ];
+                      restrictedTypes python:['promotion', 'Annual Evaluation', 'Tenure', 'Pdf File'];
                       checkPermission nocall: context/portal_membership/checkPermission;">
   <tal:block tal:condition="python:contexttype in restrictedTypes and checkPermission('collective.judgment: Evaluation', context)">
 
