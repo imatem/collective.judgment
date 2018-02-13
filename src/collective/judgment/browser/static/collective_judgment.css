@@ -75,6 +75,11 @@
     font-size: 130%;
 }*/
 
+.emptyTitle h2{
+
+    display: none;
+}
+
 th.approve{
     background-color: #39aa56 !important;
     color:#ffffff !important;

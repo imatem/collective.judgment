@@ -172,7 +172,7 @@
     </fieldset>
 
   </td>
-  <td tal:define="item python:context['carta']">
+  <td class="emptyTitle" tal:define="item python:context['carta']">
 
     <tal:block tal:define="item_url item/absolute_url;
                   item_title item/Title;
@@ -190,6 +190,7 @@
                 i18n:translate="">View History
             </a>
         </tal:block>
+      <br/><br/>
     <div  tal:replace="structure item/@@full_view_item | nothing" />
   </td>
 </tr>
