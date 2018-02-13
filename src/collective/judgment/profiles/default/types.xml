@@ -3,6 +3,6 @@
   <property name="title">Controls the available contenttypes in your portal</property>
 
   <object meta_type="Dexterity FTI" name="promotion"/>
-  <object meta_type="Dexterity FTI" name="tenure"/>
+  <object meta_type="Dexterity FTI" name="Tenure"/>
   <object meta_type="Dexterity FTI" name="Pdf File"/>
 </object>

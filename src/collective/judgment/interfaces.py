@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
-from plone import api
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from plone.supermodel.directives import fieldset
-from z3c.form.interfaces import IEditForm
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import Interface
@@ -25,6 +23,7 @@ class IEvaluable(Interface):
 class IEvaluation(model.Schema):
     directives.omitted('evaluations')
     # show debug tab
+    # from plone import api
     # if api.env.debug_mode():
     #     directives.no_omit(IEditForm, 'evaluations')
 
