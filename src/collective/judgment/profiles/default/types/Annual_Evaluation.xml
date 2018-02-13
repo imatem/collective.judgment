@@ -26,10 +26,10 @@
 
   <!-- Schema, class and security -->
   <property name="add_permission">collective.judgment.AddAnnualEvaluation</property>
-  <property name="klass">collective.judgment.content.tenure.Tenure</property>
+  <property name="klass">collective.judgment.content.annualevaluation.AnnualEvaluation</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">collective.judgment.content.tenure.ITenure</property>
+  <property name="schema">collective.judgment.content.annualevaluation.IAnnualEvaluation</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
