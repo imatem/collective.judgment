@@ -68,14 +68,21 @@
   </metal:css>
 
 
+<metal:main fill-slot="content-title">
+  <a class="submit-widget button-field context" href="" tal:attributes="href context/aq_parent/absolute_url">
+    <span i18n:translate="">All cases in </span> <span tal:content="context/aq_parent/Title"/>
+  </a>
 
+  <h1 class="documentFirstHeading"
+                    tal:define="title context/Title"
+                    tal:condition="title"
+                    tal:content="title">Title or id</h1>
+</metal:main>
 
 <!-- plone/app/dexterity/browser/container.pt -->
 <metal:main fill-slot="content-core">
 <metal:content-core define-macro="content-core">
-
   <tal:block tal:define="allvalues view/widgets/values">
-
     <h2>
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
@@ -176,12 +183,12 @@
                   item_link python:item_url+'/view';
                   item_link_history python:item_url+'/historyview';">
             <a tal:attributes="href item_link;
-                            class string:url;
+                            class string:submit-widget button-field context;
                             title item_type"
                 tal:content="item_title">Item Title
             </a>
             <a tal:attributes="href item_link_history;
-                            class string:url;
+                            class string:submit-widget button-field context;
                             title item_type"
                 i18n:translate="">View History
             </a>
