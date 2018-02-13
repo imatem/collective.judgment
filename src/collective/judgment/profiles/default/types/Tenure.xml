@@ -51,7 +51,7 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++Tenure</property>
-  <property name="default_view">view</property>
+  <property name="default_view">tenureview</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
   <property name="view_methods">
