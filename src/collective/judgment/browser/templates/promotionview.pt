@@ -97,9 +97,9 @@
      <b tal:replace="structure view/w/IPersonalData.current_position/label"/>:
      <span tal:replace="structure view/w/IPersonalData.current_position/render"/>
     </p>
-    <p>
-      <b tal:replace="structure view/w/requestedposition/label"/>:
-      <span tal:replace="structure view/w/requestedposition/render"/>
+    <p tal:condition="view/w/requestedposition/label | nothing">
+      <b tal:replace="structure view/w/requestedposition/label | nothing"/>:
+      <span tal:replace="structure view/w/requestedposition/render | nothing"/>
     </p>
 
     <p>

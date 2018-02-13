@@ -41,7 +41,7 @@ class PromotionView(DefaultView):
         return {'base': items, 'extra': others}
 
     def editurl(self, key):
-        return '++add++Pdf File?title=foopdf'
+        return '++add++Pdf File?title=Documentation'
 
 
 class FolderCdimView(BrowserView):
