@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from collective.judgment import _
-from plone.app.contenttypes.content import File
-# from plone.dexterity.content import Container
-from zope import schema
-from plone.supermodel import model
-from plone.namedfile import field as namedfile
-
 from collective.judgment.validators import isValidFileType
+from plone.app.contenttypes.content import File
 from plone.autoform import directives
+from plone.namedfile import field as namedfile
+from plone.supermodel import model
+from zope import schema
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 

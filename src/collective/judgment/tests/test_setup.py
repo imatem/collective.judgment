@@ -50,6 +50,4 @@ class TestUninstall(unittest.TestCase):
         from collective.judgment.interfaces import \
             ICollectiveJudgmentLayer
         from plone.browserlayer import utils
-        self.assertNotIn(
-           ICollectiveJudgmentLayer,
-           utils.registered_layers())
+        self.assertNotIn(ICollectiveJudgmentLayer, utils.registered_layers())

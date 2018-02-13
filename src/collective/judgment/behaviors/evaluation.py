@@ -5,7 +5,7 @@ from persistent.list import PersistentList
 from zope.annotation.interfaces import IAnnotations
 
 
-KEY = "collective.judgment.behaviors.evaluation.Evaluation"
+KEY = 'collective.judgment.behaviors.evaluation.Evaluation'
 
 
 class Evaluation(object):

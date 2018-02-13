@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.judgment import _
-from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
@@ -16,7 +15,7 @@ class IPersonalData(model.Schema):
         required=True
     )
     title = schema.TextLine(
-        title=u"Title",
+        title=u'Title',
         required=True
     )
 

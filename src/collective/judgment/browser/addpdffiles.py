@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# from collective.judgment import _
 from Acquisition import aq_inner
 from plone.dexterity.browser.add import DefaultAddForm
 from plone.dexterity.browser.add import DefaultAddView
@@ -15,17 +14,17 @@ class PdfFileAddForm(DefaultAddForm):
 
         fti = getUtility(IDexterityFTI, name=self.portal_type)
         container = aq_inner(self.context)
-        new_object = addContentToContainer(container, object)
+        addContentToContainer(container, object)
 
         parentfti = getUtility(IDexterityFTI, name=container.portal_type)
 
         if parentfti.immediate_view:
-            self.immediate_view = "/".join(
+            self.immediate_view = '/'.join(
                 [container.absolute_url(), fti.immediate_view]
             )
         else:
-            self.immediate_view = "/".join(
-                [container.absolute_url(), ]
+            self.immediate_view = '/'.join(
+                [container.absolute_url()]
             )
 
 

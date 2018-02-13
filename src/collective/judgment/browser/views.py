@@ -6,12 +6,12 @@ from plone.dexterity.browser.view import DefaultView
 from Products.Five import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
-from zope.i18n import translate
-
-from zope.schema.interfaces import IVocabularyFactory
 from zope.component import getUtility
+from zope.i18n import translate
+from zope.schema.interfaces import IVocabularyFactory
 
 import datetime
+
 
 class PromotionView(DefaultView):
     """ The default view for talks
@@ -116,7 +116,7 @@ class FolderCdimView(BrowserView):
         current_state = api.content.get_state(obj)
         itemstatus = translate(
             wft.getTitleForStateOnType(current_state, obj.portal_type),
-            domain="collective.judgment",
+            domain='collective.judgment',
             target_language=self.context.REQUEST.LANGUAGE
         )
 
@@ -174,6 +174,6 @@ class FolderCdimView(BrowserView):
                 raise SMTPRecipientsRefused('Recipient address rejected by server')
 
         IStatusMessage(self.request).addStatusMessage(
-            'The system sended email to: ' + ', '.join(message), "info"
+            'The system sended email to: ' + ', '.join(message), 'info'
         )
         return True

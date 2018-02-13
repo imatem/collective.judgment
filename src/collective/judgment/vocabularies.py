@@ -14,6 +14,8 @@ def YesorNoVocabulary(context):
 
     items = [SimpleTerm(i[1], i[1], i[0]) for i in items]
     return SimpleVocabulary(items)
+
+
 directlyProvides(YesorNoVocabulary, IVocabularyFactory)
 
 
@@ -25,6 +27,8 @@ def ClassificationsVocabulary(context):
 
     items = [SimpleTerm(i[1], i[1], i[0]) for i in items]
     return SimpleVocabulary(items)
+
+
 directlyProvides(ClassificationsVocabulary, IVocabularyFactory)
 
 
@@ -44,4 +48,6 @@ def PositionsVocabulary(context):
     ]
     items = [SimpleTerm(i[0], i[0], i[1]) for i in items]
     return SimpleVocabulary(items)
+
+
 directlyProvides(PositionsVocabulary, IVocabularyFactory)
