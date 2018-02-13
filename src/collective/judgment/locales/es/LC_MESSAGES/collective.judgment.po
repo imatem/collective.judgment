@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-07 13:24+0000\n"
+"POT-Creation-Date: 2018-02-13 18:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,17 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: collective/judgment/vocabularies.py:23
+#: collective/judgment/vocabularies.py:25
 msgid "Academic Technician"
 msgstr "Técnico Académico"
-
-#: collective/judgment/profiles/default/types/Activities_Plan.xml
-msgid "Activities Plan"
-msgstr "Plan de Actividades"
-
-#: collective/judgment/profiles/default/types/Activities_Report.xml
-msgid "Activities Report"
-msgstr "Reporte de actividades"
 
 #: collective/judgment/browser/templates/promotionview.pt:152
 msgid "Add"
@@ -34,7 +26,7 @@ msgstr "Agregar"
 msgid "Adds first name and last name fields"
 msgstr "Agrega campos de nombre y apellidos"
 
-#: collective/judgment/browser/templates/promotionview.pt:195
+#: collective/judgment/browser/overrides/plone.app.discussion.browser.comments.pt:6
 msgid "All evaluators can view the comments"
 msgstr "Sus comentarios son vistos por el resto de los evaluadores"
 
@@ -42,15 +34,23 @@ msgstr "Sus comentarios son vistos por el resto de los evaluadores"
 msgid "Allow evaluation for an item"
 msgstr "Permite la evalución de elementos"
 
-#: collective/judgment/profiles/default/types/tenure.xml
+#: collective/judgment/profiles/default/types/Tenure.xml
 msgid "An indefinite academic appointment"
 msgstr "Un contrato académico permanente"
+
+#: collective/judgment/profiles/default/types/Annual_Evaluation.xml
+msgid "Annual Evaluation"
+msgstr "Recontratación"
+
+#: collective/judgment/profiles/default/types/Annual_Evaluation.xml
+msgid "Annual Evaluation of Faculty and Staff"
+msgstr "Recontratación de académicos"
 
 #: collective/judgment/browser/templates/evaluation_viewlet.pt:8
 msgid "Approve"
 msgstr "Aprobar"
 
-#: collective/judgment/behaviors/personaldata.py:14
+#: collective/judgment/behaviors/personaldata.py:13
 msgid "Classification"
 msgstr "Clasificación"
 
@@ -58,15 +58,11 @@ msgstr "Clasificación"
 msgid "Creation Date:"
 msgstr "Fecha de Creación:"
 
-#: collective/judgment/behaviors/personaldata.py:34
+#: collective/judgment/behaviors/personaldata.py:33
 msgid "Current Position"
 msgstr "Nombramiento"
 
-#: collective/judgment/profiles/default/types/Curriculum_Vitae.xml
-msgid "Curriculum Vitae"
-msgstr "Curriculum Vitae"
-
-#: collective/judgment/content/files.py:23
+#: collective/judgment/content/files.py:30
 msgid "Description"
 msgstr "Descripción"
 
@@ -74,13 +70,17 @@ msgstr "Descripción"
 msgid "Disapprove"
 msgstr "Rechazar"
 
+#: collective/judgment/browser/templates/promotionview.pt:146
+msgid "Documentation"
+msgstr "Documentación"
+
 #: collective/judgment/browser/templates/promotionview.pt:132
 msgid "Download"
 msgstr "Descargar"
 
 #: collective/judgment/browser/templates/promotionview.pt:135
-#: collective/judgment/profiles/default/types/Activities_Plan.xml
-#: collective/judgment/profiles/default/types/Activities_Report.xml
+#: collective/judgment/profiles/default/types/Annual_Evaluation.xml
+#: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Edit"
 msgstr "Editar"
 
@@ -88,8 +88,9 @@ msgstr "Editar"
 msgid "Evaluation"
 msgstr "Evaluación"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:59
-#: collective/judgment/content/promotion.py:31
+#: collective/judgment/browser/templates/folder_cdim_types.pt:58
+#: collective/judgment/content/annualevaluation.py:20
+#: collective/judgment/content/promotion.py:27
 msgid "Evaluation Date"
 msgstr "Fecha de evaluación"
 
@@ -97,15 +98,15 @@ msgstr "Fecha de evaluación"
 msgid "Extra Contents"
 msgstr "Contenido adicional"
 
-#: collective/judgment/content/files.py:29
+#: collective/judgment/content/files.py:36
 msgid "File"
 msgstr "Archivo"
 
-#: collective/judgment/behaviors/personaldata.py:24
+#: collective/judgment/behaviors/personaldata.py:23
 msgid "First Name"
 msgstr "Nombre"
 
-#: collective/judgment/content/files.py:38
+#: collective/judgment/content/files.py:45
 msgid "ImageThumb"
 msgstr "Imagen miniatura"
 
@@ -117,7 +118,7 @@ msgstr "Instala el paquete collective.judgment"
 msgid "Invalid Type File: please correct it, only accept pdf file"
 msgstr "Tipo de archivo inválido: Sólo acepta archivos PDF"
 
-#: collective/judgment/behaviors/personaldata.py:29
+#: collective/judgment/behaviors/personaldata.py:28
 msgid "Last Name"
 msgstr "Apellido(s)"
 
@@ -125,15 +126,17 @@ msgstr "Apellido(s)"
 msgid "Left Time (in days):"
 msgstr "Tiempo Restante (en días):"
 
-#: collective/judgment/profiles/default/types/Activities_Plan.xml
-#: collective/judgment/profiles/default/types/Activities_Report.xml
-#: collective/judgment/profiles/default/types/Curriculum_Vitae.xml
+#: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Lets you upload a file to the site."
 msgstr "Subir un archivo el sitio"
 
 #: collective/judgment/vocabularies.py:11
 msgid "No"
 msgstr "No"
+
+#: collective/judgment/profiles/default/types/Pdf_File.xml
+msgid "Pdf File"
+msgstr "Archivo Pdf"
 
 #: collective/judgment/browser/templates/promotionview.pt:120
 msgid "Pdf Files"
@@ -156,40 +159,32 @@ msgstr "Promoción"
 msgid "Promotion of Faculty and Staff"
 msgstr "Promoción de Investigadores y Técnicos Académicos"
 
-#: collective/judgment/profiles/default/types/Reasoned_Letter.xml
-msgid "Reasoned Letter"
-msgstr "Carta Razonada"
-
-#: collective/judgment/content/promotion.py:25
+#: collective/judgment/content/promotion.py:21
 msgid "Requested position"
 msgstr "Nombramiento Solicitado"
 
-#: collective/judgment/vocabularies.py:22
+#: collective/judgment/vocabularies.py:24
 msgid "Researcher"
 msgstr "Investigador"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:20
-msgid "Select type:"
-msgstr "Tipo de caso:"
+msgid "Select type"
+msgstr "Selecciona el tipo"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:26
 #: collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
 msgid "Studied"
 msgstr "Casos estudiados"
 
-#: collective/judgment/profiles/default/types/tenure.xml
+#: collective/judgment/profiles/default/types/Tenure.xml
 msgid "Tenure"
 msgstr "Definitividad"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:102
+#: collective/judgment/browser/templates/folder_cdim_types.pt:101
 msgid "There are currently no items in this folder."
 msgstr "No hay items contenidos en esta carpeta"
 
-#: collective/judgment/handlers.py:40
-msgid "There were errors."
-msgstr "Hay errores"
-
-#: collective/judgment/content/files.py:17
+#: collective/judgment/content/files.py:23
 msgid "Title"
 msgstr "Título"
 
@@ -197,9 +192,9 @@ msgstr "Título"
 msgid "Uninstalls the collective.judgment add-on."
 msgstr "Desinstala el paquete collective.judgement"
 
-#: collective/judgment/profiles/default/types/Activities_Plan.xml
-#: collective/judgment/profiles/default/types/Activities_Report.xml
-#: collective/judgment/profiles/default/types/Curriculum_Vitae.xml
+#: collective/judgment/profiles/default/types/Annual_Evaluation.xml
+#: collective/judgment/profiles/default/types/Pdf_File.xml
+#: collective/judgment/profiles/default/types/Tenure.xml
 msgid "View"
 msgstr "Vista"
 
@@ -228,12 +223,14 @@ msgid "collective.judgment (uninstall)"
 msgstr ""
 
 #. Default: "The Evaluation Date must be grather than Creation Date"
-#: collective/judgment/content/promotion.py:51
+#: collective/judgment/content/annualevaluation.py:40
+#: collective/judgment/content/promotion.py:47
+#: collective/judgment/content/tenure.py:40
 msgid "label_error_dates"
 msgstr "La Fecha de Evaluación debe ser mayor que la Fecha de Creación"
 
 #. Default: "The Requested Position must be grather than Position"
-#: collective/judgment/content/promotion.py:73
+#: collective/judgment/content/promotion.py:77
 msgid "label_error_orderpositions"
 msgstr "El Nombramiento solicitado debe ser mayor que el Nombramiento Actual"
 
