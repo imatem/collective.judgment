@@ -130,36 +130,34 @@
     <fieldset>
       <legend i18n:translate="" i18n:domain="collective.judgment">Pdf Files</legend>
 
-      <tal:block tal:repeat="key python:items.keys()">
-        <tal:block tal:condition="python:items[key]">
-          <div class="myphotoAlbumEntry" tal:define="item python:items[key]">
-            <p i18n:translate="" tal:content="python:item.portal_type"/>
-            <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
-              <span class="myphotoAlbumEntryWrapper">
-                <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
-              </span>
-            </a>
-            <span class="myphotoAlbumEntryTitle">
-              <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
-                Download
-              </a>
-              <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
-                tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
-                Edit
-              </a>
+      <tal:block tal:repeat="item python:items">
+        <div class="myphotoAlbumEntry">
+          <p i18n:translate="" tal:content="python:item.title"/>
+          <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
+            <span class="myphotoAlbumEntryWrapper">
+              <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
             </span>
+          </a>
+          <span class="myphotoAlbumEntryTitle">
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
+              Download
+            </a>
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
+              Edit
+            </a>
+          </span>
+        </div>
+      </tal:block>
 
-          </div>
-        </tal:block>
-
-        <tal:block tal:condition="python:not items[key]">
+        <tal:block tal:condition="python:not items">
           <div class="myphotoAlbumEntry">
             <p i18n:translate="">Documentation</p>
               <span class="emptymyphotoAlbumEntryWrapper">
                 <img src="" tal:attributes="src string:++plone++collective.judgment/no-fees-icon-B.png"/>
               </span>
 
-            <span class="myphotoAlbumEntryTitle" tal:define="editurl python:view.editurl(key)">
+            <span class="myphotoAlbumEntryTitle" tal:define="editurl view/editurl">
               <a href="" tal:attributes="href string:${context/absolute_url}/${editurl}" i18n:translate=""
                 tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
                 Add
@@ -168,7 +166,7 @@
           </div>
 
         </tal:block>
-      </tal:block>
+
 
 
     </fieldset>

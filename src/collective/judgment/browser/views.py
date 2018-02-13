@@ -27,20 +27,20 @@ class PromotionView(DefaultView):
         return str(timeleft.days)
 
     def order_items(self):
-        items = OrderedDict()
-        items['pdf'] = None
+        # items = OrderedDict()
+        items = []
         others = []
 
         for item in self.context.items():
             itemportal = item[1].portal_type
             if itemportal == 'Pdf File':
-                items['pdf'] = item[1]
+                items.append(item[1])
             else:
                 others.append(item[1])
 
         return {'base': items, 'extra': others}
 
-    def editurl(self, key):
+    def editurl(self):
         return '++add++Pdf File?title=Documentation'
 
 
