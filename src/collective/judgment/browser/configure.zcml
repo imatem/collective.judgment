@@ -57,6 +57,15 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="tenureview"
+      for="collective.judgment.content.tenure.ITenure"
+      layer="zope.interface.Interface"
+      class=".views.PromotionView"
+      template="templates/promotionview.pt"
+      permission="zope2.View"
+      />
+
   <browser:viewlet
       name="collective.judgment.evaluation"
       for="collective.judgment.interfaces.IEvaluable"
