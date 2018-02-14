@@ -113,7 +113,7 @@
  </transition>
  <transition transition_id="submit" title="Member submits content for publication" new_state="studied" trigger="USER" before_script="" after_script="" >
   <description>Puts your item in a studied state</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="" i18n:attributes="">Submit for Studied</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for Studied</action>
   <guard >
    <guard-permission>Request review</guard-permission>
   </guard>
