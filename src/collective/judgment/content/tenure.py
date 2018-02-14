@@ -56,7 +56,7 @@ class Tenure(Container):
             domain='collective.judgment',
             target_language='es'
         )
-        return ' '.join([ftititle, self.first_name, self.last_name])
+        return ' '.join([ftititle, '-', self.first_name, self.last_name])
 
     @property
     def Title(self):
