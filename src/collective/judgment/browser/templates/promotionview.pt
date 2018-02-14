@@ -185,7 +185,7 @@
               <span i18n:translate="">Edit</span>  <span tal:content="item_title"/>
             </a>
             <a tal:attributes="href item_link_history;
-                            class string:submit-widget button-field context;
+                            class string:submit-widget button-field context pat-plone-modal;
                             title item_type"
                 i18n:translate="">View History
             </a>
