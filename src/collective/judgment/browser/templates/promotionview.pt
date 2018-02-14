@@ -154,7 +154,7 @@
           <div class="myphotoAlbumEntry">
             <p i18n:translate="">Documentation</p>
               <span class="emptymyphotoAlbumEntryWrapper">
-                <img src="" tal:attributes="src string:++plone++collective.judgment/no-fees-icon-B.png"/>
+                <img src="" tal:attributes="src string:${portal_url}/++plone++collective.judgment/no-fees-icon-B.png"/>
               </span>
 
             <span class="myphotoAlbumEntryTitle" tal:define="editurl view/editurl">
