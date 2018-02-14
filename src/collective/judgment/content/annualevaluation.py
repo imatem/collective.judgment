@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from collective.judgment import _
 from plone.autoform import directives
+from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope import schema
+from zope.component import getUtility
 from zope.interface import implementer
 from zope.interface import Invalid
 from zope.interface import invariant
+from zope.i18n import translate
 
 import datetime
 
@@ -46,3 +49,16 @@ class IAnnualEvaluation(model.Schema):
 class AnnualEvaluation(Container):
     """
     """
+
+    def computedtitle(self):
+        fti = getUtility(IDexterityFTI, name=self.portal_type)
+        ftititle = translate(
+            fti.title,
+            domain='collective.judgment',
+            target_language='es'
+        )
+        return ' '.join([ftititle, self.first_name, self.last_name])
+
+    @property
+    def Title(self):
+        return self.computedtitle
