@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-14 20:02+0000\n"
+"POT-Creation-Date: 2018-02-14 23:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,6 +146,7 @@ msgid "Pdf Files"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:23
+#: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_content_workflow/definition.xml
 #: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
 msgid "Pending review"
 msgstr ""
@@ -175,8 +176,17 @@ msgid "Select type"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:26
+#: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_content_workflow/definition.xml
 #: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
 msgid "Studied"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_content_workflow/definition.xml
+msgid "Submit for Studied"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/workflows/cdim_content_workflow/definition.xml
+msgid "Submit to Pending review"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/profiles/default/types/Tenure.xml
