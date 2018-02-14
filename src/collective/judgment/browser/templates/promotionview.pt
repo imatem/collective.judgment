@@ -87,13 +87,13 @@
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
     </h2>
-    <p tal:define="cdate context/creation_date">
+    <p>
       <b i18n:translate="">Creation Date:</b>
-      <span tal:content="python:str(cdate.day()) + '/' + str(cdate.month()) + '/' + str(cdate.year())"/>
+      <span class="pat-moment" data-pat-moment="format:LL;" tal:content="python:context.creation_date.asdatetime()"/>
     </p>
     <p>
       <b tal:replace="structure view/w/evaluation_date/label"/>:
-      <span tal:replace="structure view/w/evaluation_date/render"/>
+      <span class="pat-moment" data-pat-moment="format:LL;" tal:content="python:context.evaluation_date"/>
     </p>
     <p style="color:red">
       <span i18n:translate="">Left Time (in days):</span>
