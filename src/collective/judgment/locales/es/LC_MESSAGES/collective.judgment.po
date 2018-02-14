@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-13 18:08+0000\n"
+"POT-Creation-Date: 2018-02-14 00:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Academic Technician"
 msgstr "Técnico Académico"
 
-#: collective/judgment/browser/templates/promotionview.pt:152
+#: collective/judgment/browser/templates/promotionview.pt:161
 msgid "Add"
 msgstr "Agregar"
 
@@ -26,7 +26,11 @@ msgstr "Agregar"
 msgid "Adds first name and last name fields"
 msgstr "Agrega campos de nombre y apellidos"
 
-#: collective/judgment/browser/overrides/plone.app.discussion.browser.comments.pt:6
+#: collective/judgment/browser/templates/promotionview.pt:73
+msgid "All cases in"
+msgstr "Todos los casos en"
+
+#: collective/judgment/browser/overrides/plone.app.discussion.browser.commentssss.pt:6
 msgid "All evaluators can view the comments"
 msgstr "Sus comentarios son vistos por el resto de los evaluadores"
 
@@ -54,7 +58,7 @@ msgstr "Aprobar"
 msgid "Classification"
 msgstr "Clasificación"
 
-#: collective/judgment/browser/templates/promotionview.pt:84
+#: collective/judgment/browser/templates/promotionview.pt:91
 msgid "Creation Date:"
 msgstr "Fecha de Creación:"
 
@@ -70,15 +74,15 @@ msgstr "Descripción"
 msgid "Disapprove"
 msgstr "Rechazar"
 
-#: collective/judgment/browser/templates/promotionview.pt:146
+#: collective/judgment/browser/templates/promotionview.pt:155
 msgid "Documentation"
 msgstr "Documentación"
 
-#: collective/judgment/browser/templates/promotionview.pt:132
+#: collective/judgment/browser/templates/promotionview.pt:142
 msgid "Download"
 msgstr "Descargar"
 
-#: collective/judgment/browser/templates/promotionview.pt:135
+#: collective/judgment/browser/templates/promotionview.pt:145
 #: collective/judgment/profiles/default/types/Annual_Evaluation.xml
 #: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Edit"
@@ -93,10 +97,6 @@ msgstr "Evaluación"
 #: collective/judgment/content/promotion.py:27
 msgid "Evaluation Date"
 msgstr "Fecha de evaluación"
-
-#: collective/judgment/browser/templates/promotionview.pt:166
-msgid "Extra Contents"
-msgstr "Contenido adicional"
 
 #: collective/judgment/content/files.py:36
 msgid "File"
@@ -122,7 +122,7 @@ msgstr "Tipo de archivo inválido: Sólo acepta archivos PDF"
 msgid "Last Name"
 msgstr "Apellido(s)"
 
-#: collective/judgment/browser/templates/promotionview.pt:92
+#: collective/judgment/browser/templates/promotionview.pt:99
 msgid "Left Time (in days):"
 msgstr "Tiempo Restante (en días):"
 
@@ -138,7 +138,7 @@ msgstr "No"
 msgid "Pdf File"
 msgstr "Archivo Pdf"
 
-#: collective/judgment/browser/templates/promotionview.pt:120
+#: collective/judgment/browser/templates/promotionview.pt:131
 msgid "Pdf Files"
 msgstr "Archivos Pdf"
 
@@ -198,7 +198,7 @@ msgstr "Desinstala el paquete collective.judgement"
 msgid "View"
 msgstr "Vista"
 
-#: collective/judgment/browser/templates/promotionview.pt:183
+#: collective/judgment/browser/templates/promotionview.pt:187
 msgid "View History"
 msgstr "Histórico"
 

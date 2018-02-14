@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-13 18:08+0000\n"
+"POT-Creation-Date: 2018-02-14 00:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Academic Technician"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:152
+#: collective/judgment/browser/templates/promotionview.pt:161
 msgid "Add"
 msgstr ""
 
@@ -26,7 +26,11 @@ msgstr ""
 msgid "Adds first name and last name fields"
 msgstr ""
 
-#: collective/judgment/browser/overrides/plone.app.discussion.browser.comments.pt:6
+#: collective/judgment/browser/templates/promotionview.pt:73
+msgid "All cases in"
+msgstr ""
+
+#: collective/judgment/browser/overrides/plone.app.discussion.browser.commentssss.pt:6
 msgid "All evaluators can view the comments"
 msgstr ""
 
@@ -54,7 +58,7 @@ msgstr ""
 msgid "Classification"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:84
+#: collective/judgment/browser/templates/promotionview.pt:91
 msgid "Creation Date:"
 msgstr ""
 
@@ -70,15 +74,15 @@ msgstr ""
 msgid "Disapprove"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:146
+#: collective/judgment/browser/templates/promotionview.pt:155
 msgid "Documentation"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:132
+#: collective/judgment/browser/templates/promotionview.pt:142
 msgid "Download"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:135
+#: collective/judgment/browser/templates/promotionview.pt:145
 #: collective/judgment/profiles/default/types/Annual_Evaluation.xml
 #: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Edit"
@@ -92,10 +96,6 @@ msgstr ""
 #: collective/judgment/content/annualevaluation.py:20
 #: collective/judgment/content/promotion.py:27
 msgid "Evaluation Date"
-msgstr ""
-
-#: collective/judgment/browser/templates/promotionview.pt:166
-msgid "Extra Contents"
 msgstr ""
 
 #: collective/judgment/content/files.py:36
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:92
+#: collective/judgment/browser/templates/promotionview.pt:99
 msgid "Left Time (in days):"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Pdf File"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:120
+#: collective/judgment/browser/templates/promotionview.pt:131
 msgid "Pdf Files"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: collective/judgment/browser/templates/promotionview.pt:183
+#: collective/judgment/browser/templates/promotionview.pt:187
 msgid "View History"
 msgstr ""
 
