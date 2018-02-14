@@ -107,7 +107,11 @@ class FolderCdimView(BrowserView):
         vocabulary = getUtility(
             IVocabularyFactory,
             'collective.judgment.PositionsVocabulary')(self.context).by_value
-        return vocabulary[position].title
+        complete_position = vocabulary[position].title
+        if brain.portal_type == 'promotion':
+            rposition = brain.getObject().requestedposition
+            complete_position += ' - ' + vocabulary[rposition].title
+        return complete_position
 
     def title_state(self, brain):
 
