@@ -68,14 +68,21 @@
   </metal:css>
 
 
+<metal:main fill-slot="content-title">
+  <a class="submit-widget button-field context" href="" tal:attributes="href context/aq_parent/absolute_url">
+    <span i18n:translate="">All cases in </span> <span tal:content="context/aq_parent/Title"/>
+  </a>
 
+  <h1 class="documentFirstHeading"
+                    tal:define="title context/Title"
+                    tal:condition="title"
+                    tal:content="title">Title or id</h1>
+</metal:main>
 
 <!-- plone/app/dexterity/browser/container.pt -->
 <metal:main fill-slot="content-core">
 <metal:content-core define-macro="content-core">
-
   <tal:block tal:define="allvalues view/widgets/values">
-
     <h2>
       <span tal:replace="structure view/w/IPersonalData.first_name/render"/>
       <span tal:replace="structure view/w/IPersonalData.last_name/render"/>
@@ -116,39 +123,41 @@
 
   <tal:block tal:define="order_items view/order_items; items order_items/base; extras order_items/extra">
 
+    <table>
+      <tr>
+        <td>
+
     <fieldset>
       <legend i18n:translate="" i18n:domain="collective.judgment">Pdf Files</legend>
 
-      <tal:block tal:repeat="key python:items.keys()">
-        <tal:block tal:condition="python:items[key]">
-          <div class="myphotoAlbumEntry" tal:define="item python:items[key]">
-            <p i18n:translate="" tal:content="python:item.portal_type"/>
-            <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
-              <span class="myphotoAlbumEntryWrapper">
-                <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
-              </span>
-            </a>
-            <span class="myphotoAlbumEntryTitle">
-              <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
-                Download
-              </a>
-              <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
-                tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
-                Edit
-              </a>
+      <tal:block tal:repeat="item python:items">
+        <div class="myphotoAlbumEntry">
+          <p i18n:translate="" tal:content="python:item.title"/>
+          <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
+            <span class="myphotoAlbumEntryWrapper">
+              <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
             </span>
+          </a>
+          <span class="myphotoAlbumEntryTitle">
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@download/file" i18n:translate="">
+              Download
+            </a>
+            <a href="" tal:attributes="href string:${item/absolute_url}/@@edit" i18n:translate=""
+              tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
+              Edit
+            </a>
+          </span>
+        </div>
+      </tal:block>
 
-          </div>
-        </tal:block>
-
-        <tal:block tal:condition="python:not items[key]">
+        <tal:block tal:condition="python:not items">
           <div class="myphotoAlbumEntry">
             <p i18n:translate="">Documentation</p>
               <span class="emptymyphotoAlbumEntryWrapper">
                 <img src="" tal:attributes="src string:++plone++collective.judgment/no-fees-icon-B.png"/>
               </span>
 
-            <span class="myphotoAlbumEntryTitle" tal:define="editurl python:view.editurl(key)">
+            <span class="myphotoAlbumEntryTitle" tal:define="editurl view/editurl">
               <a href="" tal:attributes="href string:${context/absolute_url}/${editurl}" i18n:translate=""
                 tal:condition="python: checkPermission('collective.judgment: Add Promotion', context)">
                 Add
@@ -157,62 +166,41 @@
           </div>
 
         </tal:block>
-      </tal:block>
+
+
 
     </fieldset>
 
-    <br/>
-    <fieldset id="folder-listing">
-        <legend i18n:translate="" i18n:domain="collective.judgment">Extra Contents</legend>
-        <tal:block tal:repeat="item extras">
-        <!--
-          item_wf_state item/review_state;
-          item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
-          item_type_class python:('contenttype-' + view.normalizeString(item_type));
-           -->
-        <tal:block tal:define="item_url item/absolute_url;
+  </td>
+  <td class="emptyTitle" tal:define="item python:context['carta']">
+
+    <tal:block tal:define="item_url item/absolute_url;
                   item_title item/Title;
                   item_type item/portal_type;
-                  item_link python:item_url+'/view';
+                  item_link python:item_url+'/edit';
                   item_link_history python:item_url+'/historyview';">
             <a tal:attributes="href item_link;
-                            class string:url;
-                            title item_type"
-                tal:content="item_title">Item Title
+                            class string:submit-widget button-field context;
+                            title item_type">
+              <span i18n:translate="">Edit</span>  <span tal:content="item_title"/>
             </a>
             <a tal:attributes="href item_link_history;
-                            class string:url;
+                            class string:submit-widget button-field context;
                             title item_type"
                 i18n:translate="">View History
             </a>
         </tal:block>
+      <br/><br/>
+    <div  tal:replace="structure item/@@full_view_item | nothing" />
+  </td>
+</tr>
+</table>
 
-      </tal:block>
-    </fieldset>
+
+
   </tal:block>
 
   <hr/>
-
-  <!-- <tal:block repeat="widget view/widgets/values">
-      <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
-          <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
-      </tal:block>
-  </tal:block> -->
-
-  <!-- <fieldset tal:repeat="group view/groups"
-            tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
-      <legend tal:content="group/label" />
-      <tal:block tal:repeat="widget group/widgets/values">
-          <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
-      </tal:block>
-  </fieldset> -->
-
-  <!-- <fieldset id="folder-listing">
-      <legend i18n:translate="" i18n:domain="collective.judgment">Contents</legend>
-      <tal:block define="view nocall:context/folder_listing; listing_macro view/macros/listing">
-          <metal:use_macro use-macro="listing_macro" />
-      </tal:block>
-  </fieldset> -->
 
 </metal:content-core>
 </metal:main>

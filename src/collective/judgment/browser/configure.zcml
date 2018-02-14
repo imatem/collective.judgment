@@ -40,6 +40,13 @@
     permission="collective.judgment.AddPromotion"
     />
 
+  <browser:page
+    for="plone.app.contenttypes.interfaces.IDocument"
+    name="edit"
+    class=".editDocument.EditForm"
+    permission="cmf.ModifyPortalContent"
+    />
+
   <!-- macros and views -->
   <browser:page
     for="*"

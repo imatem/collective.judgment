@@ -12,7 +12,7 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 
 @provider(IContextAwareDefaultFactory)
 def request_title(context):
-    return context.REQUEST.form.get('title', '')
+    return context.REQUEST.form.get('title', u'')
 
 
 class IPdfFile(model.Schema):
