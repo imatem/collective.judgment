@@ -103,15 +103,15 @@
 
 
  </state>
- <transition transition_id="retract" title="Member retracts submission" new_state="pending" trigger="USER" before_script="" after_script="" >
+ <transition transition_id="retract" title="Submit to Pending review" i18n:attributes="title" new_state="pending" trigger="USER" before_script="" after_script="" >
   <description>If you submitted the item by mistake or want to perform additional edits, this will take it back.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Retract</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Submit to Pending review</action>
   <guard >
    <guard-permission>Request review</guard-permission>
   </guard>
 
  </transition>
- <transition transition_id="submit" title="Member submits content for publication" new_state="studied" trigger="USER" before_script="" after_script="" >
+ <transition transition_id="submit" title="Submit for Studied" i18n:attributes="title" new_state="studied" trigger="USER" before_script="" after_script="">
   <description>Puts your item in a studied state</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for Studied</action>
   <guard >
