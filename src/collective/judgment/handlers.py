@@ -30,7 +30,8 @@ def handleAddedEvaluable(obj, event):
     with api.env.adopt_roles(roles='Manager'):
         constraints = ISelectableConstrainTypes(obj)
         constraints.setConstrainTypesMode(constrains.DISABLED)
-        api.content.create(type='Document', title='Carta', container=obj)
+        document = api.content.create(type='Document', title='Carta', container=obj)
+        api.group.grant_roles(groupname='evaluators', roles=['Editor'], obj=document)
         constraints.setLocallyAllowedTypes(['Pdf File'])
         constraints.setImmediatelyAddableTypes(['Pdf File'])
         constraints.setConstrainTypesMode(constrains.ENABLED)
