@@ -27,7 +27,7 @@ class IPromotion(model.Schema):
     )
     directives.order_after(evaluation_date='requestedposition')
     evaluation_date = schema.Date(
-        title=_(u'Evaluation Date'),
+        title=_(u'Evaluation deadline'),
         required=True,
     )
 
@@ -48,7 +48,7 @@ class IPromotion(model.Schema):
         if (data.evaluation_date < creation_date.date()):
             raise Invalid(
                 _('label_error_dates',
-                  default=u'The Evaluation Date must be grather than Creation Date')
+                  default=u'The Evaluation deadline must be grather than Creation Date')
             )
 
     @invariant

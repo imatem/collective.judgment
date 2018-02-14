@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-14 00:03+0000\n"
+"POT-Creation-Date: 2018-02-14 20:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,15 +54,15 @@ msgstr "Recontratación de académicos"
 msgid "Approve"
 msgstr "Aprobar"
 
-#: collective/judgment/behaviors/personaldata.py:13
+#: collective/judgment/behaviors/personaldata.py:14
 msgid "Classification"
 msgstr "Clasificación"
 
 #: collective/judgment/browser/templates/promotionview.pt:91
 msgid "Creation Date:"
-msgstr "Fecha de Creación:"
+msgstr "Fecha de creación:"
 
-#: collective/judgment/behaviors/personaldata.py:33
+#: collective/judgment/behaviors/personaldata.py:36
 msgid "Current Position"
 msgstr "Nombramiento"
 
@@ -93,16 +93,16 @@ msgid "Evaluation"
 msgstr "Evaluación"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:58
-#: collective/judgment/content/annualevaluation.py:20
-#: collective/judgment/content/promotion.py:27
-msgid "Evaluation Date"
-msgstr "Fecha de evaluación"
+#: collective/judgment/content/annualevaluation.py:23
+#: collective/judgment/content/promotion.py:30
+msgid "Evaluation deadline"
+msgstr "Fecha límite de evaluación"
 
 #: collective/judgment/content/files.py:36
 msgid "File"
 msgstr "Archivo"
 
-#: collective/judgment/behaviors/personaldata.py:23
+#: collective/judgment/behaviors/personaldata.py:26
 msgid "First Name"
 msgstr "Nombre"
 
@@ -118,13 +118,13 @@ msgstr "Instala el paquete collective.judgment"
 msgid "Invalid Type File: please correct it, only accept pdf file"
 msgstr "Tipo de archivo inválido: Sólo acepta archivos PDF"
 
-#: collective/judgment/behaviors/personaldata.py:28
+#: collective/judgment/behaviors/personaldata.py:31
 msgid "Last Name"
 msgstr "Apellido(s)"
 
 #: collective/judgment/browser/templates/promotionview.pt:99
 msgid "Left Time (in days):"
-msgstr "Tiempo Restante (en días):"
+msgstr "Tiempo restante (en días):"
 
 #: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Lets you upload a file to the site."
@@ -136,11 +136,11 @@ msgstr "No"
 
 #: collective/judgment/profiles/default/types/Pdf_File.xml
 msgid "Pdf File"
-msgstr "Archivo Pdf"
+msgstr "Archivo PDF"
 
 #: collective/judgment/browser/templates/promotionview.pt:131
 msgid "Pdf Files"
-msgstr "Archivos Pdf"
+msgstr "Archivos PDF"
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:23
 #: collective/judgment/profiles/default/workflows/cdim_workflow/definition.xml
@@ -159,9 +159,9 @@ msgstr "Promoción"
 msgid "Promotion of Faculty and Staff"
 msgstr "Promoción de Investigadores y Técnicos Académicos"
 
-#: collective/judgment/content/promotion.py:21
+#: collective/judgment/content/promotion.py:24
 msgid "Requested position"
-msgstr "Nombramiento Solicitado"
+msgstr "Nombramiento solicitado"
 
 #: collective/judgment/vocabularies.py:24
 msgid "Researcher"
@@ -222,17 +222,17 @@ msgstr ""
 msgid "collective.judgment (uninstall)"
 msgstr ""
 
-#. Default: "The Evaluation Date must be grather than Creation Date"
-#: collective/judgment/content/annualevaluation.py:40
-#: collective/judgment/content/promotion.py:47
-#: collective/judgment/content/tenure.py:40
+#. Default: "The Evaluation deadline must be grather than Creation Date"
+#: collective/judgment/content/annualevaluation.py:43
+#: collective/judgment/content/promotion.py:50
+#: collective/judgment/content/tenure.py:43
 msgid "label_error_dates"
-msgstr "La Fecha de Evaluación debe ser mayor que la Fecha de Creación"
+msgstr "La fecha límite de evaluación debe ser mayor que la fecha de creación"
 
 #. Default: "The Requested Position must be grather than Position"
-#: collective/judgment/content/promotion.py:77
+#: collective/judgment/content/promotion.py:80
 msgid "label_error_orderpositions"
-msgstr "El Nombramiento solicitado debe ser mayor que el Nombramiento Actual"
+msgstr "El nombramiento solicitado debe ser mayor que el nombramiento actual"
 
 #. Default: "Filter"
 #: collective/judgment/browser/templates/folder_cdim_types.pt:28

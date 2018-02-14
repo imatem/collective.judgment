@@ -55,7 +55,7 @@
 
                 <li>
                   <div class="row-date">
-                    <span i18n:translate="">Evaluation Date</span><br/>
+                    <span i18n:translate="">Evaluation deadline</span><br/>
                     <span class="pat-moment" data-pat-moment="format:LL;" tal:content="python:view.evaluation_date(item)"/>
                   </div>
                 </li>

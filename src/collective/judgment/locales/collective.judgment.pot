@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-14 00:03+0000\n"
+"POT-Creation-Date: 2018-02-14 20:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:13
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:14
 msgid "Classification"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Creation Date:"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:33
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:36
 msgid "Current Position"
 msgstr ""
 
@@ -96,16 +96,16 @@ msgid "Evaluation"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:58
-#: collective.judgment/src/collective/judgment/content/annualevaluation.py:20
-#: collective.judgment/src/collective/judgment/content/promotion.py:27
-msgid "Evaluation Date"
+#: collective.judgment/src/collective/judgment/content/annualevaluation.py:23
+#: collective.judgment/src/collective/judgment/content/promotion.py:30
+msgid "Evaluation deadline"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/content/files.py:36
 msgid "File"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:23
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:26
 msgid "First Name"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Invalid Type File: please correct it, only accept pdf file"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:28
+#: collective.judgment/src/collective/judgment/behaviors/personaldata.py:31
 msgid "Last Name"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Promotion of Faculty and Staff"
 msgstr ""
 
-#: collective.judgment/src/collective/judgment/content/promotion.py:21
+#: collective.judgment/src/collective/judgment/content/promotion.py:24
 msgid "Requested position"
 msgstr ""
 
@@ -225,15 +225,15 @@ msgstr ""
 msgid "collective.judgment (uninstall)"
 msgstr ""
 
-#. Default: "The Evaluation Date must be grather than Creation Date"
-#: collective.judgment/src/collective/judgment/content/annualevaluation.py:40
-#: collective.judgment/src/collective/judgment/content/promotion.py:47
-#: collective.judgment/src/collective/judgment/content/tenure.py:40
+#. Default: "The Evaluation deadline must be grather than Creation Date"
+#: collective.judgment/src/collective/judgment/content/annualevaluation.py:43
+#: collective.judgment/src/collective/judgment/content/promotion.py:50
+#: collective.judgment/src/collective/judgment/content/tenure.py:43
 msgid "label_error_dates"
 msgstr ""
 
 #. Default: "The Requested Position must be grather than Position"
-#: collective.judgment/src/collective/judgment/content/promotion.py:77
+#: collective.judgment/src/collective/judgment/content/promotion.py:80
 msgid "label_error_orderpositions"
 msgstr ""
 
