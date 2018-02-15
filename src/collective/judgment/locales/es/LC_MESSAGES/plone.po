@@ -15,8 +15,12 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 msgid "Studied"
-msgstr "Estudiadisimo"
+msgstr "Estudiado"
 
 
 msgid "Submit for Studied"
 msgstr "Enviar a estudiado"
+
+msgid "Submit to Pending review"
+msgstr "Enviar a pendiente de revisión"
+
