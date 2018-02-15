@@ -58,7 +58,7 @@
   <browser:page
       name="promotionview"
       for="collective.judgment.content.promotion.IPromotion"
-      layer="zope.interface.Interface"
+      layer="collective.judgment.interfaces.ICollectiveJudgmentLayer"
       class=".views.PromotionView"
       template="templates/promotionview.pt"
       permission="zope2.View"
@@ -67,7 +67,7 @@
   <browser:page
       name="tenureview"
       for="collective.judgment.content.tenure.ITenure"
-      layer="zope.interface.Interface"
+      layer="collective.judgment.interfaces.ICollectiveJudgmentLayer"
       class=".views.PromotionView"
       template="templates/promotionview.pt"
       permission="zope2.View"
@@ -76,6 +76,15 @@
   <browser:page
       name="tenureview"
       for="collective.judgment.content.annualevaluation.IAnnualEvaluation"
+      layer="collective.judgment.interfaces.ICollectiveJudgmentLayer"
+      class=".views.PromotionView"
+      template="templates/promotionview.pt"
+      permission="zope2.View"
+      />
+
+    <browser:page
+      name="tenureview"
+      for="collective.judgment.content.coa.ICoa"
       layer="zope.interface.Interface"
       class=".views.PromotionView"
       template="templates/promotionview.pt"

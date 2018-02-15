@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-14 23:06+0000\n"
+"POT-Creation-Date: 2018-02-15 18:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,6 +57,10 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
+#: collective.judgment/src/collective/judgment/profiles/default/types/Coa.xml
+msgid "COA"
+msgstr ""
+
 #: collective.judgment/src/collective/judgment/behaviors/personaldata.py:14
 msgid "Classification"
 msgstr ""
@@ -87,7 +91,7 @@ msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/promotionview.pt:145
 #: collective.judgment/src/collective/judgment/profiles/default/types/Annual_Evaluation.xml
-#: collective.judgment/src/collective/judgment/profiles/default/types/Pdf_File.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Coa.xml
 msgid "Edit"
 msgstr ""
 
@@ -97,7 +101,7 @@ msgstr ""
 
 #: collective.judgment/src/collective/judgment/browser/templates/folder_cdim_types.pt:58
 #: collective.judgment/src/collective/judgment/content/annualevaluation.py:23
-#: collective.judgment/src/collective/judgment/content/promotion.py:30
+#: collective.judgment/src/collective/judgment/content/coa.py:23
 msgid "Evaluation deadline"
 msgstr ""
 
@@ -135,6 +139,10 @@ msgstr ""
 
 #: collective.judgment/src/collective/judgment/vocabularies.py:11
 msgid "No"
+msgstr ""
+
+#: collective.judgment/src/collective/judgment/profiles/default/types/Coa.xml
+msgid "Open opposition contest"
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/profiles/default/types/Pdf_File.xml
@@ -206,8 +214,8 @@ msgid "Uninstalls the collective.judgment add-on."
 msgstr ""
 
 #: collective.judgment/src/collective/judgment/profiles/default/types/Annual_Evaluation.xml
+#: collective.judgment/src/collective/judgment/profiles/default/types/Coa.xml
 #: collective.judgment/src/collective/judgment/profiles/default/types/Pdf_File.xml
-#: collective.judgment/src/collective/judgment/profiles/default/types/Tenure.xml
 msgid "View"
 msgstr ""
 
@@ -237,8 +245,8 @@ msgstr ""
 
 #. Default: "The Evaluation deadline must be grather than Creation Date"
 #: collective.judgment/src/collective/judgment/content/annualevaluation.py:43
+#: collective.judgment/src/collective/judgment/content/coa.py:43
 #: collective.judgment/src/collective/judgment/content/promotion.py:50
-#: collective.judgment/src/collective/judgment/content/tenure.py:43
 msgid "label_error_dates"
 msgstr ""
 
