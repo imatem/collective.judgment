@@ -1,15 +1,19 @@
 <?xml version="1.0"?>
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
- <object name="cdim_workflow" meta_type="Workflow"/>
+ <object name="cdim_content_workflow" meta_type="Workflow"/>
+ <object name="restricted_folder_workflow" meta_type="Workflow"/>
  <bindings>
   <type type_id="Annual Evaluation">
-   <bound-workflow workflow_id="cdim_workflow"/>
+   <bound-workflow workflow_id="cdim_content_workflow"/>
   </type>
   <type type_id="promotion">
-   <bound-workflow workflow_id="cdim_workflow"/>
+   <bound-workflow workflow_id="cdim_content_workflow"/>
   </type>
   <type type_id="Tenure">
-   <bound-workflow workflow_id="cdim_workflow"/>
+   <bound-workflow workflow_id="cdim_content_workflow"/>
+  </type>
+  <type type_id="Folder">
+   <bound-workflow workflow_id="restricted_folder_workflow"/>
   </type>
  </bindings>
 </object>
