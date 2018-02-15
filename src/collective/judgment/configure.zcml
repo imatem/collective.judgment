@@ -49,6 +49,11 @@
   <subscriber handler=".handlers.handlerAddedPdfFile" />
   <subscriber handler=".handlers.handlerModifiedPdfFile" />
 
+  <subscriber
+        for="Products.PluggableAuthService.interfaces.events.IUserLoggedInEvent"
+        handler=".postlogin.logged_in_handler"
+        />
+
   <!-- VOCABULARIES -->
   <utility
     component=".vocabularies.YesorNoVocabulary"
