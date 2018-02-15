@@ -5,5 +5,6 @@
   <object meta_type="Dexterity FTI" name="Annual Evaluation"/>
   <object meta_type="Dexterity FTI" name="promotion"/>
   <object meta_type="Dexterity FTI" name="Tenure"/>
+  <object meta_type="Dexterity FTI" name="Coa"/>
   <object meta_type="Dexterity FTI" name="Pdf File"/>
 </object>

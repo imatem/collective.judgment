@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="collective.judgment.AddCoa"
+        title="collective.judgment: Add COA"
+    />
+
+
+    <permission
         id="collective.judgment.AddAnnualEvaluation"
         title="collective.judgment: Add Annual Evaluation"
     />
