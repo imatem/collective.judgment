@@ -24,3 +24,6 @@ msgstr "Enviar a estudiado"
 msgid "Submit to Pending review"
 msgstr "Enviar a pendiente de revisión"
 
+msgid "folder_cdim_types"
+msgstr "Vista de casos"
+
