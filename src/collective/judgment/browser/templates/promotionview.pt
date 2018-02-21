@@ -133,7 +133,7 @@
       <tal:block tal:repeat="item python:items">
         <div class="myphotoAlbumEntry">
           <p i18n:translate="" tal:content="python:item.title"/>
-          <a href="" tal:attributes="href string:${item/absolute_url}/@@display-file/file">
+          <a href="" tal:attributes="href string:${item/absolute_url}">
             <span class="myphotoAlbumEntryWrapper">
               <img height="75%" width="128" src="" tal:attributes="src string:${item/absolute_url}/@@images/thumbfile;"/>
             </span>
