@@ -113,6 +113,17 @@ class FolderCdimView(BrowserView):
             complete_position += ' - ' + vocabulary[rposition].title
         return complete_position
 
+    def downloadDocs(self, brain):
+        obj = brain.getObject()
+
+        items = []
+        for item in obj.items():
+            itemportal = item[1].portal_type
+            if itemportal == 'Pdf File':
+                items.append(item[1])
+
+        return items
+
     def title_state(self, brain):
 
         wft = api.portal.get_tool('portal_workflow')

@@ -49,7 +49,12 @@
                 <li>
                   <div class="row-personaldata">
                    <a href="#" tal:attributes="href item/getURL"><h2 tal:content="item/Title | nothing"/></a>
-                   <span class="position" tal:content="python:view.position(item)"/>
+                   <span class="position" tal:content="python:view.position(item)"/><br/>
+                   <tal:block tal:repeat="doc python:view.downloadDocs(item)">
+                      <a href="" tal:attributes="href string:${doc/absolute_url}/@@download/file" >
+                        <span i18n:translate="" tal:content="doc/Title"/><br/>
+                      </a>
+                    </tal:block>
                   </div>
                 </li>
 
