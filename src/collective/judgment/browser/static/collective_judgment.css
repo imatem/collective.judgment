@@ -76,9 +76,13 @@
 }*/
 
 .emptyTitle h2{
-
     display: none;
 }
+
+.emptyTitle {
+    padding: 10px;
+}
+
 
 .tagDelete, .tagInsert{
     display: none;
