@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-15 18:02+0000\n"
+"POT-Creation-Date: 2018-03-06 20:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,7 +96,7 @@ msgstr "Editar"
 msgid "Evaluation"
 msgstr "Evaluación"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:58
+#: collective/judgment/browser/templates/folder_cdim_types.pt:63
 #: collective/judgment/content/annualevaluation.py:23
 #: collective/judgment/content/coa.py:23
 msgid "Evaluation deadline"
@@ -156,6 +156,10 @@ msgstr "Archivos PDF"
 msgid "Pending review"
 msgstr "En revisión"
 
+#: collective/judgment/browser/views.py:179
+msgid "Pending reviews, IM UNAM"
+msgstr "Dictamenes pendientes, IM UNAM"
+
 #: collective/judgment/behaviors/configure.zcml:10
 msgid "Personal Data"
 msgstr "Datos personales"
@@ -198,7 +202,11 @@ msgstr "Enviar a Pendiente de revisión"
 msgid "Tenure"
 msgstr "Definitividad"
 
-#: collective/judgment/browser/templates/folder_cdim_types.pt:101
+#: collective/judgment/browser/views.py:193
+msgid "The system sended email to: "
+msgstr "El sistema envió correo a: "
+
+#: collective/judgment/browser/templates/folder_cdim_types.pt:106
 msgid "There are currently no items in this folder."
 msgstr "No hay items contenidos en esta carpeta"
 
@@ -232,6 +240,10 @@ msgstr "Sí"
 msgid "You already evaluated this case."
 msgstr "Usted ya evaluó este caso"
 
+#: collective/judgment/browser/views.py:171
+msgid "You have the following pending reviews:"
+msgstr "usted tiene las siguientes revisiones pendientes"
+
 #: collective/judgment/configure.zcml:26
 msgid "collective.judgment"
 msgstr ""
@@ -239,6 +251,11 @@ msgstr ""
 #: collective/judgment/configure.zcml:35
 msgid "collective.judgment (uninstall)"
 msgstr ""
+
+#. Default: "Dear ${name}"
+#: collective/judgment/browser/views.py:169
+msgid "email_intro_msg"
+msgstr "Estimado(a) ${name}"
 
 #. Default: "The Evaluation deadline must be grather than Creation Date"
 #: collective/judgment/content/annualevaluation.py:43
@@ -261,3 +278,7 @@ msgstr "Buscar"
 #: collective/judgment/browser/templates/folder_cdim_types.pt:33
 msgid "label_sendmail"
 msgstr "Enviar correo"
+
+#: collective/judgment/browser/views.py:173
+msgid "you have the following pending review:"
+msgstr "usted tiene las siguiente revision pendiente"

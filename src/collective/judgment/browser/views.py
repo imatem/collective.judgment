@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from collections import OrderedDict
+from collective.judgment import _
 from collective.judgment.interfaces import IEvaluation
 from plone import api
 from plone.dexterity.browser.view import DefaultView
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 from smtplib import SMTPRecipientsRefused
@@ -142,7 +144,7 @@ class FolderCdimView(BrowserView):
         brains = catalog(
             path=dict(query='/'.join(self.context.getPhysicalPath()), depth=1),
             review_state='pending',
-            # sort_on='start'
+            sort_on='evaluation_date'
         )
 
         evaluators = api.user.get_users(groupname='evaluators')
@@ -164,23 +166,22 @@ class FolderCdimView(BrowserView):
 
         message = []
         for k, v in emails.iteritems():
-            mail_text = 'Dear %s:' % (evaluators_data[k]['name'].decode('utf-8'))
+            salutation = _(u'email_intro_msg', default=u'Dear ${name}', mapping={u'name': safe_unicode(evaluators_data[k]['name'])})
             if len(v) > 1:
-                mail_text += u'\n Please evaluate the next cases: \n'
+                mail_intro = _(u'You have the following pending reviews:')
             else:
-                mail_text += u'\n Please evaluate the next case: \n'
-            for item in v:
-                mail_text += (item[0] + ' ' + item[1]).decode('utf-8')
-                mail_text += u'\n'
-            mail_text += u'.\n\n\n\n'
-            mail_text += u' Best regards, \n'
-            mail_text += u'Commissioner \n'
-
+                mail_intro = _(u'you have the following pending review:')
+            mail_cases = u'\n'.join([i[0] + u' ' + safe_unicode(i[1]) for i in v])
+            mail_sign = u'Asuntos Académicos\nInstituto de Matemáticas, UNAM'
+            salutation = self.context.translate(salutation)
+            mail_intro = self.context.translate(mail_intro)
+            mail_text = '\n'.join([salutation, mail_intro, u'\n', mail_cases, u'\n\n', mail_sign])
+            mail_subject = self.context.translate(_(u'Pending reviews, IM UNAM'))
             try:
                 api.portal.send_email(
                     recipient=evaluators_data[k]['email'],
                     sender='apoyo@im.unam.mx',
-                    subject='Evaluators System',
+                    subject=mail_subject,
                     body=mail_text,
                 )
                 message.append(evaluators_data[k]['email'])
@@ -189,6 +190,7 @@ class FolderCdimView(BrowserView):
                 raise SMTPRecipientsRefused('Recipient address rejected by server')
 
         IStatusMessage(self.request).addStatusMessage(
-            'The system sended email to: ' + ', '.join(message), 'info'
+            self.context.translate(_(u'The system sended email to: '))  + ', '.join(message),
+            'info'
         )
         return True
