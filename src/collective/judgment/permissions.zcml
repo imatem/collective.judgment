@@ -11,6 +11,11 @@
         title="collective.judgment: Add COA"
     />
 
+    <permission
+        id="collective.judgment.AddSpecial"
+        title="collective.judgment: Add Special"
+    />
+
 
     <permission
         id="collective.judgment.AddAnnualEvaluation"
