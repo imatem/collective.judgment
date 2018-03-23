@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-03-06 20:14+0000\n"
+"POT-Creation-Date: 2018-03-23 20:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,6 +139,7 @@ msgid "No"
 msgstr ""
 
 #: collective/judgment/profiles/default/types/Coa.xml
+#: collective/judgment/profiles/default/types/Special.xml
 msgid "Open opposition contest"
 msgstr ""
 
@@ -182,6 +183,10 @@ msgstr ""
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:20
 msgid "Select type"
+msgstr ""
+
+#: collective/judgment/profiles/default/types/Special.xml
+msgid "Special"
 msgstr ""
 
 #: collective/judgment/browser/templates/folder_cdim_types.pt:26
