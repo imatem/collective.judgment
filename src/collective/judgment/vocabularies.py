@@ -45,6 +45,7 @@ def PositionsVocabulary(context):
         ('TATA', u'Técnico Académico Titular A'),
         ('TATB', u'Técnico Académico Titular B'),
         ('TATC', u'Técnico Académico Titular C'),
+        ('CC', u'Cátedra CONACyT'),
     ]
     items = [SimpleTerm(i[0], i[0], i[1]) for i in items]
     return SimpleVocabulary(items)
