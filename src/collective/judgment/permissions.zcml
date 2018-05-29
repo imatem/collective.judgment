@@ -16,6 +16,10 @@
         title="collective.judgment: Add Special"
     />
 
+    <permission
+        id="collective.judgment.AddNewmember"
+        title="collective.judgment: Add New Member"
+    />
 
     <permission
         id="collective.judgment.AddAnnualEvaluation"

@@ -18,6 +18,9 @@
   <type type_id="Special">
    <bound-workflow workflow_id="cdim_content_workflow"/>
   </type>
+  <type type_id="New Member">
+   <bound-workflow workflow_id="cdim_content_workflow"/>
+  </type>
   <type type_id="Folder">
    <bound-workflow workflow_id="restricted_folder_workflow"/>
   </type>

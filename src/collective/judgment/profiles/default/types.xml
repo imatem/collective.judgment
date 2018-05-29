@@ -7,5 +7,6 @@
   <object meta_type="Dexterity FTI" name="Tenure"/>
   <object meta_type="Dexterity FTI" name="Coa"/>
   <object meta_type="Dexterity FTI" name="Special"/>
+  <object meta_type="Dexterity FTI" name="New Member"/>
   <object meta_type="Dexterity FTI" name="Pdf File"/>
 </object>
