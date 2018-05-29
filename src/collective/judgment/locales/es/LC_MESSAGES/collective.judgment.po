@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-03-23 20:34+0000\n"
+"POT-Creation-Date: 2018-05-29 19:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,6 +134,14 @@ msgstr "Tiempo restante (en días):"
 msgid "Lets you upload a file to the site."
 msgstr "Subir un archivo el sitio"
 
+#: collective/judgment/profiles/default/types/New_Member.xml
+msgid "New Faculty or Staff member"
+msgstr "Ingreso de Investigador, Técnico o Catedrático"
+
+#: collective/judgment/profiles/default/types/New_Member.xml
+msgid "New Member"
+msgstr "Ingreso"
+
 #: collective/judgment/vocabularies.py:11
 msgid "No"
 msgstr "No"
@@ -225,7 +233,7 @@ msgstr "Desinstala el paquete collective.judgement"
 
 #: collective/judgment/profiles/default/types/Annual_Evaluation.xml
 #: collective/judgment/profiles/default/types/Coa.xml
-#: collective/judgment/profiles/default/types/Pdf_File.xml
+#: collective/judgment/profiles/default/types/New_Member.xml
 msgid "View"
 msgstr "Vista"
 
@@ -265,7 +273,7 @@ msgstr "Estimado(a) ${name}"
 #. Default: "The Evaluation deadline must be grather than Creation Date"
 #: collective/judgment/content/annualevaluation.py:43
 #: collective/judgment/content/coa.py:43
-#: collective/judgment/content/promotion.py:50
+#: collective/judgment/content/newmember.py:48
 msgid "label_error_dates"
 msgstr "La fecha límite de evaluación debe ser mayor que la fecha de creación"
 
