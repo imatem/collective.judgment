@@ -2,15 +2,14 @@
   xmlns="http://namespaces.zope.org/zope"
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
-  <!-- -*- extra stuff goes here -*- -->
-  <!--<genericsetup:upgradeStep
-    source="*"
-    destination="1001"
-    title="Reload GS profiles"
-    description=""
-    profile="collective.judgment:default"
-    handler=".upgrades.reload_gs_profile"
-    />-->
-
+  <genericsetup:upgradeStep
+      title="Update evaluation annotations"
+      description="Update list of evaluators per object"
+      source="1000"
+      destination="1001"
+      handler="collective.judgment.upgrades.upgrade_evaluators"
+      sortkey="1"
+      profile="collective.judgment:default"
+      />
 
 </configure>

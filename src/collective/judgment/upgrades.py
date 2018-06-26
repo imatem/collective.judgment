@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-from plone.app.upgrade.utils import loadMigrationProfile
+from plone import api
 
-
-def reload_gs_profile(context):
-    loadMigrationProfile(
-        context,
-        'profile-collective.judgment:default'
-    )
+def upgrade_evaluators(setup):
+    pass
