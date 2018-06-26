@@ -32,13 +32,16 @@ class Evaluation(base.ViewletBase):
         return self.evaluation.evaluations[self.userid][0]['evaluation']
 
     def allevaluations(self):
-
+        """Every evaluotion object supose to have the evaluators ids as
+        values in the Anotation dict
+        """
         allevaluations = self.evaluation.evaluations
         evaluators = []
-
-        for member in api.user.get_users(groupname='evaluators'):
+        for userid in allevaluations:
             value = None
-            if self.evaluation.already_evaluated(member.id):
-                value = allevaluations[member.id][0]['evaluation']
-            evaluators.append((member.getProperty('fullname'), value,))
+            member = api.user.get(userid)
+            if allevaluations[userid]:
+                value = allevaluations[userid][0]['evaluation']
+            evaluators.append((member.getProperty('fullname'), value))
+        evaluators.sort()
         return evaluators
