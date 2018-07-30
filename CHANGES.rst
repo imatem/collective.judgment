@@ -1,8 +1,14 @@
 Changelog
 =========
 
+1.0 (unreleased)
+------------------
 
-1.0a1 (unreleased)
+- store all evaluators in annotations.
+  [imatem]
+
+
+1.0a1 (2018-02-12)
 ------------------
 
 - Initial release.

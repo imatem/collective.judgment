@@ -3,6 +3,7 @@ from collective.judgment.behaviors.evaluation import KEY
 from collective.judgment.content.files import IPdfFile
 from collective.judgment.interfaces import IEvaluable
 from persistent.dict import PersistentDict
+from persistent.list import PersistentList
 from plone import api
 from plone import namedfile
 from plone.app.dexterity.behaviors import constrains
@@ -23,6 +24,9 @@ def handlerCreatedPromotion(self, event):
     annotations = IAnnotations(self)
     if KEY not in annotations:
         annotations[KEY] = PersistentDict()
+        evaluations = annotations[KEY]
+        for member in api.user.get_users(groupname='evaluators'):
+            evaluations[member.id] = PersistentList()
 
 
 @adapter(IEvaluable, IObjectAddedEvent)
