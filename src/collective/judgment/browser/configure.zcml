@@ -136,6 +136,13 @@
       />
 
   <browser:page
+      name="update-pending"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      class=".evaluation.UpdateEvaluations"
+      permission="zope2.ViewManagementScreens"
+      />
+
+  <browser:page
       name="folder_cdim_types"
       template="templates/folder_cdim_types.pt"
       for="plone.dexterity.interfaces.IDexterityContainer"
