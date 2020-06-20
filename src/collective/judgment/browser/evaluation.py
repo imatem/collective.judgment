@@ -39,13 +39,18 @@ class UpdateEvaluations(form.Form):
         # code from upgrades.py
         brains = api.content.find(
             object_provides=IEvaluable, review_state='pending')
+        evaluators = [i.id for i in api.user.get_users(groupname='evaluators')]
         for evaluable in brains:
             evaluations = IEvaluation(evaluable.getObject()).evaluations
-            evaluations.pop('mochan')
-            for user in api.user.get_users(groupname='evaluators'):
-                if user.id not in evaluations:
-                    evaluations[user.id] = PersistentList()
+            inactive = [i for i in evaluations if i not in evaluators]
+            for userid in inactive:
+                evaluations.pop(userid)
+                logger.info('remove {} from evaluators'.format(userid))
+
+            for userid in evaluators:
+                if userid not in evaluations:
+                    evaluations[userid] = PersistentList()
                     logger.info('Adding {} to {}'.format(
-                        user.id, evaluable.Title.encode('utf-8')))
+                        userid, evaluable.Title.encode('utf-8')))
             logger.info('{} has {} evaluators'.format(
                 evaluable.Title.encode('utf-8'), len(evaluations)))
