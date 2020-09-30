@@ -54,3 +54,23 @@ class UpdateEvaluations(form.Form):
                         userid, evaluable.Title.encode('utf-8')))
             logger.info('{} has {} evaluators'.format(
                 evaluable.Title.encode('utf-8'), len(evaluations)))
+
+
+class UpdateStudiedEvaluations(form.Form):
+    """docstring for UpdateEvaluations"""
+
+    @button.buttonAndHandler(u'Update studied evaluations, change local roles')
+    def handle_update_evaluations(self, action):
+        """ update list of evaluators in objects pending for review.
+        """
+        # code from upgrades.py
+        brains = api.content.find(
+            object_provides=IEvaluable, review_state='studied')
+
+        for brain in brains:
+            obj = brain.getObject()
+            api.content.disable_roles_acquisition(obj=obj)
+            evaluations = IEvaluation(obj).evaluations
+            for xid in sorted(evaluations.keys()):
+                api.user.grant_roles(username=xid, roles=['Reader'], obj=obj)
+        logger.info('listo')

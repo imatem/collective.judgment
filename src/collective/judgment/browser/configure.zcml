@@ -143,6 +143,13 @@
       />
 
   <browser:page
+      name="update-studied"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      class=".evaluation.UpdateStudiedEvaluations"
+      permission="zope2.ViewManagementScreens"
+      />
+
+  <browser:page
       name="folder_cdim_types"
       template="templates/folder_cdim_types.pt"
       for="plone.dexterity.interfaces.IDexterityContainer"
