@@ -116,7 +116,7 @@
       class=".viewlets.Evaluation"
       layer="..interfaces.ICollectiveJudgmentLayer"
       template="templates/evaluation_viewlet.pt"
-      permission="collective.judgment.Evaluation"
+      permission="zope2.View"
       />
 
   <browser:page
