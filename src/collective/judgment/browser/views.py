@@ -81,7 +81,8 @@ class FolderCdimView(BrowserView):
         isManager = self.isManager()
         userid = api.user.get_current().id
 
-        for member in api.user.get_users(groupname='evaluators'):
+        for xid in sorted(evaluations.keys()):
+            member = api.user.get(username=xid)
 
             if isManager:
                 member_evaluations = evaluations.get(member.id, None)
