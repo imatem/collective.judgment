@@ -1,43 +1,52 @@
 <tal:snippet omit-tag="" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="collective.judgment">
-  <div class="evaluation">
-    <div id="alreadyevaluated" class="evaluation_option">
-      <span i18n:translate="">You already evaluated this case.</span>
-    </div>
-    <div id="notyetevaluated" class="evaluation_option">
-      <span i18n:translate="">What do you think of this case?</span>
-      <div class="evaluations"><span id="evaluation_approve" i18n:translate="">Approve</span> <span id="evaluation_disapprove" i18n:translate="">Disapprove</span>
+  <div class="evaluation" tal:define="checkPermission nocall: context/portal_membership/checkPermission;">
+
+    <tal:block tal:condition="python:checkPermission('collective.judgment: Evaluation', context)">
+
+      <div id="alreadyevaluated" class="evaluation_option">
+        <span i18n:translate="">You already evaluated this case.</span>
       </div>
-    </div>
-    <!-- <div id="delete_evaluations" tal:condition="view/is_manager">
-      Delete all votes
-    </div>
-    <div id="delete_evaluations2" class="areyousure warning"
-         tal:condition="view/is_manager"
-         >
-      Are you sure?
-    </div> -->
-    <a href="#" class="hiddenStructure" id="context_url"
-       tal:attributes="href context/absolute_url"></a>
-    <p id="evaluated" style="width: 40pt;" tal:condition="view/evaluated">
+      <div id="notyetevaluated" class="evaluation_option">
+        <span i18n:translate="">What do you think of this case?</span>
+        <div class="evaluations"><span id="evaluation_approve" i18n:translate="">Approve</span> <span id="evaluation_disapprove" i18n:translate="">Disapprove</span>
+        </div>
+      </div>
+      <!-- <div id="delete_evaluations" tal:condition="view/is_manager">
+        Delete all votes
+      </div>
+      <div id="delete_evaluations2" class="areyousure warning"
+           tal:condition="view/is_manager"
+           >
+        Are you sure?
+      </div> -->
+      <a href="#" class="hiddenStructure" id="context_url"
+         tal:attributes="href context/absolute_url"></a>
+      <p id="evaluated" style="width: 40pt;" tal:condition="view/evaluated">
 
-      <tal:block tal:condition="python:view.evaluationvalue() == 'approve'">
-        <span class="myicon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
-            <path stroke="#39aa56" fill="none" style="stroke-width: 3"
-              d="M14.5 1.5L6.499 13.716.5 8.78">
-            </path></svg>
-        </span>
-      </tal:block>
+        <tal:block tal:condition="python:view.evaluationvalue() == 'approve'">
+          <span class="myicon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+              <path stroke="#39aa56" fill="none" style="stroke-width: 3"
+                d="M14.5 1.5L6.499 13.716.5 8.78">
+              </path></svg>
+          </span>
+        </tal:block>
 
-      <tal:block tal:condition="python:view.evaluationvalue() == 'disapprove'">
-        <span class="myicon">
-          <svg viewBox="0 0 15 15">
-            <style>.stroke-grey{fill:none;stroke:#9d9d9d;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
-            <path stroke="#db4545" fill="none" style="stroke-width: 3" d="M.5.5l14 14m0-14l-14 14"></path>
-          </svg>
-        </span>
-      </tal:block>
-    </p>
+        <tal:block tal:condition="python:view.evaluationvalue() == 'disapprove'">
+          <span class="myicon">
+            <svg viewBox="0 0 15 15">
+              <style>.stroke-grey{fill:none;stroke:#9d9d9d;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+              <path stroke="#db4545" fill="none" style="stroke-width: 3" d="M.5.5l14 14m0-14l-14 14"></path>
+            </svg>
+          </span>
+        </tal:block>
+      </p>
+    </tal:block>
+
+    <tal:block tal:condition="python:not checkPermission('collective.judgment: Evaluation', context)">
+      Evaluadores participantes
+      <br/>
+    </tal:block>
 
     <br/>
     <div>
@@ -46,7 +55,7 @@
           <th tal:attributes="class python:item[1]" tal:content="python:item[0]"/>
         </tr>
       </table>
-    </div>
+    </div><!--end div list evaluators -->
 
 
 
