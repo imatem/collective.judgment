@@ -107,7 +107,7 @@
   <description>If you submitted the item by mistake or want to perform additional edits, this will take it back.</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Submit to Pending review</action>
   <guard >
-   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
   </guard>
 
  </transition>
@@ -115,7 +115,7 @@
   <description>Puts your item in a studied state</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for Studied</action>
   <guard >
-   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
   </guard>
 
  </transition>
