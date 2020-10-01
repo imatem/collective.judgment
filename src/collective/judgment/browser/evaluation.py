@@ -41,15 +41,18 @@ class UpdateEvaluations(form.Form):
             object_provides=IEvaluable, review_state='pending')
         evaluators = [i.id for i in api.user.get_users(groupname='evaluators')]
         for evaluable in brains:
-            evaluations = IEvaluation(evaluable.getObject()).evaluations
+            obj = evaluable.getObject()
+            evaluations = IEvaluation(obj).evaluations
             inactive = [i for i in evaluations if i not in evaluators]
             for userid in inactive:
+                api.user.revoke_roles(username=userid, roles=['Reader'], obj=obj)
                 evaluations.pop(userid)
                 logger.info('remove {} from evaluators'.format(userid))
 
             for userid in evaluators:
                 if userid not in evaluations:
                     evaluations[userid] = PersistentList()
+                    api.user.grant_roles(username=userid, roles=['Reader'], obj=obj)
                     logger.info('Adding {} to {}'.format(
                         userid, evaluable.Title.encode('utf-8')))
             logger.info('{} has {} evaluators'.format(
