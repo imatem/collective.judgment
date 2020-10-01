@@ -44,9 +44,7 @@ def handleAddedEvaluable(obj, event):
             api.user.grant_roles(username=member.id, roles=['Reader'], obj=obj)
 
         api.content.disable_roles_acquisition(obj=obj)
-        # por si admin crea el contenido le sede a reviewers la autoria.
-        # api.group.grant_roles(groupname='Reviewers', roles=['Reader', 'Reviewer'], obj=obj)
-        api.group.grant_roles(groupname='Reviewers', roles=['Owner'], obj=obj)
+        api.group.grant_roles(groupname='Reviewers', roles=['Reader'], obj=obj)
 
 
 @adapter(IPdfFile, IObjectAddedEvent)
