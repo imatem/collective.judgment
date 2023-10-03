@@ -57,7 +57,7 @@ def handlerAddedPdfFile(self, event):
         file_os.close()
         os.system('cd {0}; gs -o page1.png -sDEVICE=pngalpha -dLastPage=1 {1}'.format(tempdir, file_path))
         image_path = os.path.join(tempdir, 'page1.png')
-        thumb_file = open(image_path, 'r')
+        thumb_file = open(image_path, 'rb')
 
         self.thumbfile = namedfile.NamedBlobImage(
             data=thumb_file.read(),
@@ -75,6 +75,7 @@ def handlerAddedPdfFile(self, event):
 
 @adapter(IPdfFile, IObjectModifiedEvent)
 def handlerModifiedPdfFile(self, event):
+    import pdb; pdb.set_trace()
     tempdir = tempfile.mkdtemp()
     try:
         file_path = os.path.join(tempdir, 'file.pdf')
@@ -83,7 +84,7 @@ def handlerModifiedPdfFile(self, event):
         file_os.close()
         os.system('cd {0}; gs -o page1.png -sDEVICE=pngalpha -dLastPage=1 {1}'.format(tempdir, file_path))
         image_path = os.path.join(tempdir, 'page1.png')
-        thumb_file = open(image_path, 'r')
+        thumb_file = open(image_path, 'rb')
 
         self.thumbfile = namedfile.NamedBlobImage(
             data=thumb_file.read(),
