@@ -75,7 +75,6 @@ def handlerAddedPdfFile(self, event):
 
 @adapter(IPdfFile, IObjectModifiedEvent)
 def handlerModifiedPdfFile(self, event):
-    import pdb; pdb.set_trace()
     tempdir = tempfile.mkdtemp()
     try:
         file_path = os.path.join(tempdir, 'file.pdf')
