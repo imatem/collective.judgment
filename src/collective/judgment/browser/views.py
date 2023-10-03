@@ -154,9 +154,10 @@ class FolderCdimView(BrowserView):
         for brain in brains:
             values = IEvaluation(brain.getObject()).evaluations
             for gmember in evaluators:
-                if values.get(gmember.id, None) is None:
+                if len(values.get(gmember.id, [])) == 0:
                     emails.setdefault(gmember.id, [])
                     emails[gmember.id].append((brain.Title, brain.getURL()))
+
 
         evaluators_data = {}
         for evaluator in evaluators:
@@ -166,7 +167,7 @@ class FolderCdimView(BrowserView):
             }
 
         message = []
-        for k, v in emails.iteritems():
+        for k, v in emails.items():
             salutation = _(u'email_intro_msg', default=u'Dear ${name}', mapping={u'name': safe_unicode(evaluators_data[k]['name'])})
             if len(v) > 1:
                 mail_intro = _(u'You have the following pending reviews:')
